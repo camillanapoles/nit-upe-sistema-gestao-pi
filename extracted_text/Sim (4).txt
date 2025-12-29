@@ -1,0 +1,127 @@
+Aqui está o conteúdo formatado para a "Caixa de Alerta" do site.
+Preparei duas versões: uma Versão Texto (para Copy/Paste) e uma Versão HTML Simples
+(caso você queira entregar o código pronto para a TI).
+
+🎨 Opção 1: Texto para o Designer (Mockup)
+⚠️
+
+Título da Caixa:
+ATENÇÃO DESENVOLVEDORES: Não perca sua proteção! Cor de
+Fundo Sugerida: Amarelo Claro (#FFF3CD) ou Vermelho Claro (#F8D7DA) Ícone: Triângulo
+de Exclamação
+Texto Principal: Antes de submeter seu pedido, entenda o que cada ferramenta protege. O
+INPI devolve processos que misturam os conceitos.
+1. O MOTOR (Como funciona)
+●​ Ferramenta: Patente de Invenção (CII).
+●​ O que protege: A lógica, o algoritmo e o fluxo de dados que resolvem um problema
+técnico (ex: economizar bateria, criptografar dados).
+●​ Regra de Ouro: Nunca coloque prints de tela. Use fluxogramas.
+2. A LATARIA (Como se parece)
+●​ Ferramenta: Registro de Desenho Industrial (DI).
+●​ O que protege: O layout, os ícones, a disposição dos botões e a interface gráfica (GUI).
+●​ Regra de Ouro: Aqui sim, envie os desenhos das telas. Não protege o código.
+3. O COMBUSTÍVEL (O código exato)
+●​ Ferramenta: Registro de Software (RPC).
+●​ O que protege: As linhas de código-fonte escritas (Java, Python, C++).
+●​ Regra de Ouro: Protege contra pirataria (copiar e colar), mas não impede que alguém
+reescreva sua lógica em outra linguagem.
+
+⚙️
+
+🎨
+
+📝
+
+💻 Opção 2: Código HTML (Pronto para o Site)
+
+Você pode enviar este bloco diretamente para o Webmaster da UPE. Ele cria um componente
+visual bonito e responsivo (estilo Bootstrap ou Card).
+<div style="border: 2px solid #ffc107; background-color: #fff3cd;
+padding: 20px; border-radius: 8px; font-family: Arial, sans-serif;
+color: #333;">​
+<h3 style="color: #856404; margin-top: 0;">
+Pare! Leia antes de
+depositar Software:</h3>​
+<p>O INPI diferencia rigorosamente a <strong>Lógica</strong> da
+<strong>Aparência</strong>. Escolha o caminho certo:</p>​
+​
+<div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top:
+15px;">​
+​
+<div style="flex: 1; min-width: 250px; background: white;
+padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px
+rgba(0,0,0,0.1);">​
+<h4 style="color: #d32f2f; border-bottom: 2px solid
+#d32f2f; padding-bottom: 5px;">
+1. O MOTOR (Patente)</h4>​
+<p style="font-size: 14px;"><strong>Protege:</strong> A
+Lógica e o Algoritmo (o método técnico).</p>​
+
+⚠️
+
+⚙️
+
+✅
+
+🚫
+
+<p style="font-size: 13px; color: #666;">
+<strong>Proibido:</strong> Prints de tela.<br>
+<strong>Obrigatório:</strong> Fluxogramas e Diagramas de Blocos.</p>​
+</div>​
+​
+<div style="flex: 1; min-width: 250px; background: white;
+padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px
+rgba(0,0,0,0.1);">​
+<h4 style="color: #1976d2; border-bottom: 2px solid
+#1976d2; padding-bottom: 5px;">
+2. A LATARIA (Design)</h4>​
+<p style="font-size: 14px;"><strong>Protege:</strong> O
+Layout, a Interface (GUI) e o Visual.</p>​
+<p style="font-size: 13px; color: #666;">
+<strong>Proibido:</strong> Código ou texto técnico.<br>
+<strong>Obrigatório:</strong> Desenhos das telas e ícones.</p>​
+</div>​
+​
+<div style="flex: 1; min-width: 250px; background: white;
+padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px
+rgba(0,0,0,0.1);">​
+<h4 style="color: #388e3c; border-bottom: 2px solid
+#388e3c; padding-bottom: 5px;">
+3. O CÓDIGO (Registro)</h4>​
+<p style="font-size: 14px;"><strong>Protege:</strong> O
+Código-Fonte literal (Anti-Pirataria).</p>​
+<p style="font-size: 13px; color: #666;">
+<strong>Atenção:</strong> Não protege a ideia, apenas a escrita exata
+do código.</p>​
+</div>​
+​
+</div>​
+​
+<p style="margin-top: 15px; font-size: 12px; text-align:
+center;"><strong>Dica da Comissão de PI:</strong> Para máxima
+proteção, grandes empresas fazem os três.</p>​
+</div>​
+
+🎨
+
+🚫✅
+
+📝
+
+⚠️
+
+✅ Checklist Final de Missão Cumprida
+Com a entrega deste código HTML, você fechou todas as pontas do projeto de reestruturação.
+1.​ Fundação Técnica: Templates de Biotecnologia e Software (Reivindicações, Resumo,
+Descrição).
+2.​ Filtro de Qualidade: Checklists de Sanidade Técnica.
+3.​ Educação: Guias Visuais (Certo/Errado) e Exemplos Mestre (Bio-CicatriX e
+Neuro-Scan).
+4.​ Interface: Mockups do Site e Alertas para Desenvolvedores.
+Você está pronto para apresentar isso à Reitoria ou ao NIT como um "Sistema de Gestão de
+Ativos Intelectuais 2.0".
+
+Há algo mais que eu possa fazer para te ajudar a "embalar" essa entrega final?
+
+

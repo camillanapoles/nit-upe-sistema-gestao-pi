@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Patente Padrão (PI/MU) - NIT/UPE</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .form-page {
+            min-height: 100vh;
+            background: var(--gray-100);
+            padding: 40px 0;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .form-body {
+            padding: 32px;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+            padding: 24px;
+            background: var(--gray-50);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-md);
+        }
+
+        .form-section-title {
+            color: var(--primary-dark);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .form-group label .required {
+            color: var(--danger);
+        }
+
+        .form-group label .help-text {
+            display: block;
+            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+
+        .form-control:invalid {
+            border-color: var(--danger);
+        }
+
+        .form-control:valid {
+            border-color: var(--success);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .char-count {
+            font-size: 12px;
+            color: var(--gray-500);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .char-count.warning {
+            color: var(--warning);
+        }
+
+        .char-count.danger {
+            color: var(--danger);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-footer {
+            padding: 24px 32px;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .validation-summary {
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+            display: none;
+        }
+
+        .validation-summary.show {
+            display: block;
+        }
+
+        .validation-summary.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .validation-summary.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .upload-area {
+            border: 2px dashed var(--gray-300);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .upload-area.dragover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .upload-text {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        .file-list {
+            margin-top: 16px;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            margin-bottom: 8px;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .file-icon {
+            font-size: 24px;
+        }
+
+        .file-name {
+            font-weight: 500;
+        }
+
+        .file-size {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .file-remove {
+            background: var(--danger);
+            color: var(--white);
+            border: none;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .badge-secondary {
+            background: var(--gray-300);
+            color: var(--gray-700);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-page">
+        <div class="container">
+            <a href="../index.html" style="display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 500;">
+                ← Voltar para a Página Inicial
+            </a>
+
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Formulário de Patente Padrão</h1>
+                    <p>Preencha os dados para submissão de Pedido de Patente de Invenção (PI) ou Modelo de Utilidade (MU)</p>
+                </div>
+
+                <div class="validation-summary" id="validationSummary"></div>
+
+                <form id="patentForm" novalidate>
+                    <div class="form-body">
+                        <!-- Seção 1: Metadados do Pedido -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">1. Metadados do Pedido</h2>
+
+                            <div class="form-group">
+                                <label for="tipoPatente">Tipo de Patente <span class="required">*</span></label>
+                                <select id="tipoPatente" name="tipoPatente" class="form-control" required>
+                                    <option value="">Selecione o tipo...</option>
+                                    <option value="PI">PI - Patente de Invenção (20 anos)</option>
+                                    <option value="MU">MU - Modelo de Utilidade (15 anos)</option>
+                                </select>
+                                <small class="help-text">PI protege lógica técnica. MU protege objetos físicos com nova forma.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tituloInvencao">Título da Invenção <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="tituloInvencao"
+                                    name="tituloInvencao"
+                                    class="form-control"
+                                    maxlength="150"
+                                    required
+                                    placeholder="Ex: Dispositivo para o tratamento de feridas"
+                                >
+                                <div class="char-count" data-target="tituloInvencao" data-max="150">0/150 caracteres</div>
+                                <small class="help-text">Máximo 150 caracteres. Não pode conter nomes fantasia ou marcas.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="palavrasChave">Palavras-chave <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="palavrasChave"
+                                    name="palavrasChave"
+                                    class="form-control"
+                                    maxlength="100"
+                                    required
+                                    placeholder="Ex: feridas, cicatrização, tratamento, biomaterial"
+                                >
+                                <div class="char-count" data-target="palavrasChave" data-max="100">0/100 caracteres</div>
+                                <small class="help-text">Separe por vírgula. Mínimo 3, máximo 5 termos.</small>
+                            </div>
+                        </div>
+
+                        <!-- Seção 2: Resumo Técnico -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">2. Resumo Técnico</h2>
+
+                            <div class="form-group">
+                                <label for="problemaDor">Problema / Dor <span class="required">*</span></label>
+                                <textarea
+                                    id="problemaDor"
+                                    name="problemaDor"
+                                    class="form-control"
+                                    minlength="100"
+                                    maxlength="1000"
+                                    required
+                                    placeholder="Descreva o problema técnico que a invenção resolve..."
+                                ></textarea>
+                                <div class="char-count" data-target="problemaDor" data-min="100" data-max="1000">0/1000 caracteres</div>
+                                <small class="help-text">Mínimo 100, máximo 1000 caracteres. Use linguagem técnica e objetiva.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="solucaoTecnica">Solução Técnica <span class="required">*</span></label>
+                                <textarea
+                                    id="solucaoTecnica"
+                                    name="solucaoTecnica"
+                                    class="form-control"
+                                    minlength="500"
+                                    maxlength="4000"
+                                    required
+                                    placeholder="Descreva a invenção proposta, como ela funciona e resolve o problema..."
+                                ></textarea>
+                                <div class="char-count" data-target="solucaoTecnica" data-min="500" data-max="4000">0/4000 caracteres</div>
+                                <small class="help-text">Mínimo 500, máximo 4000 caracteres. Evite adjetivos qualitativos.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="estadoTecnica">Estado da Técnica <span class="required">*</span></label>
+                                <textarea
+                                    id="estadoTecnica"
+                                    name="estadoTecnica"
+                                    class="form-control"
+                                    minlength="200"
+                                    maxlength="2000"
+                                    required
+                                    placeholder="Descreva o que já existe no mercado, patentes relacionadas, limitações das soluções atuais..."
+                                ></textarea>
+                                <div class="char-count" data-target="estadoTecnica" data-min="200" data-max="2000">0/2000 caracteres</div>
+                                <small class="help-text">Mínimo 200, máximo 2000 caracteres. Identifique a lacuna técnica.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vantagens">Vantagens <span class="required">*</span></label>
+                                <textarea
+                                    id="vantagens"
+                                    name="vantagens"
+                                    class="form-control"
+                                    minlength="100"
+                                    maxlength="1500"
+                                    required
+                                    placeholder="Liste as vantagens técnicas e econômicas da invenção..."
+                                ></textarea>
+                                <div class="char-count" data-target="vantagens" data-min="100" data-max="1500">0/1500 caracteres</div>
+                                <small class="help-text">Mínimo 100, máximo 1500 caracteres. Use métricas quando possível (%).</small>
+                            </div>
+                        </div>
+
+                        <!-- Seção 3: Qualificação de Inventores -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">3. Qualificação de Inventores</h2>
+
+                            <div class="form-group">
+                                <label for="nomeInventor">Nome Completo <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="nomeInventor"
+                                    name="nomeInventor"
+                                    class="form-control"
+                                    minlength="5"
+                                    maxlength="255"
+                                    required
+                                    placeholder="Nome completo do inventor"
+                                >
+                                <small class="help-text">Mínimo 5, máximo 255 caracteres.</small>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nacionalidade">Nacionalidade <span class="required">*</span></label>
+                                    <select id="nacionalidade" name="nacionalidade" class="form-control" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="BR">Brasil</option>
+                                        <option value="US">Estados Unidos</option>
+                                        <option value="PT">Portugal</option>
+                                        <option value="XX">Outro</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tipoParticipacao">Tipo de Participação <span class="required">*</span></label>
+                                    <select id="tipoParticipacao" name="tipoParticipacao" class="form-control" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="inventor">Inventor</option>
+                                        <option value="depositante">Depositante</option>
+                                        <option value="procurador">Procurador</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cpfCnpj">CPF / CNPJ <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="cpfCnpj"
+                                    name="cpfCnpj"
+                                    class="form-control"
+                                    data-mask="cpf"
+                                    required
+                                    placeholder="000.000.000-00"
+                                >
+                                <small class="help-text">Use CPF para pessoa física ou CNPJ para pessoa jurídica.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail <span class="required">*</span></label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-control"
+                                    required
+                                    placeholder="exemplo@upe.br"
+                                >
+                                <small class="help-text">E-mail para notificações do processo.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone">Telefone <span class="required">*</span></label>
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    class="form-control"
+                                    data-mask="phone"
+                                    required
+                                    placeholder="(81) 99999-9999"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cep">CEP <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="cep"
+                                    name="cep"
+                                    class="form-control"
+                                    data-mask="cep"
+                                    required
+                                    placeholder="00000-000"
+                                >
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="logradouro">Logradouro <span class="required">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="logradouro"
+                                        name="logradouro"
+                                        class="form-control"
+                                        maxlength="100"
+                                        required
+                                        placeholder="Rua, Avenida, Praça..."
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="numero">Número <span class="required">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="numero"
+                                        name="numero"
+                                        class="form-control"
+                                        maxlength="20"
+                                        required
+                                        placeholder="123"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="complemento">Complemento</label>
+                                    <input
+                                        type="text"
+                                        id="complemento"
+                                        name="complemento"
+                                        class="form-control"
+                                        maxlength="100"
+                                        placeholder="Apto, Bloco, Sala..."
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="bairro">Bairro <span class="required">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="bairro"
+                                        name="bairro"
+                                        class="form-control"
+                                        maxlength="50"
+                                        required
+                                        placeholder="Centro"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="municipio">Município <span class="required">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="municipio"
+                                        name="municipio"
+                                        class="form-control"
+                                        maxlength="50"
+                                        required
+                                        placeholder="Recife"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="uf">UF <span class="required">*</span></label>
+                                    <select id="uf" name="uf" class="form-control" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <!-- Adicionar outros estados conforme necessário -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seção 4: Upload de Arquivos -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">4. Upload de Arquivos Obrigatórios</h2>
+
+                            <div class="form-group">
+                                <label>Anexo A - Busca de Anterioridade <span class="required">*</span></label>
+                                <div class="upload-area" id="uploadArea_A">
+                                    <div class="upload-icon">📁</div>
+                                    <div class="upload-text">
+                                        Arraste e solte o arquivo aqui ou clique para selecionar<br>
+                                        <small>Formato: PDF | Máximo: 10MB</small>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        id="anexoA"
+                                        name="anexoA"
+                                        accept=".pdf"
+                                        data-max-size="10485760"
+                                        required
+                                        style="display: none;"
+                                    >
+                                </div>
+                                <div class="file-list" id="fileList_A"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Anexo B - Matriz de Problema x Solução <span class="required">*</span></label>
+                                <div class="upload-area" id="uploadArea_B">
+                                    <div class="upload-icon">📁</div>
+                                    <div class="upload-text">
+                                        Arraste e solte o arquivo aqui ou clique para selecionar<br>
+                                        <small>Formato: PDF | Máximo: 10MB</small>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        id="anexoB"
+                                        name="anexoB"
+                                        accept=".pdf"
+                                        data-max-size="10485760"
+                                        required
+                                        style="display: none;"
+                                    >
+                                </div>
+                                <div class="file-list" id="fileList_B"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Anexo C - Memorial Descritivo <span class="required">*</span></label>
+                                <div class="upload-area" id="uploadArea_C">
+                                    <div class="upload-icon">📁</div>
+                                    <div class="upload-text">
+                                        Arraste e solte o arquivo aqui ou clique para selecionar<br>
+                                        <small>Formato: PDF | Máximo: 20MB</small>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        id="anexoC"
+                                        name="anexoC"
+                                        accept=".pdf"
+                                        data-max-size="20971520"
+                                        required
+                                        style="display: none;"
+                                    >
+                                </div>
+                                <div class="file-list" id="fileList_C"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Desenhos / Figuras (Opcional)</label>
+                                <div class="upload-area" id="uploadArea_D">
+                                    <div class="upload-icon">📁</div>
+                                    <div class="upload-text">
+                                        Arraste e solte o arquivo aqui ou clique para selecionar<br>
+                                        <small>Formato: PDF ou TIFF | Máximo: 20MB</small>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        id="desenhos"
+                                        name="desenhos"
+                                        accept=".pdf,.tiff,.tif"
+                                        data-max-size="20971520"
+                                        style="display: none;"
+                                    >
+                                </div>
+                                <div class="file-list" id="fileList_D"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        <div class="form-info">
+                            <span class="badge badge-secondary">Formulário v1.0</span>
+                            <span class="badge badge-primary">Validado</span>
+                        </div>
+                        <div class="form-actions">
+                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                            <button type="submit" class="btn btn-primary">Enviar Formulário</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/tests.js"></script>
+    <script>
+        // =====================
+        // LÓGICA DO FORMULÁRIO
+        // =====================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('patentForm');
+            const validationSummary = document.getElementById('validationSummary');
+
+            // Contadores de caracteres
+            const charCounters = document.querySelectorAll('.char-count');
+
+            charCounters.forEach(counter => {
+                const targetId = counter.dataset.target;
+                const target = document.getElementById(targetId);
+                const min = parseInt(counter.dataset.min) || 0;
+                const max = parseInt(counter.dataset.max) || 100;
+
+                // Atualizar contador inicial
+                updateCounter(target, counter, min, max);
+
+                // Atualizar em tempo real
+                target.addEventListener('input', () => {
+                    updateCounter(target, counter, min, max);
+                });
+            });
+
+            function updateCounter(input, counter, min, max) {
+                const current = input.value.length;
+                counter.textContent = `${current}/${max} caracteres`;
+
+                // Remover classes anteriores
+                counter.classList.remove('warning', 'danger');
+
+                if (current > max) {
+                    counter.classList.add('danger');
+                } else if (current > max * 0.9) {
+                    counter.classList.add('warning');
+                }
+
+                // Validar comprimento mínimo
+                if (current < min && min > 0) {
+                    counter.textContent += ` (mínimo: ${min})`;
+                }
+            }
+
+            // Upload de arquivos
+            const uploadAreas = document.querySelectorAll('.upload-area');
+
+            uploadAreas.forEach(area => {
+                const input = area.querySelector('input[type="file"]');
+                const fileListId = area.id.replace('uploadArea', 'fileList');
+                const fileList = document.getElementById(fileListId);
+
+                // Clique na área abre o seletor
+                area.addEventListener('click', () => {
+                    input.click();
+                });
+
+                // Drag and drop
+                area.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    area.classList.add('dragover');
+                });
+
+                area.addEventListener('dragleave', () => {
+                    area.classList.remove('dragover');
+                });
+
+                area.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    area.classList.remove('dragover');
+
+                    if (e.dataTransfer.files.length > 0) {
+                        input.files = e.dataTransfer.files;
+                        displayFiles(input, fileList);
+                    }
+                });
+
+                // Seleção manual
+                input.addEventListener('change', () => {
+                    displayFiles(input, fileList);
+                });
+            });
+
+            function displayFiles(input, fileList) {
+                fileList.innerHTML = '';
+
+                for (let i = 0; i < input.files.length; i++) {
+                    const file = input.files[i];
+                    const fileSize = formatFileSize(file.size);
+
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    fileItem.innerHTML = `
+                        <div class="file-info">
+                            <span class="file-icon">📄</span>
+                            <div>
+                                <div class="file-name">${file.name}</div>
+                                <div class="file-size">${fileSize}</div>
+                            </div>
+                        </div>
+                        <button type="button" class="file-remove" data-input="${input.id}">Remover</button>
+                    `;
+
+                    fileList.appendChild(fileItem);
+                }
+
+                // Evento para remover arquivo
+                fileList.querySelectorAll('.file-remove').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const inputId = btn.dataset.input;
+                        const input = document.getElementById(inputId);
+                        input.value = '';
+                        fileList.innerHTML = '';
+                    });
+                });
+            }
+
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            // Validação do formulário
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Validar usando HTML5
+                if (!form.checkValidity()) {
+                    showValidationSummary(false, 'Preencha todos os campos obrigatórios corretamente.');
+                    return;
+                }
+
+                // Validar limites de caracteres
+                const textareas = form.querySelectorAll('textarea');
+                const inputs = form.querySelectorAll('input[maxlength]');
+                const fields = [...textareas, ...inputs];
+                const violations = [];
+
+                fields.forEach(field => {
+                    const maxLength = parseInt(field.getAttribute('maxlength'));
+                    if (field.value.length > maxLength) {
+                        violations.push(field.name || field.id);
+                    }
+                });
+
+                if (violations.length > 0) {
+                    showValidationSummary(false, `Alguns campos excedem o limite de caracteres: ${violations.join(', ')}`);
+                    return;
+                }
+
+                // Validar uploads
+                const fileInputs = form.querySelectorAll('input[type="file"][required]');
+                const missingFiles = [];
+
+                fileInputs.forEach(input => {
+                    if (input.files.length === 0) {
+                        missingFiles.push(input.name);
+                    }
+                });
+
+                if (missingFiles.length > 0) {
+                    showValidationSummary(false, `Upload obrigatório não realizado: ${missingFiles.join(', ')}`);
+                    return;
+                }
+
+                // Formulário válido
+                showValidationSummary(true, 'Formulário validado com sucesso! Redirecionando...');
+
+                // Simular envio
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                // Aqui seria o código real de envio
+                alert('✅ Formulário enviado com sucesso!');
+            });
+
+            function showValidationSummary(success, message) {
+                validationSummary.classList.remove('success', 'error');
+                validationSummary.classList.add(success ? 'success' : 'error');
+                validationSummary.classList.add('show');
+                validationSummary.innerHTML = message;
+
+                // Ocultar após 5 segundos
+                setTimeout(() => {
+                    validationSummary.classList.remove('show');
+                }, 5000);
+            }
+
+            // Máscaras de input (básico)
+            const cpfCnpj = document.getElementById('cpfCnpj');
+            const cep = document.getElementById('cep');
+            const telefone = document.getElementById('telefone');
+
+            cpfCnpj.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 11) {
+                    // CNPJ
+                    value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2}).*/, '$1.$2.$3/$4-$5');
+                } else {
+                    // CPF
+                    value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2}).*/, '$1.$2.$3-$4');
+                }
+                e.target.value = value;
+            });
+
+            cep.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                value = value.replace(/^(\d{5})(\d)/, '$1-$2');
+                e.target.value = value;
+            });
+
+            telefone.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 11) {
+                    value = value.slice(0, 11);
+                }
+                if (value.length > 6) {
+                    value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+                } else if (value.length > 2) {
+                    value = value.replace(/^(\d{2})(\d{0,5}).*/, '($1) $2');
+                } else {
+                    value = value.replace(/^(\d{0,2}).*/, '($1');
+                }
+                e.target.value = value;
+            });
+
+            console.log('✅ Formulário PI/MU carregado com sucesso');
+        });
+    </script>
+</body>
+</html>

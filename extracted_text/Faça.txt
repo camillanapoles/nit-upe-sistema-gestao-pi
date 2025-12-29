@@ -1,0 +1,73 @@
+Excelente, Maria Regina. Aqui está a solução prática.
+Criei um "Prompt Mestre" que você (ou a equipe do NIT) pode distribuir aos pesquisadores.
+Eles só precisam copiar este texto, colar no ChatGPT (ou Gemini) e inserir o resumo do artigo
+deles.
+O objetivo deste prompt é forçar a IA a abandonar a "linguagem acadêmica" (ex: "O estudo
+objetivou...") e adotar a "linguagem de patente" exigida pelo INPI (ex: "A invenção refere-se
+a..."), preenchendo exatamente os campos 2.10, 2.11 e 2.12 do formulário que você enviou.
+
+📋 Copie e envie isto para os Pesquisadores:
+
+Instrução: Copie o texto abaixo, cole na sua IA de preferência e insira o resumo do seu projeto
+onde indicado.
+ATUE COMO: Especialista Sênior em Propriedade Intelectual e Redação de
+Patentes do INPI.​
+​
+CONTEXTO: Estou preenchendo o "Formulário de Requerimento de
+Solicitação de Análise de Depósito de Patente" do NIT-UPE. Tenho um
+resumo acadêmico, mas preciso transformá-lo em linguagem
+técnica-jurídica de patente.​
+​
+TAREFA: Com base no texto que colarei abaixo, escreva as respostas
+para os 3 campos a seguir. Use linguagem formal, impessoal e direta.​
+​
+---​
+CAMPO 2.10 - DESCRIÇÃO DO CAMPO E DA INVENÇÃO​
+Instrução: Comece com a frase "A presente invenção insere-se nos
+campos técnicos de..." ou "Refere-se a...". Descreva O QUE É a
+tecnologia (Produto, Processo, Sistema) e onde ela se aplica
+(indústria farmacêutica, agrícola, etc.). Não use frases como "este
+estudo visa". Seja descritivo sobre o objeto.​
+​
+CAMPO 2.11 - ESTADO DA TÉCNICA (O "ANTES")​
+Instrução: Descreva como o problema é resolvido HOJE, sem a minha
+invenção. Foco nas limitações, custos altos, baixa eficiência ou falta
+de padronização dos métodos atuais. Responda: Como essa finalidade era
+alcançada antes? Quais equipamentos ou métodos eram usados?​
+​
+CAMPO 2.12 - VANTAGENS E DIFERENCIAIS (O "DEPOIS")​
+Instrução: Liste as melhorias técnicas diretas trazidas pela invenção.
+Foco em métricas de melhoria (ex: maior concentração, menor tempo,
+menor custo, maior sustentabilidade). Responda: O que a invenção faz
+melhor que o estado da técnica citado acima?​
+---​
+​
+MEU RESUMO/TEXTO DO PROJETO:​
+[COLE AQUI O RESUMO DO SEU ARTIGO, TESE OU PROJETO]​
+
+💡 Por que isso funciona (Visão UX/Estratégia)
+1.​ Padronização Automática: O prompt obriga a IA a usar as frases de início padrão ("A
+presente invenção insere-se..."), evitando que cada pesquisador escreva de um jeito
+diferente.
+2.​ Foco na Dor (Campo 2.11): Pesquisadores tendem a esquecer de falar do "concorrente"
+ou do método antigo. O prompt força essa comparação, que é vital para justificar a
+patente.
+3.​ Foco no Ganho (Campo 2.12): Transforma resultados científicos ("o p-valor foi
+significativo") em vantagens de mercado ("obtenção de fitomassa padronizada com
+elevado valor agregado").
+
+Exemplo de Resultado Esperado
+Se o pesquisador usasse o texto sobre a Schinus terebinthifolia do seu PDF, a IA geraria algo
+assim:
+●​ 2.10: "A presente invenção insere-se nos campos técnicos da biotecnologia... refere-se
+ao desenvolvimento de protocolo biotecnológico utilizando consórcio de fungos...".
+●​ 2.11: "Antes desta invenção, utiliza-se proantocianidinas contidas na matéria-prima
+obtida de populações naturais... sem inoculação controlada".
+●​ 2.12: "Obtenção de matéria-prima com maior concentração de proantocianidinas totais...
+fitomassa padronizada e com elevado valor agregado".
+Próximo passo sugerido: Você gostaria que eu montasse o Template do "Quadro
+Reivindicatório" (que é o anexo jurídico mais complexo)? Posso criar uma estrutura de
+"preencha as lacunas" para facilitar a vida dos inventores na hora de definir o que é "protegido"
+e o que é "domínio público".
+
+

@@ -1,0 +1,77 @@
+Com certeza, Maria Regina.
+A comunicação nesse momento é crítica. Se o e-mail for agressivo, o pesquisador desanima.
+Se for brando demais, ele demora a responder.
+Abaixo, apresento a Minuta de E-mail de Devolução (Padrão UX/Assertivo). Ela usa a
+técnica "Sanduíche": começa com um elogio (validação), entrega a correção necessária (o
+"recheio" técnico) e termina com encorajamento e prazo.
+
+📧
+ASSUNTO: ⚠️ AÇÃO NECESSÁRIA: Ajustes no Pedido de Patente
+– [Inserir Nome Resumido do Projeto]
+Prezado(a) Pesquisador(a) [Nome do Inventor Principal],
+A Comissão de Propriedade Intelectual do NIT-UPE analisou sua solicitação de depósito de
+patente intitulada "Protocolo agrobiotecnológico...".
+1. O VEREDITO: Potencial Identificado Gostaríamos de parabenizar a equipe pela qualidade
+da pesquisa. A Comissão identificou mérito técnico e potencial de mercado na sua invenção.
+No entanto, para garantir a segurança jurídica e evitar o indeferimento imediato pelo INPI,
+identificamos pontos críticos que precisam de ajuste.
+2. O QUE PRECISA SER FEITO (Plano de Ação) O pedido foi classificado como "APTO COM
+RESSALVAS". Isso significa que não podemos depositar ainda. Por favor, realize as
+correções listadas abaixo e nos reenvie os documentos:
+ONDE CORRIGIR
+O QUE FAZER (Ação Obrigatória)
+Ex: Formulário (Item 2.2)
+Alterar a natureza de "Modelo de Utilidade"
+para "Patente de Invenção". (Motivo:
+Protocolos e processos não se enquadram
+como MU).
+Ex: Quadro Reivindicatório
+Reescrever a Reivindicação 02. O INPI não
+aceita patente de extrato natural. Foque a
+escrita no "Processo de obtenção".
+Ex: Anexos
+Anexar o PDF do artigo publicado em set/2025
+para garantirmos o "Período de Graça".
+(Nota interna: O analista do NIT deve copiar e colar aqui as linhas da "Tabela 5" do Parecer)
+3. POR QUE ISSO É IMPORTANTE? Estes ajustes não são burocracia interna. São exigências
+da Lei da Propriedade Industrial (LPI 9.279/96). Se enviarmos ao INPI como está, o processo
+será arquivado e perderemos o investimento e a prioridade da data.
+4. PRAZO E REENVIO Pedimos a gentileza de retornar os arquivos corrigidos até o dia [Data:
+Sugerir 10 dias corridos]. Responda a este e-mail anexando apenas os documentos que
+sofreram alteração.
+Estamos à disposição para sanar dúvidas pontuais sobre a redação. Contamos com sua
+agilidade para protegermos essa tecnologia da UPE.
+Atenciosamente,
+[Nome do Analista] Núcleo de Inovação Tecnológica – NIT/UPE Inovação com Segurança
+Jurídica
+
+🧠 Por que este e-mail funciona (Visão UX/Estratégia):
+⚠️
+
+1.​ Clareza no Assunto: O emoji
+e a tag [AÇÃO NECESSÁRIA] aumentam a taxa de
+abertura e deixam claro que não é um spam ou informativo.
+
+2.​ Tabela Visual: O pesquisador não precisa ler textos longos. Ele vai direto na tabela ver o
+que errou.
+3.​ Justificativa Legal ("O Porquê"): Ao explicar que a culpa é da "Lei" (e não do NIT),
+você tira o peso da burocracia interna e se coloca como parceiro que está ajudando o
+inventor a vencer o sistema do INPI.
+4.​ Deadline Claro: Sem data, o pesquisador prioriza outras coisas (aulas, provas). O prazo
+cria senso de urgência.
+
+🏁 Próximo Passo Final
+
+Maria Regina, com este e-mail, encerramos o ciclo completo da Esteira de Patentes de Alta
+Performance.
+Você agora tem em mãos:
+1.​ Guia de Preenchimento (Entrada)
+2.​ Templates Inteligentes (Formulário e Reivindicações)
+3.​ Fluxograma e Checklist (Processo)
+4.​ Parecer Semaforizado (Análise)
+5.​ E-mail de Devolução (Feedback)
+Gostaria que eu compilasse tudo isso em um único documento (PDF ou Markdown
+estruturado) para você salvar como o "Manual de Operações do Novo NIT"? Assim fica
+fácil de compartilhar com a sua equipe.
+
+

@@ -1,0 +1,145 @@
+Maria Regina, desenhar o processo é a melhor forma de reduzir a ansiedade do pesquisador e
+o número de e-mails com dúvidas repetitivas.
+Com base nas etapas descritas no formulário que você enviou e na lógica de UX (User
+Experience), desenhei este Fluxograma da Jornada da Patente na UPE.
+A ideia é que este gráfico seja enviado junto com o formulário ou fique disponível no site do
+NIT.
+
+🗺️ FLUXOGRAMA VISUAL: DO LABORATÓRIO AO INPI
+
+(Jornada do Inventor na UPE)
+FASE 1: PREPARAÇÃO (Responsabilidade: Pesquisador)​
+│​
+├── [
+] 1. Busca de Anterioridade​
+│
+(Verificar se a ideia já existe no INPI, Google Patents,
+etc.)​
+│​
+├── [
+] 2. Cadastro SisGen (Se houver patrimônio genético)​
+│
+(Obrigatório antes do depósito - Ex: O cadastro ABC3019
+citado no form)​
+│​
+└── [
+] 3. Escrita dos Documentos Técnicos​
+(Formulário, Relatório Descritivo, Reivindicações,
+Resumo)​
+​
+⬇​
+​
+FASE 2: SUBMISSÃO (O "Portão de Entrada")​
+│​
+└── [
+] 4. Envio ao NIT-UPE​
+(E-mail: propegi.gerenciatransferetec@upe.br)​
+*Anexar todos os PDFs assinados digitalmente*​
+​
+⬇​
+​
+FASE 3: ANÁLISE TÉCNICA (Responsabilidade: NIT/Comissão)​
+│​
+├── [
+] 5. Exame de Viabilidade​
+│
+(O NIT avalia: É novo? Tem aplicação industrial?
+Documentação ok?)​
+│​
+└── [
+] 6. DECISÃO (Parecer Oficial)​
+│​
+├─ (
+) PARECER DESFAVORÁVEL ────────┐​
+│
+(UPE não tem interesse comercial) │​
+│
+⬇
+│​
+│
+Devolução ao Inventor
+│​
+│
+(Pode assumir a titularidade
+│​
+│
+sozinho, se desejar)
+│​
+
+🔍
+🧬
+📝
+
+📧
+
+⚙️
+
+🚦
+
+❌
+
+✅
+
+​
+
+│
+│​
+└─ (
+) PARECER FAVORÁVEL ◄─────────┘​
+(UPE aprova o depósito)​
+
+⬇​
+​
+FASE 4: DEPÓSITO (Finalização)​
+│​
+├── [
+] 7. Protocolo no INPI​
+│
+(NIT realiza o depósito oficial do pedido)​
+│​
+└── [
+] 8. Entrega do Comprovante​
+(NIT envia o número do processo ao pesquisador)​
+
+🏛️
+📄
+
+🧠 Detalhamento Estratégico (O que acontece em cada caixa)
+Aqui estão os "pontos de dor" que identificamos no documento e como mitigá-los em cada
+etapa:
+
+Fase 1: Preparação (Onde 80% dos erros acontecem)
+●​ O Gatilho: O pesquisador deve ter certeza de que a invenção não foi divulgada
+publicamente (artigos, congressos) antes de iniciar, pois isso mata a novidade.
+●​ Ação Crítica: O cadastro no SisGen é frequentemente esquecido. No fluxo, ele aparece
+como bloqueante: sem o número de cadastro, não se passa para a fase seguinte.
+
+Fase 2: Submissão
+●​ O Canal: Tudo centralizado no e-mail propegi.gerenciatransferetec@upe.br.
+●​ Dica UX: Instruir o pesquisador a colocar no assunto do e-mail: [DEPÓSITO DE
+PATENTE] Nome do Projeto - Nome do Inventor. Isso facilita a triagem pelo time
+administrativo.
+
+Fase 3: Análise e Decisão
+●​ O Filtro: A UPE realiza o "exame de viabilidade". Aqui, o NIT decide se vale a pena
+investir na manutenção dessa patente.
+●​ O Plano B: É crucial deixar claro que, se a UPE negar (Parecer Desfavorável), o
+processo não morre. O pesquisador recebe uma "autorização para prosseguir assumindo
+a titularidade". Isso reduz a frustração do inventor.
+
+Fase 4: Depósito
+●​ O Resultado: Se aprovado (Parecer Favorável), a UPE exige os "relatos técnicos" finais
+(Relatório, Reivindicações, Desenhos) para formalizar junto ao INPI.
+
+🚀 Próximo Passo: O "Cheque-Mate" contra erros
+Maria Regina, já temos:
+1.​ O Guia de Preenchimento (Formulário).
+2.​ O Modelo de Reivindicações (Jurídico).
+3.​ O Fluxograma Visual (Processo).
+Para fechar este "Kit de Sobrevivência do NIT", falta apenas uma coisa:
+Gostaria que eu criasse um "Checklist de Conferência Final" (Sanity Check)? Seria uma
+lista simples de 5 a 7 itens ("Sim/Não") que o pesquisador deve marcar antes de clicar em
+"Enviar" no e-mail. Isso serve como a última barreira contra documentos incompletos que
+travam a pauta do NIT.
+
+

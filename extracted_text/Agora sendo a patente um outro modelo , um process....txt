@@ -1,0 +1,117 @@
+Esta é uma excelente pergunta. Quando mudamos de Biotecnologia/Processos Físicos para
+Software/Processos Digitais, as regras do jogo no INPI (e no mundo) mudam drasticamente.
+O maior erro dos inventores de software é tentar proteger o código-fonte (isso é Direito
+Autoral/Copyright) ou uma regra de negócio (isso não é patenteável).
+Para patentear software, precisamos descrever um "Método Implementado por
+Computador" que resolva um Problema Técnico.
+Aqui está o Dossiê Adaptado para Software e Processos Digitais.
+
+💻
+DOSSIÊ ESTRATÉGICO: Patentes de
+Software (CII - Computer Implemented
+Inventions)
+1. O Conceito Central (A "Vacina" contra Rejeição)
+
+Atenção Inventor: O INPI não patenteia código, planilhas financeiras ou ideias abstratas. O
+INPI patenteia a Lógica Técnica.
+●​
+Não Patenteável: "Um software para vender passagens aéreas mais barato." (Isso é
+modelo de negócio).
+●​
+Patenteável: "Um método computacional que reduz o uso de memória do servidor ao
+compactar dados de passagens aéreas usando o algoritmo [X]." (Isso é solução técnica).
+
+❌
+✅
+
+2. Template de Reivindicações (Específico para
+Software)
+Diferente da química, aqui protegemos o fluxo lógico e o hardware que o executa.
+
+A. Reivindicação de PROCESSO/MÉTODO (A Lógica)
+Aqui descrevemos o algoritmo passo-a-passo, sem falar de código.
+1. Método de [FUNÇÃO TÉCNICA, ex: Processamento de Imagens Médicas]
+implementado por computador, caracterizado por compreender as etapas de: a)
+Recebimento de dados de entrada referentes a [DEFINIR O INPUT] através de uma interface
+de comunicação; b) Processamento dos referidos dados através de um módulo de [NOME DO
+MÓDULO], aplicando uma função de [LÓGICA ESPECÍFICA] para transformar [VARIÁVEL A]
+em [VARIÁVEL B]; c) Comparação dos resultados obtidos com um banco de dados [TIPO]
+utilizando o critério de [PARÂMETRO TÉCNICO]; d) Geração de um sinal de saída/comando
+para [AÇÃO FINAL] com base na comparação realizada.
+
+B. Reivindicação de SISTEMA (O "Corpo" do Software)
+Protege o dispositivo (celular, servidor, robô) que roda o software.
+2. Sistema de [FUNÇÃO TÉCNICA], caracterizado por compreender: um processador; e uma
+memória acoplada ao processador contendo instruções que, quando executadas, configuram o
+
+processador para realizar o método definido na reivindicação 1.
+
+C. Reivindicação de MÍDIA (O "Transporte")
+Protege o software quando vendido em nuvem ou disco.
+3. Mídia legível por computador não transitória, caracterizada por armazenar instruções
+que, quando executadas por um processador, realizam o método definido na reivindicação 1.
+
+3. Checklist de Sanidade Técnica (Software)
+O filtro para saber se é "Ideia" ou "Invenção".
+Para o Inventor:
+●​ [ ] Fluxograma Detalhado: Você consegue desenhar o processo em blocos (Início >
+Processamento > Decisão > Fim)? Se não tiver fluxograma, não tem patente.
+●​ [ ] Inputs e Outputs: Quais são exatamente os dados que entram (ex: pixels, sinais de
+sensores, texto bruto) e o que sai (ex: imagem filtrada, comando de frenagem)?
+●​ [ ] Efeito Técnico: O software melhora o funcionamento do computador? (Ex: gasta
+menos bateria, processa mais rápido, criptografa melhor, economiza banda de internet).
+○​ Se a melhoria for apenas "ganhar dinheiro" ou "organizar a agenda", é Regra de
+Negócio (Não patenteável).
+●​ [ ] Interação com Hardware: O software controla algum hardware externo? (Ex:
+sensores, câmeras, braços robóticos). Isso fortalece muito a patente.
+
+4. Guia Mestre de Referência (Exemplo: Software)
+Comparativo "Código vs. Lógica de Patente".
+Cenário Fictício: "Smart-Route" (Sistema de Logística)
+O QUE O INVENTOR DIZ (Vago/Copyright)
+COMO ESCREVER NA PATENTE
+(Técnico)
+"É um App tipo Uber, mas para caminhões."
+Rejeitado: Modelos de negócio ou
+comparações comerciais não são aceitos.
+"O código usa Python e bibliotecas IA."
+Rejeitado: Linguagens de programação
+mudam. A patente deve ser agnóstica à
+linguagem.
+"O sistema calcula a melhor rota."
+Método: "Método de cálculo de rota
+caracterizado por ponderar variáveis de
+topografia e tráfego em tempo real, aplicando
+algoritmo de grafo ponderado..."
+"É muito fácil de usar (User Friendly)."
+Efeito Técnico: "Método que reduz a latência
+de resposta da interface gráfica ao pré-carregar
+mapas vetoriais..."
+
+❌
+
+✅
+
+5. Nota Estratégica para o Portal da UPE (Para a
+Comissão de PI)
+Ao colocar isso no site, sugiro adicionar um quadro de "Qual caminho seguir?" para orientar
+o aluno de Computação:
+
+🧭1.​Bússola
+da Inovação Digital
+Se você criou apenas o CÓDIGO FONTE:
+○​ Caminho: Registro de Programa de Computador (RPC).
+○​ Protege contra: Cópia literal (pirataria).
+○​ Validade: 50 anos.
+2.​ Se você criou uma NOVA LÓGICA/ALGORITMO que resolve um problema técnico:
+○​ Caminho: Patente de Invenção (PI).
+○​ Protege contra: Alguém criar um software diferente que use a mesma lógica.
+○​ Validade: 20 anos.
+○​ Obs: É o "Santo Graal" das Big Techs.
+
+Próximo Passo
+Gostaria que eu criasse um Fluxograma Visual (em formato texto/ASCII) para ajudar o
+inventor a decidir se o software dele é patenteável ou apenas registrável, para incluir no
+manual?
+
+

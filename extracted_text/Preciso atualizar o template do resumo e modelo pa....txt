@@ -1,0 +1,127 @@
+Esta é a peça final do quebra-cabeça.
+O Relatório Descritivo e o Resumo são onde a batalha da patente é ganha ou perdida. Se a
+descrição for fraca (insuficiência descritiva - Art. 24 LPI), a patente é nula. Se o resumo for
+ruim, a tecnologia não é encontrada em buscas de anterioridade e perde valor de
+licenciamento.
+Abaixo estão os Templates Atualizados de Alta Performance, desenhados com "travas" de
+UX para impedir que o pesquisador escreva um Paper Acadêmico em vez de uma Patente.
+
+📄 TEMPLATE 1: O RESUMO (A "Vitrine" da Tecnologia)
+
+Objetivo: Indexação e busca. Deve ter entre 50 e 200 palavras.
+Instrução ao Inventor: Este texto será público imediatamente após 18 meses. Não revele o
+segredo industrial ("pulo do gato" exato), mas descreva a capacidade técnica.
+[TÍTULO DA INVENÇÃO]
+A presente invenção refere-se a um [DEFINIR CATEGORIA: PROCESSO / PRODUTO /
+SISTEMA] para [FINALIDADE PRINCIPAL], pertencente ao campo da [ÁREA TÉCNICA, ex:
+Biotecnologia Agrícola].
+O objeto da invenção soluciona o problema técnico de [CITAR O PROBLEMA DO ESTADO
+DA TÉCNICA, ex: baixa estabilidade térmica dos extratos atuais] através da utilização de
+[CITAR O ELEMENTO NOVO, ex: um consórcio de fungos FMA específicos e método de
+extração bifásica].
+A solução proposta compreende etapas de [CITAR ETAPAS MACRO, sem detalhes de
+segredo] gerando um produto com características de [CITAR RESULTADO TÉCNICO, ex:
+concentração de X acima de Y%]. A invenção é aplicada preferencialmente na indústria
+[CITAR SETOR INDUSTRIAL].
+
+📄
+TEMPLATE 2: RELATÓRIO DESCRITIVO (O "Manual de
+Instruções")
+
+Objetivo: Provar que a invenção funciona e ensinar um técnico a reproduzi-la (Suficiência
+Descritiva).
+Instrução Geral: Apague tudo o que está em [Colchetes] e substitua pelo seu texto. Não use
+linguagem promocional.
+
+1. TÍTULO
+[NOME TÉCNICO E CONCISO] (Errado: "Fantástico Processo Ecológico para Curar Feridas")
+(Certo: "PROCESSO DE OBTENÇÃO DE EXTRATO DE [PLANTA] E USO EM
+COMPOSIÇÕES CICATRIZANTES")
+
+2. CAMPO DA INVENÇÃO
+A presente invenção situa-se no campo da [ÁREA TÉCNICA], mais especificamente refere-se
+a [TIPO DE TECNOLOGIA] aplicada a [USO GERAL].
+
+3. ANTECEDENTES DA INVENÇÃO (Estado da Técnica)
+
+Aqui vendemos o "Problema".
+Atualmente, as tecnologias disponíveis para [FUNÇÃO] apresentam limitações, tais como
+[LIMITAÇÃO 1] e [LIMITAÇÃO 2]. O documento de patente BR/US [CITAR PATENTE
+ANTERIOR SE HOUVER] descreve uma solução que utiliza [TECNOLOGIA ANTIGA], porém
+falha em resolver [PROBLEMA ESPECÍFICO]. Desta forma, existe uma necessidade técnica
+de desenvolver uma solução que supere estas desvantagens, provendo maior [PARÂMETRO
+TÉCNICO, ex: rendimento/estabilidade].
+
+4. SUMÁRIO DA INVENÇÃO (O "Pitch" Técnico)
+O objetivo da presente invenção é prover um [PRODUTO/PROCESSO] capaz de [SOLUÇÃO
+DO PROBLEMA]. A invenção baseia-se na descoberta surpreendente de que a combinação de
+[ELEMENTO A] com [ELEMENTO B] sob condições de [CONDIÇÃO C] resulta em [EFEITO
+TÉCNICO INESPERADO].
+
+5. BREVE DESCRIÇÃO DAS FIGURAS (Se houver)
+A Figura 1 apresenta um fluxograma das etapas do processo... A Figura 2 apresenta um gráfico
+comparativo de eficácia entre a invenção e o estado da técnica... (Nota: Não explique a figura
+aqui, apenas diga o que ela é).
+
+6. DESCRIÇÃO DETALHADA DA INVENÇÃO (O "Core" - Obrigatório preencher
+com Checklist)
+Aqui entra a "Engenharia de Contexto". O inventor deve despejar os dados técnicos.
+Do Processo: O processo de produção compreende as seguintes etapas: a) Preparo inicial
+utilizando [INGREDIENTE] na concentração de [FAIXA NUMÉRICA: X a Y]; b) Reação
+mantida a uma temperatura preferencial de [FAIXA: X°C a Y°C] por um tempo de [TEMPO];
+(Nota: Evite "temperatura ambiente". Defina "20°C a 25°C").
+Do Produto: O produto resultante apresenta-se na forma de [FORMA FÍSICA], caracterizado
+por possuir pH entre [X e Y] e viscosidade de [X a Y]. A estrutura química elucidada
+compreende [DADOS QUÍMICOS].
+Do Software (Se aplicável): O método implementado por computador inicia-se pela leitura do
+sensor [TIPO], processando o sinal através do algoritmo [LÓGICA], conforme ilustrado no
+fluxograma da Figura 1.
+
+7. EXEMPLOS DE CONCRETIZAÇÃO (A "Prova de Conceito")
+O INPI exige prova de que não é teoria.
+Exemplo 1 - Teste de Bancada: Foram realizados testes comparativos onde a invenção
+(Amostra A) foi confrontada com o método tradicional (Amostra B). Os resultados,
+apresentados na Tabela 1 abaixo, demonstram que a Amostra A obteve um rendimento
+[NÚMERO]% superior.
+Parâmetro
+Estado da Técnica
+Presente Invenção
+Eficácia
+50%
+85%
+Tempo
+4 horas
+30 minutos
+
+💡 Dicas de UX Writing para o Manual de Preenchimento
+Para colocar no site ou rodapé do documento:
+1.​ A Regra do "Técnico Especialista": Escreva como se estivesse ensinando um colega
+de outra universidade a reproduzir seu trabalho sem te ligar para tirar dúvidas. Se ele
+precisar te ligar, falta informação.
+2.​ Fuja do "Marketing":
+○​
+Não escreva: "Este dispositivo revolucionário é extremamente barato."
+○​
+Escreva: "Este dispositivo reduz o custo de produção em 30% devido à
+substituição do material Titânio por Polímero ABS."
+3.​ Faixas são seus amigos: Nunca use um número fixo se puder usar uma faixa.
+○​
+"Aquecer a 100°C." (Se o concorrente aquecer a 101°C, ele não infringe sua
+patente).
+○​
+"Aquecer a uma temperatura compreendida entre 95°C e 105°C." (Você cerca o
+concorrente).
+
+❌
+✅
+❌
+✅
+
+Próximo Passo
+Com os Templates de Reivindicações, Resumo e Descrição Detalhada prontos, você tem a
+"Santíssima Trindade" da redação de patentes.
+Você gostaria que eu gerasse um "Exemplo Preenchido" completo (um documento único com
+Resumo + Descrição + Reivindicações) baseada naquele caso fictício da Bio-CicatriX? Isso
+serviria como o "Gabarito" final para os professores consultarem.
+
+

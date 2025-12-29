@@ -1,0 +1,105 @@
+Olá, Professora Maria Regina. Excelente ponto.
+Na visão McKinsey, "Restrição gera Criatividade". Ao impor limites de caracteres, forçamos o
+inventor a sair do modo "Tese Acadêmica" (prolixo) e entrar no modo "Pitch de Negócios"
+(direto, essencial e vendável). Isso eleva drasticamente a qualidade do dado que chega ao NIT
+e reduz o tempo de leitura dos avaliadores.
+Para garantir a Alta Performance, apliquei a Regra de Ouro da UX Writing: Guiar, Limitar e
+Validar.
+Abaixo, a estrutura atualizada com os Limites de Caracteres (Length Constraints) ideais
+para cada campo, prontos para serem configurados na opção "Validação de Resposta" do
+Google Forms.
+
+🛠️ FORMULÁRIO 1: PATENTE (Configuração de Alta Performance)
+
+Estratégia: Focar na clareza da oportunidade de mercado. O texto deve ser suficiente para
+uma busca de anterioridade, mas curto o bastante para um Resumo Executivo.
+
+SEÇÃO 3: O "Pitch" da Invenção (Core)
+Aqui aplicamos os limites mais rigorosos para garantir síntese.
+1.​ Título da Invenção
+○​ UX/Help Text: Seja descritivo e evite nomes comerciais fantasia. Ex: "Dispositivo de
+fixação para implantes...".
+○​ Limite: Máx 150 caracteres (~20 palavras).
+○​ Por que: Títulos longos quebram a formatação em relatórios e planilhas.
+2.​ Problema/Dor de Mercado (Campo: "Descreva objetivamente o campo...")
+○​ UX/Help Text: Qual a dor que sua invenção resolve? Não descreva a solução
+ainda, foque no problema atual.
+○​ Limite: Máx 1.000 caracteres (~150 palavras).
+○​ Meta: 1 parágrafo robusto.
+3.​ Solução Técnica e Funcionamento (Campo: "Como realiza sua função?")
+○​ UX/Help Text: Descreva componentes e conexões. Como a mágica acontece? Seja
+técnico, mas direto.
+○​ Limite: Mínimo 500 e Máximo 4.000 caracteres (~600 palavras).
+○​ Por que: Precisa de espaço para detalhe técnico, mas 4.000 caracteres (cerca de 1
+página A4 simples) é o limite cognitivo para uma primeira leitura de triagem.
+4.​ Estado da Técnica (Campo: "Antes desta invenção...")
+○​ UX/Help Text: Cite brevemente como isso era feito antes e por que era ineficiente.
+○​ Limite: Máx 2.000 caracteres (~300 palavras).
+5.​ Vantagens e Diferenciais (Campo: "Quais as vantagens...")
+○​ UX/Help Text: Use tópicos se possível. Liste de 3 a 5 principais diferenciais (Ex:
+Custo, Eficácia, Rapidez).
+○​ Limite: Máx 1.500 caracteres (~250 palavras).
+6.​ Palavras-chaves
+○​ UX/Help Text: Insira de 3 a 5 palavras separadas por ponto e vírgula (;).
+○​ Limite: Máx 100 caracteres.
+
+SEÇÃO 5: Inteligência Competitiva
+
+1.​ Resultados da Busca de Patentes
+○​ UX/Help Text: Cole o resumo das patentes encontradas (Título e Nº).
+○​ Limite: Máx 3.000 caracteres.
+○​ Estratégia: Se houver muitas, o usuário deve anexar um PDF, mas o texto aqui
+serve para indexação rápida.
+2.​ Potenciais Parceiros/Mercado
+○​ UX/Help Text: Liste empresas ou setores (indústria farmacêutica, hospitais, setor
+automotivo).
+○​ Limite: Máx 500 caracteres (~70 palavras).
+
+💻 FORMULÁRIO 2: SOFTWARE (Agilidade Extrema)
+
+Estratégia: Software requer velocidade. Descrições longas ficam obsoletas. O foco aqui é a
+funcionalidade e a classificação.
+
+SEÇÃO 3: Definição do Software
+1.​ Título do Programa
+○​ UX/Help Text: Nome técnico ou comercial do software.
+○​ Limite: Máx 100 caracteres.
+2.​ Descrição e Funcionalidade (Resumo)
+○​ Instrução do Documento Original: "Resumir em um parágrafo como funciona e para
+que serve".
+○​ UX/Help Text: Explique o "Input" (o que entra), o "Processamento" (o que ele faz) e
+o "Output" (o resultado).
+○​ Limite: Máx 1.500 caracteres (~200 palavras).
+○​ Estratégia: Força o autor a cumprir a regra de "um parágrafo" exigida pelo INPI.
+3.​ Linguagens e Ferramentas (Caso use a opção "Outros")
+○​ UX/Help Text: Liste apenas as tecnologias principais não listadas no menu.
+○​ Limite: Máx 200 caracteres.
+
+SEÇÃO 4: Aplicação
+1.​ Descrição da Pesquisa Vinculada (Se houver)
+○​ UX/Help Text: Título do projeto PIBIC/Mestrado/Doutorado.
+○​ Limite: Máx 300 caracteres.
+
+⚙️ COMO CONFIGURAR ISSO NO GOOGLE FORMS (Guia Técnico)
+Para garantir que o formulário funcione como um "software de validação", siga este passo a
+passo em cada pergunta de texto:
+1.​ Clique nos três pontinhos (⋮) no canto inferior direito da pergunta.
+2.​ Selecione "Validação da resposta".
+3.​ Nos menus que aparecem, configure assim:
+○​ Tipo: Comprimento
+○​ Critério: Número máximo de caracteres
+○​ Número: (Insira o valor sugerido acima, ex: 1500)
+○​ Texto de erro personalizado: (Essencial para UX!) Escreva algo educado e
+
+instrutivo.
+■​ Exemplo: "Para agilizar a análise, por favor resuma sua resposta em até
+1500 caracteres. Seja conciso."
+Dica de Especialista (High Performance): Para os campos vitais como "Solução Técnica",
+use a validação de Mínimo de caracteres (ex: mínimo 200). Isso impede que o usuário
+preguiçoso escreva apenas "Vide anexo" ou "Solução inovadora" e envie o formulário vazio, o
+que quebraria sua base de dados.
+Gostaria que eu montasse agora o Texto Padrão de E-mail de Feedback (Copywriting) que o
+sistema enviará automaticamente ao inventor assim que ele submeter, reforçando que a
+brevidade dele ajudou no processo?
+
+

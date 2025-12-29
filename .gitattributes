@@ -1,0 +1,62 @@
+# Auto-detect text files and normalize line endings to LF
+* text=auto eol=lf
+
+# HTML/CSS/JS files
+*.html text
+*.css text
+*.js text
+
+# Markdown files
+*.md text
+
+# YAML files
+*.yml text
+*.yaml text
+
+# JSON files
+*.json text
+
+# Shell scripts
+*.sh text
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# PDFs
+*.pdf binary
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Archives
+*.zip binary
+*.tar.gz binary
+
+# Lock files
+*.lock text
+package-lock.json text
+yarn.lock text
+pnpm-lock.yaml text
+
+# Git files
+.gitattributes text
+.gitignore text
+.gitmodules text
+
+# CI/CD files
+.github/** text
+
+# Node modules (should be in .gitignore, but just in case)
+node_modules/** linguist-generated
+
+# OS files
+.DS_Store binary
+Thumbs.db binary

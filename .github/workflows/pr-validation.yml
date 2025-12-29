@@ -1,0 +1,401 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    branches: [main, master]
+    types: [opened, synchronize, reopened, labeled]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/**'
+      - 'AGENTS.md'
+      - 'SPEC_*.md'
+
+env:
+  NODE_VERSION: '20'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # ============================================================================
+  # JOB 1: CODE VALIDATION
+  # ============================================================================
+  validate:
+    name: 🔍 Validate Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📋 File structure validation
+        run: |
+          echo "📋 Validating file structure..."
+
+          # Check for essential files
+          REQUIRED_FILES=(
+            "docs/index.html"
+            "docs/assets/css/style.css"
+            "docs/assets/js/tests.js"
+            "docs/formularios/formulario_pi_mu.html"
+            "AGENTS.md"
+          )
+
+          MISSING_FILES=()
+
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              MISSING_FILES+=("$file")
+              echo "❌ Missing: $file"
+            else
+              echo "✅ Found: $file"
+            fi
+          done
+
+          if [ ${#MISSING_FILES[@]} -gt 0 ]; then
+            echo "❌ Missing files: ${MISSING_FILES[*]}"
+            exit 1
+          fi
+
+          echo "✅ All required files present"
+
+      - name: 🔍 HTML validation
+        run: |
+          echo "🔍 Validating HTML files..."
+
+          # Install HTML validator
+          npm install -g html-validator
+
+          # Validate all HTML files
+          find docs -name "*.html" -type f | while read -r html_file; do
+            echo "Validating: $html_file"
+            html-validator --file="$html_file" --verbose || {
+              echo "❌ HTML validation failed for: $html_file"
+              exit 1
+            }
+            echo "✅ Validated: $html_file"
+          done
+
+      - name: 🎨 CSS validation
+        run: |
+          echo "🎨 Validating CSS files..."
+
+          # Install stylelint
+          npm install -g stylelint
+
+          # Validate all CSS files
+          find docs -name "*.css" -type f | while read -r css_file; do
+            echo "Validating: $css_file"
+            stylelint "$css_file" --formatter compact || {
+              echo "❌ CSS validation failed for: $css_file"
+              exit 1
+            }
+            echo "✅ Validated: $css_file"
+          done
+
+      - name: 🟨 JavaScript validation
+        run: |
+          echo "🟨 Validating JavaScript files..."
+
+          # Validate all JS files
+          find docs -name "*.js" -type f | while read -r js_file; do
+            echo "Validating: $js_file"
+            node --check "$js_file" || {
+              echo "❌ JavaScript syntax error in: $js_file"
+              exit 1
+            }
+            echo "✅ Validated: $js_file"
+          done
+
+      - name: 📝 Markdown validation
+        run: |
+          echo "📝 Validating Markdown files..."
+
+          # Install markdownlint
+          npm install -g markdownlint-cli
+
+          # Validate all MD files
+          find . -name "*.md" -not -path "./node_modules/*" -type f | while read -r md_file; do
+            echo "Validating: $md_file"
+            markdownlint "$md_file" || {
+              echo "❌ Markdown validation failed for: $md_file"
+              exit 1
+            }
+            echo "✅ Validated: $md_file"
+          done
+
+  # ============================================================================
+  # JOB 2: SPECIFICATION VALIDATION
+  # ============================================================================
+  validate-specs:
+    name: 📋 Validate Specifications
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📋 Check SPEC file format
+        run: |
+          echo "📋 Validating SPEC files..."
+
+          SPEC_FILES=(
+            "SPEC_ANEXO_A.md"
+            "SPEC_ANEXO_B.md"
+            "SPEC_ANEXO_C.md"
+            "SPEC_ANEXO_F.md"
+            "SPEC_FORMULARIO_PI.md"
+            "SPEC_FORMULARIO_CII.md"
+            "SPEC_FORMULARIO_RPC.md"
+          )
+
+          for spec_file in "${SPEC_FILES[@]}"; do
+            if [ ! -f "$spec_file" ]; then
+              echo "⚠️  SPEC file not found: $spec_file"
+              continue
+            fi
+
+            echo "Validating: $spec_file"
+
+            # Check for required sections
+            if ! grep -q "^## 1\. OBJETIVO" "$spec_file"; then
+              echo "❌ Missing '1. OBJETIVO' section in: $spec_file"
+              exit 1
+            fi
+
+            if ! grep -q "^## 2\. DICIONÁRIO DE DADOS" "$spec_file"; then
+              echo "❌ Missing '2. DICIONÁRIO DE DADOS' section in: $spec_file"
+              exit 1
+            fi
+
+            # Check for data dictionary table
+            if ! grep -q "| ID Campo | Nome do Campo |" "$spec_file"; then
+              echo "❌ Missing data dictionary table in: $spec_file"
+              exit 1
+            fi
+
+            echo "✅ Validated: $spec_file"
+          done
+
+      - name: 📊 Check field ID consistency
+        run: |
+          echo "📊 Checking field ID consistency..."
+
+          # Extract all field IDs from SPEC files
+          grep -hioE "[A-Z]{2,3}_[0-9]{2}" SPEC_*.md | sort -u > /tmp/field_ids.txt
+
+          # Check for duplicates
+          duplicates=$(sort /tmp/field_ids.txt | uniq -d)
+
+          if [ -n "$duplicates" ]; then
+            echo "❌ Duplicate field IDs found:"
+            echo "$duplicates"
+            exit 1
+          fi
+
+          echo "✅ No duplicate field IDs found"
+          echo "Total unique field IDs: $(wc -l < /tmp/field_ids.txt)"
+
+  # ============================================================================
+  # JOB 3: FORM VALIDATION TESTS
+  # ============================================================================
+  test-forms:
+    name: 🧪 Test Forms
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🧪 Run form validation tests
+        run: |
+          echo "🧪 Running form validation tests..."
+
+          # Test PI/MU form
+          FORM="docs/formularios/formulario_pi_mu.html"
+
+          # Check for required attributes
+          if ! grep -q "required" "$FORM"; then
+            echo "❌ No required fields found in: $FORM"
+            exit 1
+          fi
+
+          # Check for character limits
+          if ! grep -q "maxlength" "$FORM"; then
+            echo "❌ No maxlength attributes found in: $FORM"
+            exit 1
+          fi
+
+          # Check for input masks
+          if ! grep -q 'data-mask=' "$FORM"; then
+            echo "❌ No data-mask attributes found in: $FORM"
+            exit 1
+          fi
+
+          # Check for character counters
+          if ! grep -q "char-count" "$FORM"; then
+            echo "❌ No character counters found in: $FORM"
+            exit 1
+          fi
+
+          # Check for file upload
+          if ! grep -q 'type="file"' "$FORM"; then
+            echo "❌ No file upload inputs found in: $FORM"
+            exit 1
+          fi
+
+          # Check for validation script
+          if ! grep -q "tests.js" "$FORM"; then
+            echo "❌ No test script reference found in: $FORM"
+            exit 1
+          fi
+
+          echo "✅ All form validation tests passed"
+
+  # ============================================================================
+  # JOB 4: LINK VALIDATION
+  # ============================================================================
+  validate-links:
+    name: 🔗 Validate Links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔗 Check internal links
+        run: |
+          echo "🔗 Validating internal links..."
+
+          # Extract all markdown links
+          grep -rhoE '\[.*\]\([^)]*\.md\)' docs/ | sort -u > /tmp/links.txt
+
+          # Check if target files exist
+          MISSING_LINKS=()
+
+          while read -r link; do
+            # Extract URL from markdown link
+            url=$(echo "$link" | grep -oP '(?<=\().*?(?=\))')
+
+            # Get just the filename (handle relative paths)
+            if [[ $url == "../"* ]]; then
+              filename=$(echo "$url" | sed 's|^\.\./||')
+            else
+              filename="$url"
+            fi
+
+            if [ ! -f "docs/$filename" ] && [ ! -f "$filename" ]; then
+              MISSING_LINKS+=("$filename")
+              echo "❌ Broken link: $url (target: $filename)"
+            fi
+          done < /tmp/links.txt
+
+          if [ ${#MISSING_LINKS[@]} -gt 0 ]; then
+            echo "❌ Broken links found: ${MISSING_LINKS[*]}"
+            exit 1
+          fi
+
+          echo "✅ All internal links valid"
+
+  # ============================================================================
+  # JOB 5: CHANGELOG VALIDATION
+  # ============================================================================
+  validate-changelog:
+    name: 📝 Validate Changelog
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📝 Check for changelog entry
+        run: |
+          echo "📝 Checking for changelog entry..."
+
+          # Get changed files
+          git diff --name-only origin/main...HEAD > /tmp/changed_files.txt
+
+          # Check if documentation files changed
+          if grep -q "docs/" /tmp/changed_files.txt || grep -q "SPEC_" /tmp/changed_files.txt; then
+            echo "✅ Documentation files changed"
+          else
+            echo "ℹ️  No documentation files changed"
+            exit 0
+          fi
+
+  # ============================================================================
+  # JOB 6: PR STATUS
+  # ============================================================================
+  pr-status:
+    name: 📊 PR Status
+    runs-on: ubuntu-latest
+    needs: [validate, validate-specs, test-forms, validate-links]
+
+    if: always()
+
+    steps:
+      - name: 📊 Generate PR status
+        run: |
+          echo "## 📊 Pull Request Status" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔍 Validate Code: ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 📋 Validate Specifications: ${{ needs.validate-specs.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧪 Test Forms: ${{ needs.test-forms.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔗 Validate Links: ${{ needs.validate-links.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Overall status
+          if [[ "${{ needs.validate.result }}" == "success" ]] && \
+             [[ "${{ needs.validate-specs.result }}" == "success" ]] && \
+             [[ "${{ needs.test-forms.result }}" == "success" ]] && \
+             [[ "${{ needs.validate-links.result }}" == "success" ]]; then
+            echo "### ✅ All validations passed!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "This PR is ready for merge." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ❌ Some validations failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please fix the issues above before merging." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🏷️ Add PR labels
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.issue;
+
+            let labels = [];
+
+            // Check validation results
+            if ('${{ needs.validate.result }}' === 'success') {
+              labels.push('validated');
+            } else {
+              labels.push('needs-validation');
+            }
+
+            if ('${{ needs.validate-specs.result }}' === 'success') {
+              labels.push('specs-ok');
+            } else {
+              labels.push('specs-issues');
+            }
+
+            // Add labels
+            github.rest.issues.addLabels({
+              owner: issue.owner,
+              repo: issue.repo,
+              issue_number: issue.number,
+              labels: labels
+            });

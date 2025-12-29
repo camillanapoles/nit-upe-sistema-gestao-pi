@@ -1,0 +1,97 @@
+Aqui está o Modelo de Referência (Gabarito). Este é um exemplo fictício de como um
+pesquisador de Alta Performance preencheria o Anexo C.
+Você pode enviar este documento junto com os formulários em branco, nomeando-o como:
+EXEMPLO_PREENCHIDO_ANEXO_C_MEMORIAL.pdf
+
+📄
+[MODELO PREENCHIDO] ANEXO C:
+Memorial Descritivo Estruturado
+Invenção Fictícia: Um dispositivo odontológico para anestesia sem dor.
+
+1. Título da Invenção
+Instrução: Curto, preciso e técnico.
+Resposta: Dispositivo vibratório acoplável a seringas carpule para mitigação de dor em
+anestesia odontológica. (12 palavras)
+
+2. Campo da Invenção
+Instrução: Área técnica e aplicação.
+Resposta: A presente invenção situa-se no campo dos equipamentos e instrumentos
+odontológicos, mais especificamente dispositivos auxiliares para procedimentos de injeção
+anestésica local, visando o conforto do paciente através da teoria do portão da dor. (32
+palavras)
+
+3. Estado da Técnica (O Problema e o Passado)
+Instrução: Como é feito hoje e por que é ruim. Citar limitações.
+Resposta: Atualmente, a administração de anestésicos locais em odontologia é realizada
+majoritariamente através de seringas carpule manuais. O procedimento é frequentemente
+associado a dor e ansiedade, causadas tanto pela punção da agulha quanto pela distensão dos
+tecidos durante a injeção do fluido.
+Soluções existentes, como pomadas anestésicas tópicas, possuem eficácia limitada à mucosa
+superficial e requerem tempo de espera elevado (2-5 minutos). Dispositivos eletrônicos de
+injeção controlada (ex: The Wand) reduzem a dor, mas possuem custo de aquisição proibitivo
+para a maioria das clínicas (acima de R$ 15.000) e exigem consumíveis proprietários caros.
+Conforme identificado na Busca de Anterioridade, o documento US 2015/00000X descreve um
+vibrador para seringas, porém ele é fixo e exige que o dentista compre uma seringa especial.
+Já o documento BR 10 2018 00000Y propõe uma luva vibratória, mas que perde a eficácia por
+dissipar a vibração na mão do profissional, não focando na agulha.
+A presente invenção resolve tais problemas ao propor um dispositivo universal, de baixo custo,
+acoplável a qualquer seringa carpule padrão de mercado, focando a vibração na ponta ativa.
+(168 palavras)
+
+4. Breve Descrição da Invenção (O Resumo Técnico)
+Instrução: O que é a invenção e o que ela promete.
+
+Resposta: A invenção refere-se a um "clip" vibratório reutilizável, contendo um micro motor de
+massa excêntrica, alimentado por bateria recarregável. O dispositivo é projetado para ser
+encaixado no corpo cilíndrico de seringas carpule convencionais.
+O objetivo principal é gerar uma vibração de alta frequência e baixa amplitude que, ao ser
+transmitida para a agulha, estimula as fibras nervosas A-beta (tato/vibração). Segundo a Teoria
+do Portão (Gate Control Theory), esse estímulo "fecha" a passagem do sinal de dor (fibras C e
+A-delta) na medula espinhal, reduzindo significativamente a percepção dolorosa da picada.
+Diferente dos anteriores, seu sistema de acoplamento em "C" flexível permite uso em seringas
+de diferentes diâmetros sem adaptadores. (118 palavras)
+
+5. Descrição Detalhada da Invenção (O "Core")
+Instrução: Detalhes construtivos, componentes e funcionamento. Referenciar figuras.
+Resposta: O dispositivo compreende um corpo principal (1) fabricado em polímero
+autoclavável, apresentando um formato de anel aberto ou "C", dotado de abas flexíveis (2) que
+permitem o encaixe por pressão em cilindros de 8mm a 12mm de diâmetro.
+No interior do corpo principal (1), encontra-se alojado um micro motor de vibração do tipo
+moeda (3) ou cilíndrico excêntrico, conectado a um circuito de controle miniaturizado (4) e uma
+bateria de polímero de lítio (5). O acionamento é realizado por um botão de membrana (6)
+selado, localizado na face superior, garantindo resistência à água e possibilitando a
+desinfecção química.
+O funcionamento se dá da seguinte forma: O dentista acopla o dispositivo (1) no corpo da
+seringa carpule, próximo à extremidade da agulha. Ao pressionar o botão (6), o motor (3) gera
+uma oscilação mecânica de aproximadamente 150Hz. Esta frequência foi calibrada para
+maximizar a estimulação dos mecanorreceptores sem desestabilizar a empunhadura do
+profissional.
+A vibração propaga-se através do corpo metálico da seringa até a agulha. O profissional deve
+encostar a agulha vibrando na mucosa por 2 segundos antes da penetração (pré-estimulação)
+e manter o dispositivo ligado durante a injeção. Um LED indicador (7) sinaliza o funcionamento
+e o nível de bateria. O sistema de carregamento utiliza pinos magnéticos externos (8) para
+evitar orifícios que acumulem sujidade biológica, garantindo biossegurança total, conforme
+ilustrado na Figura 2. (225 palavras)
+
+6. Exemplo de Concretização (Best Mode)
+Instrução: Exemplo prático de fabricação.
+Resposta: Numa concretização preferencial, o corpo do dispositivo é injetado em Silicone Grau
+Médico ou PEEK (Poliéter-éter-cetona), materiais que suportam ciclos de autoclave a 134ºC. O
+motor selecionado é um modelo Brushless de 3V, com contrapeso de tungstênio, garantindo
+silêncio e durabilidade. As dimensões finais do dispositivo não excedem 20mm de comprimento
+por 15mm de altura, pesando menos de 10 gramas, de modo a não alterar o centro de
+gravidade da seringa durante o procedimento delicado de anestesia. (85 palavras)
+
+💡 Por que este exemplo é bom?
+
+1.​ Cita números: Fala em "150Hz", "134ºC", "2 segundos". Isso passa credibilidade
+técnica.
+2.​ Cita a concorrência: Menciona o documento "US 2015..." e explica por que ele é
+
+inferior.
+3.​ Resolve problemas reais: Fala em "biossegurança", "autoclave", "peso leve". Mostra
+que o inventor pensou no dia a dia do dentista.
+Com este exemplo em mãos, o pesquisador entende que não adianta escrever "um negócio
+que treme a agulha". Ele precisa detalhar como e por que funciona.
+
+

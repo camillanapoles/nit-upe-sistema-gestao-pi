@@ -1,0 +1,119 @@
+Esta é uma etapa crítica. Na visão de Alta Performance (McKinsey/Lean) e UX, o objetivo
+aqui é aplicar o conceito de Poka-Yoke (à prova de erros). Se o inventor não tiver esses anexos
+prontos antes de abrir o processo, ele gera um gargalo no sistema, frustração pessoal e custos
+administrativos desnecessários para o NIT/UPE.
+Abaixo, estruturei a lista de Anexos Pré-Requisitos (O "Golden Kit" do Inventor). Este não é
+apenas um "pedido de documentos", é um Filtro de Qualidade.
+
+🚀
+Protocolo de Eficiência: Kit de Anexos para
+Pré-Qualificação (Dossiê do Inventor)
+
+Objetivo: Garantir que, ao dar o "start", o projeto já tenha viabilidade técnica, jurídica e de
+mercado, alinhado às exigências do INPI e às normas da Universidade (UPE).
+
+1. O "Go/No-Go" (Filtro de Originalidade)
+
+📄
+
+Sem isso, não há inovação, apenas redescoberta.
+●​
+Anexo A: Relatório de Busca de Anterioridade (Deep Search)
+○​ O que é: Evidência de pesquisa nas bases de patentes (INPI, Espacenet, Google
+Patents, WIPO).
+○​ Padrão Alta Performance: O inventor deve listar não apenas as palavras-chave
+usadas, mas anexar os PDFs dos 3 documentos mais parecidos encontrados e
+uma breve nota (3 linhas) explicando: "Por que minha invenção é diferente destas
+três?"
+○​ Visão INPI: Isso antecipa o exame técnico e evita indeferimento por falta de
+novidade.
+●​
+Anexo B: Matriz de Problema vs. Solução (Job-to-be-Done)
+○​ O que é: Definição clara da dor do mercado/SUS e como a invenção resolve.
+○​ Formato UX: Um slide ou página única.
+○​ KPI: Qual o ganho quantitativo? (Ex: Reduz tempo em 30%? Custa 50% menos?
+Aumenta eficácia em 20%?).
+
+📄
+
+2. O Core Técnico (Blindagem do Conteúdo)
+Estrutura necessária para o redator de patentes (seja interno ou escritório terceirizado)
+trabalhar rápido.
+●​
+Anexo C: Memorial Descritivo Estruturado (Rascunho Técnico)
+○​ Conteúdo: Descrição detalhada da invenção, sem "juridiquês", mas com precisão
+técnica. Deve descrever o funcionamento, os componentes e a implementação.
+○​ Detalhe UX: Deve incluir a "Melhor Forma de Execução" (Best Mode) para garantir
+reprodutibilidade.
+●​
+Anexo D: O "Set" de Desenhos e Diagramas
+○​ Importância: Uma patente bem ilustrada é aprovada mais rápido.
+○​ Requisito:
+■​ Para Software/Apps: Fluxogramas de processo (BPMN) e Telas
+(Wireframes).
+■​ Para Dispositivos/Produtos: Vistas (superior, lateral, corte) e detalhes das
+peças.
+
+📄
+📄
+
+■​
+
+3. Compliance Institucional e Jurídico (Segurança)
+
+📄
+
+Evita brigas judiciais sobre royalties e titularidade no futuro.
+●​
+Anexo E: Declaração de Vínculo e Fomento (Rastreabilidade do Dinheiro)
+○​ O que é: Documento informando se houve financiamento (FACEPE, CNPq,
+CAPES) ou uso de laboratórios da UPE/FOP.
+○​ Por que: A Lei de Inovação exige saber quem pagou a conta para dividir os
+royalties corretamente. Se houve bolsa, o contrato da bolsa deve estar anexo.
+●​
+Anexo F: Qualificação Completa dos Inventores (Team Data)
+○​ O que é: Tabela com Nome, CPF, Lattes, Vínculo (Aluno, Professor, Externo) e %
+de participação intelectual de cada um.
+○​ Padrão Alta Performance: Já incluir a assinatura de acordo de cotitularidade
+prévio (quem fez quanto). Isso evita conflitos emocionais no meio do processo.
+
+📄
+
+4. Visão de Mercado e Futuro (Estratégia)
+
+📄
+
+Para o NIT decidir se vale a pena investir na proteção.
+●​
+Anexo G: TRL (Nível de Maturidade Tecnológica)
+○​ O que é: Autodeclaração do estágio atual (Ideia? Protótipo de Bancada? Testado
+em ambiente real?).
+○​ Visão SUS/Saúde: Se for produto de saúde, indicar se já passou por Comitê de
+Ética (CEP/CONEP).
+
+💡 A Experiência do Usuário (UX) neste Fluxo
+
+Para que isso não pareça "burocracia chata", a interface de entrega (seja um sistema ou um
+formulário inteligente) deve usar Linguagem Visual:
+1.​ Checklist Progressivo: O inventor vê uma barra de progresso. Ele sabe que só pode
+clicar em "Enviar ao NIT" quando os 7 anexos estiverem verdes.
+2.​ Templates Prontos: O sistema fornece o modelo (template) do Memorial Descritivo e da
+Busca de Anterioridade. O inventor não começa do zero (reduz a fricção cognitiva).
+3.​ Feedback Imediato: "Sem este anexo, o INPI devolverá seu pedido em 30 dias. Proteja
+seu trabalho anexando agora." (Nudge comportamental).
+
+🎯 Resultado Esperado (KPIs)
+
+Ao exigir esses anexos antes da entrada formal:
+●​ Redução de Retrabalho: Cai em 60-70% o "vai e vem" de e-mails pedindo dados
+básicos.
+●​ Velocidade: O tempo de redação da patente cai pela metade, pois o redator tem
+"matéria-prima" de qualidade.
+●​ Taxa de Sucesso: Aumenta a chance de deferimento no INPI, pois a busca de
+anterioridade forçou o inventor a refinar sua novidade.
+Próximo Passo Sugerido: Deseja que eu crie o Template do "Anexo A - Relatório de Busca
+de Anterioridade" já com os campos que um pesquisador da área de saúde/odontologia
+
+precisa preencher para facilitar sua vida?
+
+
