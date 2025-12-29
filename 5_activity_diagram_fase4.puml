@@ -1,0 +1,111 @@
+@startuml ActivityDiagramFase4
+||Avaliador NIT|
+start
+
+:Kit de Formalização;
+
+partition "Termo de Cessão de Direitos" {
+  :Definir Instituição Beneficiária (UPE);
+  :Definir % de Cessão;
+  :Listar Invenção;
+  :Obter Assinaturas de Todos os Inventores;
+}
+
+partition "Declaração de Inventor" {
+  :Listar Todos os Inventores;
+  :Definir % de Participação;
+  :Declaração de Originalidade;
+  :Obter Assinaturas de Todos;
+}
+
+if (Usa Biodiversidade?) then (Sim)
+  |Inventor/Pesquisador|
+  :Registrar SisGen;
+  :Preencher Registro SisGen;
+  :Obter Número de Registro;
+else (Não)
+  :Documentos SisGen Não Necessários;
+endif
+
+partition "Outros Documentos" {
+  if (Requer Comitê de Ética?) then (Sim)
+    :Obter Aprovação Comitê de Ética;
+  endif
+
+  if (Teve Financiamento?) then (Sim)
+    :Obter Documentos de Financiamento;
+  endif
+}
+
+||Avaliador NIT|
+if (Todos os Documentos Assinados?) then (Não)
+  |Inventor/Pesquisador|
+  :Obter Assinaturas Pendentes;
+  repeat
+    |Avaliador NIT|
+    :Verificar Assinaturas;
+  repeat while (Todos os Documentos Assinados?) is (Não) not (Sim)
+endif
+
+||Inventor/Pesquisador|
+:Digitalizar Documentos Assinados;
+:Converter para PDF;
+:Organizar Documentos;
+
+||Avaliador NIT|
+:Checklist de Formalização;
+
+partition "Itens do Checklist" {
+  :✓ Termo de Cessão Assinado;
+  :✓ Declaração de Inventor Assinada;
+  :✓ Documentos SisGen Presentes (se aplicável);
+  :✓ Comitê de Ética (se aplicável);
+  :✓ Documentos em PDF;
+}
+
+if (Checklist Completo?) then (Não)
+  |Inventor/Pesquisador|
+  :Completar Itens Faltantes;
+  repeat
+    |Avaliador NIT|
+    :Checklist de Formalização;
+  repeat while (Checklist Completo?) is (Não) not (Sim)
+endif
+
+:Ajustes Finais no Pedido;
+
+partition "Revisão da Documentação Técnica" {
+  :Revisar Relatório Descritivo;
+  :Revisar Reivindicações;
+  :Revisar Resumo;
+  :Revisar Desenhos/Figuras;
+}
+
+||Avaliador NIT|
+:Validação Técnica Final;
+
+if (Tudo Técnico Correto?) then (Não)
+  |Inventor/Pesquisador|
+  :Corrigir Problemas Técnicos;
+  repeat
+    |Avaliador NIT|
+    :Validação Técnica Final;
+  repeat while (Tudo Técnico Correto?) is (Não) not (Sim)
+endif
+
+||Avaliador NIT|
+:Confirmar com Inventor;
+
+||Inventor/Pesquisador|
+if (Confirma?) then (Não)
+  :Solicitar Ajustes Adicionais;
+  repeat
+    :Ajustes Finais no Pedido;
+  repeat while (Confirma?) is (Não) not (Sim)
+endif
+
+:Fase 4 Completa\nPronto para Conformidade Final;
+
+stop
+
+@enduml

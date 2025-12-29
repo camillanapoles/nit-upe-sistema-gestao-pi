@@ -1,0 +1,63 @@
+@startuml DeploymentDiagram
+
+node "Navegador Web\n(Inventor)" {
+  component "Portal Kit do Inventor" as portalInventor
+}
+
+node "Servidor Web\n(HTTPS)" {
+  component "Apache/Nginx" as webServer
+  component "Aplicação Web\n(React/Vue)" as appWeb
+}
+
+node "Servidor de Aplicação\n(UPE Data Center)" {
+  component "API Backend\n(Java/Spring)" as apiBackend
+  component "Motor de Validação" as motorValidacao
+  component "Motor de Análise NAI" as motorNAI
+  component "Motor de Documentação" as motorDoc
+}
+
+node "Servidor de Banco de Dados\n(UPE Data Center)" {
+  database "PostgreSQL" as dbPostgres
+}
+
+node "Servidor de Arquivos\n(UPE Data Center)" {
+  component "Sistema de Arquivos\n(NFS/S3)" as fileSystem
+}
+
+node "Servidor de Email\n(Servidor SMTP)" {
+  component "Postfix/Sendmail" as smtpServer
+}
+
+cloud "SisGen\n(Governo Federal)" as sisGenCloud
+cloud "INPI e-INPI\n(Governo Federal)" as inpiCloud
+
+' Conexões
+portalInventor --> webServer : HTTPS
+webServer --> appWeb : HTTP
+
+appWeb --> apiBackend : REST API
+apiBackend --> motorValidacao : invoca
+apiBackend --> motorNAI : invoca
+apiBackend --> motorDoc : invoca
+
+motorValidacao --> dbPostgres : JDBC
+motorNAI --> dbPostgres : JDBC
+motorDoc --> dbPostgres : JDBC
+motorDoc --> fileSystem : NFS
+
+apiBackend --> smtpServer : SMTP
+smtpServer --> portalInventor : Email
+
+apiBackend --> sisGenCloud : HTTPS
+apiBackend --> inpiCloud : HTTPS
+
+' Atores
+actor "Inventor" as inventor
+actor "Avaliador" as avaliador
+actor "Comissão" as comissao
+
+inventor --> portalInventor : Acessa
+avaliador --> apiBackend : Acessa
+comissao --> apiBackend : Acessa
+
+@enduml

@@ -1,0 +1,130 @@
+@startuml ActivityDiagramFase5
+||Avaliador NIT|
+start
+
+:Kit de Robustez e Conformidade;
+
+partition "Checklist Final de Conformidade" {
+  :✓ Suficiência Descritiva (Art. 24 LPI);
+  :✓ Reivindicações Hierárquicas;
+  :✓ Referências Numéricas Consistentes;
+  :✓ Desenhos em P&B sem Cores;
+  :✓ Limite de Reivindicações (3-6, máx 10);
+}
+
+partition "Validação de Requisitos Formais INPI" {
+  :✓ Título (Máx 150 Caracteres);
+  :✓ Resumo (50-200 Palavras);
+  :✓ Relatório Descritivo Completo;
+  :✓ Estado da Técnica Claro;
+  :✓ Exemplo de Concretização;
+}
+
+partition "Verificação de Anexos Extras" {
+  :✓ Anexo A (Busca de Anterioridade);
+  :✓ Anexo B (Matriz Problema x Solução);
+  :✓ Anexo C (Memorial Descritivo);
+  :✓ Anexo F (Qualificação de Inventores);
+  :✓ Termo de Cessão;
+  :✓ Declaração de Inventor;
+  :✓ SisGen (se aplicável);
+}
+
+if (Todos os Checklists Passaram?) then (Não)
+  |Inventor/Pesquisador|
+  :Corrigir Itens Reprovados;
+  repeat
+    |Avaliador NIT|
+    :Checklist Final de Conformidade;
+  repeat while (Todos os Checklists Passaram?) is (Não) not (Sim)
+endif
+
+||Avaliador NIT|
+:Validação Jurídica;
+
+partition "Itens de Validação Jurídica" {
+  :Verificar Suficiência Descritiva;
+  :Verificar Reivindicações (Independente/Dependente);
+  :Verificar Não Divulgação Anterior;
+  :Verificar Ausência de Conteúdo Público;
+}
+
+if (Validação Jurídica OK?) then (Não)
+  :Realizar Ajustes Jurídicos;
+  repeat
+    :Validação Jurídica;
+  repeat while (Validação Jurídica OK?) is (Não) not (Sim)
+endif
+
+:Semaforização Final;
+
+if (Resultado da Validação?) then (🟢 Verde)
+  :Preparar Protocolo no INPI;
+elseif (🟡 Amarelo)
+  :Ajustes Menores Requeridos;
+  |Inventor/Pesquisador|
+  :Realizar Ajustes Menores;
+  repeat
+    |Avaliador NIT|
+    :Checklist Final de Conformidade;
+  repeat while (🟢 Verde?) is (Não) not (Sim)
+elseif (🔴 Vermelho)
+  :Revisão Completa Necessária;
+  |Inventor/Pesquisador|
+  :Realizar Revisão Completa;
+  repeat
+    |Avaliador NIT|
+    :Retornar ao Início da Fase 5;
+  repeat while (🟢 Verde?) is (Não) not (Sim)
+endif
+
+:Preparar Arquivos Finais;
+:Converter para Formato Aceito pelo INPI;
+:Organizar por Ordem do Pedido;
+
+:Verificação Última Minuto;
+
+partition "Itens da Verificação" {
+  :✓ Todos os Arquivos Presentes;
+  :✓ Ordem Correta;
+  :✓ Nomes de Arquivos Corretos;
+  :✓ Tamanhos Aceitos;
+}
+
+if (Verificação Final OK?) then (Não)
+  |Inventor/Pesquisador|
+  :Correções de Última Minuto;
+  repeat
+    |Avaliador NIT|
+    :Preparar Arquivos Finais;
+  repeat while (Verificação Final OK?) is (Não) not (Sim)
+endif
+
+||Avaliador NIT|
+:Gerar Protocolo de Depósito;
+
+||Examinador INPI|
+:Receber Pedido;
+:Enviar Confirmação;
+
+||Avaliador NIT|
+:Receber Número do Pedido;
+:Receber Data de Depósito;
+
+||Inventor/Pesquisador|
+:Entregar Comprovante ao Inventor;
+
+||Avaliador NIT|
+:Iniciar Acompanhamento do Pedido;
+
+partition "Acompanhamento" {
+  :Monitorar Prazos;
+  :Monitorar Publicações;
+  :Monitorar Exigências;
+}
+
+:Fase 5 Completa\nPedido Depositado\nAcompanhamento Iniciado;
+
+stop
+
+@enduml

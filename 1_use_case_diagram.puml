@@ -1,0 +1,119 @@
+@startuml UseCaseDiagram
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Inventor/Pesquisador" as inventor
+actor "Avaliador NIT" as avaliador
+actor "Comissão de Avaliação" as comissao
+actor "Examinador INPI" as inpi
+actor "Sistema de Gestão" as sistema
+actor "Designer/Desenvolvedor Web" as designer
+
+rectangle "Sistema de Gestão de Propriedade Intelectual" {
+  package "Fase 1: Preparação" {
+    usecase "Consultar Guia Laboratório vs. Patente" as uc1
+    usecase "Diferenciar Tipos de Patente (PI/MU/CII/RPC)" as uc2
+    usecase "Preencher Anexo A - Busca de Anterioridade" as uc3
+    usecase "Preencher Anexo B - Matriz Problema x Solução" as uc4
+    usecase "Preencher Anexo C - Memorial Descritivo" as uc5
+    usecase "Preencher Anexo F - Qualificação de Inventores" as uc6
+  }
+
+  package "Fase 2: Submissão" {
+    usecase "Preencher Formulário de Patente" as uc7
+    usecase "Preencher Formulário de Software CII" as uc8
+    usecase "Validar Caracteres dos Campos" as uc9
+    usecase "Realizar Checklist de Conferência" as uc10
+    usecase "Enviar Submissão ao NIT" as uc11
+  }
+
+  package "Fase 3: Análise Técnica" {
+    usecase "Realizar Triagem Administrativa" as uc12
+    usecase "Examinar NAI (Novidade)" as uc13
+    usecase "Examinar NAI (Atividade Inventiva)" as uc14
+    usecase "Examinar NAI (Aplicação Industrial)" as uc15
+    usecase "Elaborar Parecer Técnico Semaforizado" as uc16
+    usecase "Devolver Pedido ao Inventor" as uc17
+  }
+
+  package "Fase 4: Formalização" {
+    usecase "Elaborar Termo de Cessão" as uc18
+    usecase "Elaborar Declaração de Inventor" as uc19
+    usecase "Registrar SisGen (se aplicável)" as uc20
+    usecase "Revisar Documentação Técnica" as uc21
+    usecase "Obter Assinaturas de Todos os Inventores" as uc22
+  }
+
+  package "Fase 5: Robustez e Conformidade" {
+    usecase "Realizar Checklist Final de Conformidade" as uc23
+    usecase "Validar Requisitos Formais do INPI" as uc24
+    usecase "Realizar Validação Jurídica" as uc25
+    usecase "Preparar Protocolo de Depósito" as uc26
+    usecase "Depositar Pedido no INPI" as uc27
+  }
+
+  package "Portal e UX" {
+    usecase "Criar Kit do Inventor" as uc28
+    usecase "Criar Templates de Redação" as uc29
+    usecase "Criar Checklists de Validação" as uc30
+    usecase "Criar E-mails Automáticos de Feedback" as uc31
+  }
+}
+
+' Relacionamentos - Inventor
+inventor --> uc1
+inventor --> uc2
+inventor --> uc3
+inventor --> uc4
+inventor --> uc5
+inventor --> uc6
+inventor --> uc7
+inventor --> uc8
+inventor --> uc11
+inventor --> uc22
+
+' Relacionamentos - Avaliador NIT
+avaliador --> uc12
+avaliador --> uc13
+avaliador --> uc14
+avaliador --> uc15
+avaliador --> uc16
+avaliador --> uc17
+avaliador --> uc18
+avaliador --> uc19
+avaliador --> uc21
+avaliador --> uc23
+avaliador --> uc24
+avaliador --> uc25
+avaliador --> uc26
+avaliador --> uc27
+
+' Relacionamentos - Comissão de Avaliação
+comissao --> uc16
+comissao --> uc17
+
+' Relacionamentos - Examinador INPI
+inpi --> uc27
+
+' Relacionamentos - Sistema
+sistema --> uc9
+sistema --> uc10
+sistema --> uc20
+sistema --> uc31
+
+' Relacionamentos - Designer/Desenvolvedor
+designer --> uc28
+designer --> uc29
+designer --> uc30
+
+' Extensões e Inclusões
+uc7 ..> uc9 : <<include>>
+uc8 ..> uc9 : <<include>>
+uc11 ..> uc10 : <<include>>
+uc16 ..> uc13 : <<include>>
+uc16 ..> uc14 : <<include>>
+uc16 ..> uc15 : <<include>>
+uc23 ..> uc24 : <<include>>
+uc23 ..> uc25 : <<include>>
+
+@enduml

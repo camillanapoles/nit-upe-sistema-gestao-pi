@@ -1,0 +1,101 @@
+@startuml ComponentDiagram
+
+package "Portal Web" {
+  [Kit do Inventor] as kitInventor
+  [Formulários Digitais] as formularios
+  [Templates de Redação] as templates
+  [Checklists de Validação] as checklists
+}
+
+package "Sistema de Gestão (Backend)" {
+  [Módulo de Validação] as validacao
+  [Módulo de Análise NAI] as analiseNAI
+  [Módulo de Processamento] as processamento
+  [Módulo de Documentação] as documentacao
+}
+
+package "NIT (Front Office)" {
+  [Interface do Avaliador] as interfaceAvaliador
+  [Sistema de Pareceres] as sistemaPareceres
+}
+
+package "Comissão de Avaliação" {
+  [Sistema de Deliberação] as sistemaDeliberacao
+}
+
+package "Integrações Externas" {
+  [SisGen] as sisGen
+  [INPI - Sistema e-INPI] as inpi
+  [Email Service] as emailService
+}
+
+package "Banco de Dados" {
+  database [DB_Pedidos] as dbPedidos
+  database [DB_Documentos] as dbDocumentos
+  database [DB_Inventores] as dbInventores
+  database [DB_Usuarios] as dbUsuarios
+}
+
+package "Arquivos de Documentação" {
+  file [PDFs de Templates] as pdfTemplates
+  file [Documentos Legais] as docsLegais
+  file [Checklists PDF] as pdfChecklists
+}
+
+' Relacionamentos entre Componentes
+kitInventor --> formularios : usa
+kitInventor --> templates : acessa
+kitInventor --> checklists : consulta
+
+formularios --> validacao : envia dados
+validacao --> dbPedidos : grava
+validacao --> dbDocumentos : grava
+
+processamento --> analiseNAI : solicita análise
+analiseNAI --> dbPedidos : consulta
+analiseNAI --> dbDocumentos : consulta
+
+interfaceAvaliador --> processamento : acessa
+interfaceAvaliador --> sistemaPareceres : usa
+sistemaPareceres --> sistemaDeliberacao : envia parecer
+sistemaDeliberacao --> sistemaPareceres : retorna decisão
+
+documentacao --> pdfTemplates : gerencia
+documentacao --> docsLegais : gerencia
+documentacao --> pdfChecklists : gerencia
+
+sisGen --> validacao : valida registro
+emailService --> processamento : envia notificações
+inpi --> processamento : sincroniza pedido
+
+' Conexões com Banco de Dados
+processamento --> dbPedidos : lê/escreve
+processamento --> dbDocumentos : lê/escreve
+processamento --> dbInventores : lê/escreve
+processamento --> dbUsuarios : lê/escreve
+validacao --> dbPedidos : lê
+validacao --> dbDocumentos : lê
+analiseNAI --> dbPedidos : lê
+analiseNAI --> dbDocumentos : lê
+
+' Atores e Interfaces
+actor "Inventor/Pesquisador" as inventor
+actor "Avaliador NIT" as avaliador
+actor "Comissão de Avaliação" as comissao
+actor "Examinador INPI" as inpiActor
+
+inventor --> kitInventor : acessa
+inventor --> formularios : preenche
+inventor --> emailService : recebe emails
+
+avaliador --> interfaceAvaliador : acessa
+avaliador --> processamento : opera
+avaliador --> emailService : recebe emails
+
+comissao --> sistemaDeliberacao : acessa
+comissao --> emailService : recebe emails
+
+inpiActor --> inpi : acessa
+inpi --> processamento : notifica
+
+@enduml

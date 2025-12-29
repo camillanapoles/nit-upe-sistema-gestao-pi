@@ -1,0 +1,112 @@
+@startuml SequenceDiagram
+actor "Inventor" as inventor
+participant "Sistema\nWeb" as sistema
+participant "Avaliador\nNIT" as avaliador
+participant "Comissão\nAvaliação" as comissao
+participant "Examinador\nINPI" as inpi
+
+== Fase 1: Preparação ==
+inventor -> sistema : Acessar Kit do Inventor
+activate sistema
+sistema --> inventor : Apresentar Guias Educativos
+inventor -> inventor : Consultar Diferenças entre Tipos
+inventor -> inventor : Compreender Laboratório vs. Patente
+inventor -> sistema : Preencher Anexos (A, B, C, F)
+sistema --> sistema : Validar Preenchimento
+sistema --> inventor : Anexos Prontos
+
+== Fase 2: Submissão ==
+inventor -> sistema : Preencher Formulário
+activate sistema
+sistema -> sistema : Validar Caracteres
+sistema --> inventor : Feedback de Validação
+inventor -> sistema : Enviar Submissão
+sistema --> inventor : Gerar Protocolo
+sistema --> inventor : E-mail de Confirmação
+
+== Fase 3: Análise Técnica ==
+sistema -> avaliador : Notificar Nova Submissão
+activate avaliador
+avaliador -> avaliador : Triagem Administrativa
+alt Passou na Triagem
+    avaliador -> avaliador : Exame NAI
+    alt NAI Aprovado
+        avaliador -> comissao : Solicitar Parecer
+        activate comissao
+        comissao --> avaliador : Parecer Semaforizado
+        deactivate comissao
+        alt Parecer Verde
+            avaliador --> inventor : Notificar Aprovação
+        else Parecer Amarelo
+            avaliador --> inventor : Comunicar Ressalvas
+            inventor -> sistema : Fazer Ajustes Menores
+            sistema -> avaliador : Solicitar Reavaliação
+            avaliador --> inventor : Notificar Aprovação Ajustada
+        else Parecer Vermelho
+            avaliador --> inventor : Notificar Desfavorável
+            alt Inventor Aceita Reformular
+                inventor -> sistema : Reformular Completo
+                sistema -> avaliador : Retornar ao Início
+            else Inventor Desiste
+                avaliador --> inventor : Arquivar Pedido
+            end
+        end
+    else NAI Reprovado
+        avaliador --> inventor : Devolução com Explicação
+        alt Inventor Aceita Reformular
+            inventor -> sistema : Reformular Pedido
+            sistema -> avaliador : Retornar ao Exame NAI
+        else Inventor Desiste
+            avaliador --> inventor : Arquivar Pedido
+        end
+    end
+else Falhou na Triagem
+    avaliador --> inventor : Devolução Administrativa
+    inventor -> sistema : Corrigir Problemas
+    sistema -> avaliador : Retornar à Triagem
+end
+deactivate avaliador
+
+== Fase 4: Formalização ==
+avaliador -> inventor : Solicitar Documentos Legais
+inventor -> inventor : Elaborar Termo de Cessão
+inventor -> inventor : Elaborar Declaração de Inventor
+inventor -> sistema : Registrar SisGen (se aplicável)
+sistema --> inventor : Número SisGen
+inventor -> inventor : Obter Assinaturas de Todos
+inventor -> avaliador : Enviar Documentos Assinados
+avaliador -> avaliador : Validar Documentação
+avaliador -> avaliador : Ajustes Finais Técnicos
+avaliador -> inventor : Confirmar Aprovação
+inventor --> avaliador : Confirmação
+
+== Fase 5: Robustez e Conformidade ==
+avaliador -> avaliador : Checklist Final de Conformidade
+avaliador -> avaliador : Validação Jurídica
+avaliador -> avaliador : Validação de Requisitos Formais INPI
+alt Validação Verde
+    avaliador -> avaliador : Preparar Protocolo
+    avaliador -> inpi : Depositar Pedido
+    activate inpi
+    inpi --> avaliador : Confirmação de Recebimento
+    inpi --> avaliador : Número do Pedido
+    inpi --> avaliador : Data de Depósito
+    deactivate inpi
+    avaliador -> inventor : Entregar Comprovante
+    avaliador -> avaliador : Iniciar Acompanhamento
+else Validação Amarela
+    avaliador -> inventor : Solicitar Ajustes Menores
+    inventor -> sistema : Realizar Ajustes
+    sistema -> avaliador : Retornar à Validação
+else Validação Vermelha
+    avaliador -> inventor : Solicitar Revisão Completa
+    inventor -> sistema : Realizar Revisão Completa
+    sistema -> avaliador : Retornar ao Início da Fase 5
+end
+
+== Fim do Processo ==
+avaliador -> inventor : Pedido Depositado com Sucesso
+inventor --> avaliador : Agradecimento
+avaliador --> avaliador : Monitorar Prazos e Publicações
+
+@enduml

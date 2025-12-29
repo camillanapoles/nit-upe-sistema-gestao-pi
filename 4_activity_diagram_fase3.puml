@@ -1,0 +1,158 @@
+@startuml ActivityDiagramFase3
+||Avaliador NIT|
+start
+
+:Triagem Administrativa;
+
+partition "Itens da Triagem" {
+  :Verificar Arquivos Obrigatórios;
+  :Verificar Assinaturas;
+  :Verificar SisGen;
+  :Verificar Prazo 12 Meses;
+}
+
+if (Passou na Triagem?) then (Não)
+  :Devolução Administrativa;
+  :Enviar E-mail de Devolução\n(Técnica Sanduíche);
+
+  |Inventor/Pesquisador|
+  :Corrigir Problemas Administrativos;
+  repeat
+    |Avaliador NIT|
+    :Triagem Administrativa;
+  repeat while (Passou na Triagem?) is (Não) not (Sim)
+endif
+
+:Exame de Viabilidade NAI;
+
+partition "Análise de Novidade" {
+  :Analisar Busca de Anterioridade;
+  :Verificar Existência de Documentos Similares;
+}
+
+if (É Novo?) then (Não)
+  :Devolução por Falta de Novidade;
+  :Enviar E-mail Explicando Falta de Novidade;
+
+  |Inventor/Pesquisador|
+  if (Reformular?) then (Sim)
+    :Reformular Pedido;
+    repeat
+      |Avaliador NIT|
+      :Análise de Novidade;
+    repeat while (É Novo?) is (Não) not (Sim)
+  else (Não - Desistir)
+    :Arquivar Pedido;
+    stop
+  endif
+endif
+
+partition "Análise de Atividade Inventiva" {
+  :Verificar se É Óbvio para Técnico no Assunto;
+  :Comparar com Estado da Técnica;
+}
+
+if (É Não Óbvio?) then (Não)
+  :Devolução por Óbvio;
+  :Enviar E-mail Explicando Falta de Atividade Inventiva;
+
+  |Inventor/Pesquisador|
+  if (Reformular?) then (Sim)
+    :Reformular Pedido;
+    repeat
+      |Avaliador NIT|
+      :Análise de Atividade Inventiva;
+    repeat while (É Não Óbvio?) is (Não) not (Sim)
+  else (Não - Desistir)
+    :Arquivar Pedido;
+    stop
+  endif
+endif
+
+partition "Análise de Aplicação Industrial" {
+  :Verificar Capacidade de Produção;
+  :Verificar Viabilidade Comercial;
+}
+
+if (Tem Aplicação Industrial?) then (Não)
+  :Devolução por Falta de Aplicação Industrial;
+  :Enviar E-mail Explicando Falta de Aplicação Industrial;
+
+  |Inventor/Pesquisador|
+  if (Reformular?) then (Sim)
+    :Reformular Pedido;
+    repeat
+      |Avaliador NIT|
+      :Análise de Aplicação Industrial;
+    repeat while (Tem Aplicação Industrial?) is (Não) not (Sim)
+  else (Não - Desistir)
+    :Arquivar Pedido;
+    stop
+  endif
+endif
+
+||Avaliador NIT|
+:Elaborar Parecer Técnico Semaforizado;
+
+partition "Semaforização do Parecer" {
+  fork
+    :🟢 Verde\nAprovado Sem Ressalvas;
+  fork again
+    :🟡 Amarelo\nAprovado Com Ressalvas;
+  fork again
+    :🔴 Vermelho\nDesfavorável;
+  end fork
+}
+
+if (Resultado do Parecer?) then (🟢 Verde)
+  :Prosseguir para Formalização (Fase 4);
+elseif (🟡 Amarelo)
+  :Comunicar Ressalvas ao Inventor;
+
+  |Inventor/Pesquisador|
+  if (Aceita Ajustes?) then (Sim)
+    :Fazer Ajustes Menores;
+    |Avaliador NIT|
+    :Reavaliação;
+
+    if (Passou?) then (Sim)
+      :Prosseguir para Formalização (Fase 4);
+    else (Não)
+      :Devolução Desfavorável;
+      |Inventor/Pesquisador|
+      if (Reformular?) then (Sim)
+        :Reformular Completo;
+        |Avaliador NIT|
+        :Retornar ao Início do Exame NAI;
+      else (Não)
+        :Arquivar Pedido;
+        stop
+      endif
+    endif
+  else (Não)
+    :Devolução Desfavorável;
+    |Inventor/Pesquisador|
+    :Arquivar Pedido;
+    stop
+  endif
+elseif (🔴 Vermelho)
+  :Comunicar Desfavorável ao Inventor;
+
+  |Inventor/Pesquisador|
+  if (Reformular?) then (Sim)
+    :Reformular Completo;
+    repeat
+      |Avaliador NIT|
+      :Retornar ao Início do Exame NAI;
+    repeat while (É Novo?) is (Não) not (Sim)
+  else (Não)
+    :Arquivar Pedido;
+    stop
+  endif
+endif
+
+:Fase 3 Completa\nPronto para Formalização;
+
+stop
+
+@enduml

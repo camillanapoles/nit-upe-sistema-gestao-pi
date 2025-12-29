@@ -1,0 +1,109 @@
+@startuml PackageDiagram
+
+package br.upe.nit.pi {
+
+  package "modelo" {
+    class PedidoPatente
+    class Anexo
+    class DocumentoLegal
+    class Inventor
+    class Parecer
+    class Exigencia
+  }
+
+  package "tipos" {
+    enum TipoPatente {
+      PI
+      MU
+      CII
+      RPC
+    }
+    class PatenteInvencao
+    class ModeloUtilidade
+    class ComputerImplementedInvention
+    class RegistroProgramaComputador
+  }
+
+  package "validacao" {
+    class ValidadorCaracteres
+    class ValidadorNAI
+    class ValidadorJuridico
+    class ValidadorFormulario
+    interface Validador
+  }
+
+  package "servico" {
+    class ServicoValidacao
+    class ServicoAnalise
+    class ServicoFormalizacao
+    class ServicoDeposito
+    class ServicoEmail
+    class ServicoSisGen
+  }
+
+  package "controle" {
+    class ControladorInventor
+    class ControladorAvaliador
+    class ControladorComissao
+    class ControladorAdmin
+  }
+
+  package "repositorio" {
+    interface RepositorioPedido
+    interface RepositorioInventor
+    interface RepositorioDocumento
+    class RepositorioPedidoJPA
+    class RepositorioInventorJPA
+    class RepositorioDocumentoJPA
+  }
+
+  package "integracao" {
+    class IntegracaoSisGen
+    class IntegracaoINPI
+    class IntegracaoEmail
+  }
+
+  package "util" {
+    class Semaforizacao
+    class ValidadorPDF
+    class GeradorProtocolo
+    class UtilsData
+  }
+
+  package "excecao" {
+    class ExcecaoValidacao
+    class ExcecaoNAI
+    class ExcecaoJuridica
+    class ExcecaoIntegracao
+  }
+}
+
+' Relacionamentos
+Validador <|.. ValidadorCaracteres
+Validador <|.. ValidadorNAI
+Validador <|.. ValidadorJuridico
+Validador <|.. ValidadorFormulario
+
+RepositorioPedido <|.. RepositorioPedidoJPA
+RepositorioInventor <|.. RepositorioInventorJPA
+RepositorioDocumento <|.. RepositorioDocumentoJPA
+
+ServicoValidacao --> ValidadorCaracteres : usa
+ServicoValidacao --> ValidadorFormulario : usa
+ServicoAnalise --> ValidadorNAI : usa
+ServicoAnalise --> ValidadorJuridico : usa
+
+ControladorInventor --> ServicoValidacao : usa
+ControladorInventor --> ServicoAnalise : usa
+ControladorAvaliador --> ServicoAnalise : usa
+ControladorAvaliador --> ServicoFormalizacao : usa
+ControladorComissao --> ServicoAnalise : usa
+ControladorAdmin --> ServicoDeposito : usa
+
+ServicoDeposito --> IntegracaoINPI : usa
+ServicoSisGen --> IntegracaoSisGen : usa
+ServicoEmail --> IntegracaoEmail : usa
+
+ServicoEmail --> Semaforizacao : usa
+
+@enduml

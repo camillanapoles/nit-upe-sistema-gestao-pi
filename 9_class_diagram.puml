@@ -1,0 +1,189 @@
+@startuml ClassDiagram
+
+' Pacote de Entidades
+package "Entidades" {
+  class PedidoPatente {
+    - String numeroPedido
+    - Date dataCriacao
+    - Date dataDeposito
+    - String estadoAtual
+    - TipoPatente tipo
+    + void criar()
+    + void submeter()
+    + void atualizarEstado()
+    + boolean isValido()
+  }
+
+  class Anexo {
+    - String tipo
+    - File arquivo
+    - boolean assinado
+    + void assinar()
+    + boolean isAssinado()
+    + void validar()
+  }
+
+  class DocumentoLegal {
+    - String tipo
+    - String conteudo
+    - Date dataAssinatura
+    + void assinar()
+    + boolean isAssinado()
+  }
+
+  class Inventor {
+    - String nome
+    - String email
+    - String cpf
+    - float participacao
+    - String qualificacao
+    + void assinar()
+    + void definirParticipacao()
+  }
+}
+
+' Pacote de Tipos
+package "Tipos de Patente" {
+  abstract class TipoPatente <<enumeration>> {
+    PI
+    MU
+    CII
+    RPC
+  }
+
+  class PatenteInvencao {
+    + int validadeAnos = 20
+    + String[] categoriasReivindicacao
+    + boolean requiresEfeitoTecnico()
+  }
+
+  class ModeloUtilidade {
+    + int validadeAnos = 15
+    + boolean appliesToProcessos() = false
+    + boolean appliesToSoftware() = false
+  }
+
+  class ComputerImplementedInvention {
+    + boolean requiresHardwareReference()
+    + boolean requiresTriplaReivindicacao()
+    + boolean requiresFluxogramaBPMN()
+  }
+
+  class RegistroProgramaComputador {
+    + int validadeAnos = 50
+    + boolean protectsCodigoFonte()
+    + boolean notProtectsLogica()
+  }
+}
+
+' Pacote de Validação
+package "Validacao" {
+  class ValidadorCaracteres {
+    + boolean validarTitulo(String titulo)
+    + boolean validarProblema(String problema)
+    + boolean validarSolucao(String solucao)
+    + boolean validarEstadoTecnica(String estado)
+    + boolean validarVantagens(String vantagens)
+  }
+
+  class ValidadorNAI {
+    + boolean validarNovidade(AnexoA anexoA)
+    + boolean validarAtividadeInventiva(AnexoC anexoC)
+    + boolean validarAplicacaoIndustrial(AnexoC anexoC)
+  }
+
+  class ValidadorJuridico {
+    + boolean validarSuficienciaDescritiva(String relatorio)
+    + boolean validarReivindicacoes(String[] reivindicacoes)
+    + boolean validarPrioridade(String dataDivulgacao)
+  }
+
+  class Semaforizacao {
+    - String resultado
+    - String[] observacoes
+    + void semaforizar(Parecer parecer)
+    + String getResultado()
+    + String[] getObservacoes()
+  }
+}
+
+' Pacote de Processamento
+package "Processamento" {
+  class Avaliador {
+    - String nome
+    - String especialidade
+    + void triagemAdministrativa(PedidoPatente pedido)
+    + Parecer analisarNAI(PedidoPatente pedido)
+    + void validarFormalizacao(PedidoPatente pedido)
+    + void realizarChecklistFinal(PedidoPatente pedido)
+  }
+
+  class ComissaoAvaliacao {
+    - List<Avaliador> membros
+    - Parecer parecerConsolidado
+    + void deliberar(PedidoPatente pedido)
+    + Parecer emitirParecerSemaforizado()
+  }
+
+  class SistemaGestao {
+    - ValidadorCaracteres validadorCaracteres
+    - ValidadorNAI validadorNAI
+    - ValidadorJuridico validadorJuridico
+    - Semaforizacao semaforizacao
+    + void receberSubmissao(PedidoPatente pedido)
+    + void processarPedido(PedidoPatente pedido)
+    + void gerarProtocolo(PedidoPatente pedido)
+  }
+}
+
+' Pacote de INPI
+package "INPI" {
+  class ExaminadorINPI {
+    + void receberPedido(PedidoPatente pedido)
+    + void examinarPedido(PedidoPatente pedido)
+    + void emitirExigencia(Exigencia exigencia)
+    + void concederPatente(PedidoPatente pedido)
+    + void indeferirPatente(PedidoPatente pedido)
+  }
+
+  class Exigencia {
+    - String descricao
+    - Date prazoResposta
+    - Estado estado
+    + void responder()
+  }
+
+  class NumeroPedido {
+    - String numero
+    - Date dataDeposito
+    + String getFormatado()
+  }
+}
+
+' Relacionamentos
+PedidoPatente "1" -- "*" Anexo : possui
+PedidoPatente "1" -- "*" DocumentoLegal : requer
+PedidoPatente "1" -- "*" Inventor : tem
+PedidoPatente "1" *-- "1" TipoPatente : é do tipo
+PatenteInvencao --|> TipoPatente
+ModeloUtilidade --|> TipoPatente
+ComputerImplementedInvention --|> TipoPatente
+RegistroProgramaComputador --|> TipoPatente
+
+SistemaGestao "1" --> "1" ValidadorCaracteres : usa
+SistemaGestao "1" --> "1" ValidadorNAI : usa
+SistemaGestao "1" --> "1" ValidadorJuridico : usa
+SistemaGestao "1" --> "1" Semaforizacao : usa
+
+Avaliador "1" ..> "1" SistemaGestao : opera
+ComissaoAvaliacao "1" *-- "*" Avaliador : composta por
+ComissaoAvaliacao "1" --> "1" Semaforizacao : emite
+ExaminadorINPI "1" --> "1" NumeroPedido : gera
+ExaminadorINPI "1" o-- "*" Exigencia : emite
+
+' Relacionamento de uso
+PedidoPatente ..> ValidadorCaracteres : é validado por
+PedidoPatente ..> ValidadorNAI : é analisado por
+PedidoPatente ..> ValidadorJuridico : é validado juridicamente por
+
+@enduml

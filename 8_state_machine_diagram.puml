@@ -1,0 +1,82 @@
+@startuml StateMachineDiagram
+[*] --> Rascunho : Criar Pedido
+
+Rascunho --> EmPreenchimento : Iniciar Preenchimento
+
+EmPreenchimento --> Rascunho : Salvar Rascunho
+EmPreenchimento --> EmValidacaoLocal : Submeter
+
+EmValidacaoLocal --> EmPreenchimento : Validacao Falhou\n(Corrigir)
+EmValidacaoLocal --> AguardandoAnaliseNIT : Validacao OK
+
+AguardandoAnaliseNIT --> EmTriagemAdministrativa : Recebido pelo NIT
+
+EmTriagemAdministrativa --> AguardandoAnaliseNIT : Devolucao Administrativa
+EmTriagemAdministrativa --> EmExameNAI : Triagem Aprovada
+
+EmExameNAI --> AguardandoAnaliseNIT : NAI Reprovado\n(Devolucao)
+EmExameNAI --> EmAnaliseNovidade : Triagem Aprovada
+
+EmAnaliseNovidade --> AguardandoAnaliseNIT : Falta Novidade\n(Devolucao)
+EmAnaliseNovidade --> EmAnaliseAtividadeInventiva : Novidade Confirmada
+
+EmAnaliseAtividadeInventiva --> AguardandoAnaliseNIT : Obvio\n(Devolucao)
+EmAnaliseAtividadeInventiva --> EmAnaliseAplicacaoIndustrial : Nao Obvio
+
+EmAnaliseAplicacaoIndustrial --> AguardandoAnaliseNIT : Sem Aplicacao Industrial\n(Devolucao)
+EmAnaliseAplicacaoIndustrial --> EmParecer : Aplicacao Industrial OK
+
+EmParecer --> AguardandoAnaliseNIT : Parecer Vermelho\n(Reformular)
+EmParecer --> EmRessalvas : Parecer Amarelo
+EmParecer --> EmFormalizacao : Parecer Verde
+
+EmRessalvas --> EmFormalizacao : Ajustes Menores Realizados
+EmRessalvas --> AguardandoAnaliseNIT : Recusado\n(Desistir)
+
+EmFormalizacao --> AguardandoAnaliseNIT : Documentos Incompletos
+EmFormalizacao --> EmValidacaoFinal : Documentos Completos
+
+EmValidacaoFinal --> EmFormalizacao : Validacao Falhou\n(Ajustar)
+EmValidacaoFinal --> ProntoDeposito : Validacao Verde
+EmValidacaoFinal --> EmAjustesFinais : Validacao Amarela
+EmValidacaoFinal --> EmRevisaoCompleta : Validacao Vermelha
+
+EmAjustesFinais --> ProntoDeposito : Ajustes Realizados
+EmRevisaoCompleta --> EmValidacaoFinal : Revisao Completa
+
+ProntoDeposito --> DepositadoINPI : Depositar no INPI
+
+DepositadoINPI --> EmExaminacaoINPI : Recebido pelo INPI
+
+EmExaminacaoINPI --> Publicado18Meses : Periodo de Sigilo (18 meses)
+
+Publicado18Meses --> EmExigenciaINPI : Exigencia do Examinador
+Publicado18Meses --> EmConcessao : Sem Exigencias
+
+EmExigenciaINPI --> EmConcessao : Exigencias Respondidas e Aprovadas
+EmExigenciaINPI --> IndeferidoINPI : Exigencias Reprovadas
+
+EmConcessao --> Concedido : Pagamento de GRU
+EmConcessao --> Arquivado : Não Pago
+
+IndeferidoINPI --> Arquivado : Arquivamento
+Arquivado --> [*] : Fim do Processo
+
+Concedido --> Vigente : Publicação da Patente
+Vigente --> Expirado : 20 Anos (PI) ou 15 Anos (MU)
+Expirado --> [*] : Dominio Publico
+
+note right of EmExameNAI
+  NAI = Novidade,
+  Atividade Inventiva,
+  Aplicacao Industrial
+end note
+
+note right of EmParecer
+  Semaforizacao:
+  Verde = Aprovado
+  Amarelo = Com Ressalvas
+  Vermelho = Desfavoravel
+end note
+
+@enduml

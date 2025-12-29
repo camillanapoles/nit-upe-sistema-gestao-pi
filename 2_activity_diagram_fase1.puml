@@ -1,0 +1,88 @@
+@startuml ActivityDiagramFase1
+||Inventor/Pesquisador|
+start
+
+if (Já divulgou publicamente?) then (Sim)
+  :Verificar se está dentro de 12 meses;
+  if (Dentro de 12 meses?) then (Não)
+    |Inventor/Pesquisador|
+    :Invenção entra em Domínio Público;
+    stop
+  endif
+endif
+
+:Educação Prévia;
+
+partition "Compreender Diferenças entre Tipos" {
+  :Consultar Guia de Tipos de Patente;
+
+  fork
+    :PI (Patente de Invenção)\n20 anos;
+  fork again
+    :MU (Modelo de Utilidade)\n15 anos;
+  fork again
+    :CII (Software com Efeito Técnico);
+  fork again
+    :RPC (Registro de Software)\n50 anos;
+  end fork
+
+  :Selecionar Tipo Apropriado;
+}
+
+if (É uma lógica técnica?) then (Sim → PI)
+  :Selecionar PI;
+elseif (É um objeto físico com nova forma?) then (Sim → MU)
+  :Selecionar MU;
+elseif (Software melhora hardware?) then (Sim → CII)
+  :Selecionar CII;
+elseif (Apenas código sem efeito técnico?) then (Sim → RPC)
+  :Selecionar RPC;
+else
+  :Retornar à Seleção;
+endif
+
+partition "Compreender Laboratório vs. Patente" {
+  fork
+    :Laboratório\n• Foco: Descoberta e Publicação\n• Público: Comunidade Científica\n• Linguagem: Técnica Detalhada\n• Resultado: Artigo Científico;
+  fork again
+    :Patente\n• Foco: Proteção e Comercialização\n• Público: Examinador INPI, Mercado\n• Linguagem: Jurídico-técnica Defensiva\n• Resultado: Direito Exclusivo;
+  end fork
+}
+
+partition "Preencher Anexos" {
+  :Anexo A - Busca de Anterioridade;
+  :Realizar Busca em INPI;
+  :Buscar em Espacenet;
+  :Buscar em Google Patents;
+  :Identificar Top 3 Documentos Relevantes;
+  :Identificar Lacuna Técnica;
+
+  :Anexo B - Matriz Problema x Solução;
+  :Definir Problema Claramente;
+  :Descrever Solução Proposta;
+  :Listar KPIs Comparativos;
+
+  :Anexo C - Memorial Descritivo;
+  :Preencher Memorial Descritivo;
+  :Verificar Prazo 12 Meses;
+
+  :Anexo F - Qualificação de Inventores;
+  :Listar Qualificação Inventores;
+  :Definir % Participação;
+  :Registrar SisGen (se necessário);
+}
+
+:Validação de Anexos;
+
+if (Anexos Completos e Corretos?) then (Não)
+  :Corrigir Anexos;
+  repeat
+    :Validação de Anexos;
+  repeat while (Anexos Completos e Corretos?) is (Não) not (Sim)
+endif
+
+:Fase 1 Completa\nPronto para Submissão;
+
+stop
+
+@enduml

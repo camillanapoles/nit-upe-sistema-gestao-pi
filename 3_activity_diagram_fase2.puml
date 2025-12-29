@@ -1,0 +1,94 @@
+@startuml ActivityDiagramFase2
+||Inventor/Pesquisador|
+start
+
+if (Qual Tipo de Patente?) then (PI ou MU)
+  :Preencher Formulário de Patente Padrão;
+elseif (CII ou RPC)
+  :Preencher Formulário de Software CII;
+endif
+
+partition "Preencher Campos do Formulário" {
+  :Preencher Título\n(Máx 150 caracteres);
+  :Preencher Problema/Dor\n(100-1000 caracteres);
+  :Preencher Solução Técnica\n(500-4000 caracteres);
+  :Preencher Estado da Técnica\n(200-2000 caracteres);
+  :Preencher Vantagens\n(100-1500 caracteres);
+  :Preencher Palavras-chave\n(50-100 caracteres);
+
+  if (Tipo é CII ou RPC) then (Sim)
+    :Preencher Fluxograma BPMN;
+  endif
+}
+
+||Sistema de Gestão|
+:Validação de Caracteres;
+
+if (Caracteres Dentro dos Limites?) then (Não)
+  |Inventor/Pesquisador|
+  :Ajustar Tamanho dos Campos;
+  repeat
+    |Sistema de Gestão|
+    :Validação de Caracteres;
+  repeat while (Caracteres Dentro dos Limites?) is (Não) not (Sim)
+endif
+
+||Inventor/Pesquisador|
+:Checklist de Conferência;
+
+partition "Itens do Checklist" {
+  :✓ Anexo A Assinado Presente;
+  :✓ Anexo B Completo Presente;
+  :✓ Anexo C Memorial Presente;
+  :✓ Anexo F Qualificação Presente;
+  :✓ Formulário Preenchido;
+  :✓ Arquivos em PDF;
+}
+
+||Sistema de Gestão|
+if (Todos os Itens Presentes?) then (Não)
+  |Inventor/Pesquisador|
+  :Completar Itens Faltantes;
+  repeat
+    :Checklist de Conferência;
+  repeat while (Todos os Itens Presentes?) is (Não) not (Sim)
+endif
+
+||Inventor/Pesquisador|
+:Validação Legal;
+
+partition "Itens de Validação Legal" {
+  :Verificar Assinaturas Digitais;
+  :Verificar SisGen (se aplicável);
+  :Verificar Prazo 12 Meses;
+}
+
+if (Validação Legal OK?) then (Não)
+  :Corrigir Problemas Legais;
+  repeat
+    :Validação Legal;
+  repeat while (Validação Legal OK?) is (Não) not (Sim)
+endif
+
+:Enviar para NIT\n(propegi.gerenciatransferetec@upe.br);
+
+||Sistema de Gestão|
+:Gerar Protocolo;
+
+if (Protocolo Gerado?) then (Não)
+  |Inventor/Pesquisador|
+  :Reenviar Submissão;
+  repeat
+    :Enviar para NIT;
+  repeat while (Protocolo Gerado?) is (Não) not (Sim)
+endif
+
+||Sistema de Gestão|
+:Enviar E-mail de Confirmação Automático;
+
+||Inventor/Pesquisador|
+:Fase 2 Completa\nAguardando Análise do NIT;
+
+stop
+
+@enduml
