@@ -47,7 +47,7 @@ jobs:
           touch web-app/out/.nojekyll
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Caminho da pasta gerada pelo Next.js (next.config.js define distDir como 'out')
