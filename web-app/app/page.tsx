@@ -55,6 +55,12 @@ export default function HomePage() {
             </div>
             <nav className="flex space-x-4">
               <button
+                onClick={() => router.push('/pedidos')}
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+              >
+                Meus Pedidos
+              </button>
+              <button
                 onClick={() => router.push('/anexos')}
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
               >
