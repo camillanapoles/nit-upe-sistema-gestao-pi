@@ -1,0 +1,167 @@
+Este é o Gabarito Mestre para Software (Invenções Implementadas por Computador).
+A lógica aqui muda drasticamente. Enquanto na biotecnologia descrevemos reações químicas,
+no software descrevemos Fluxo de Dados, Lógica Algorítmica e Efeito Técnico (velocidade,
+segurança, economia de recursos).
+Seguindo o padrão anterior, aqui estão os dois documentos para o seu Manual: o Exemplo
+Perfeito e o Parecer do Avaliador.
+
+📂
+DOCUMENTO 1: O PEDIDO DE
+PATENTE DE SOFTWARE (Exemplo de
+Referência)
+Projeto Fictício: Neuro-Scan (Processamento de Imagens Médicas) Status: Pronto para
+Protocolo (CII).
+
+1. TÍTULO
+MÉTODO DE PROCESSAMENTO DE IMAGENS DIGITAIS PARA DETECÇÃO DE
+PADRÕES, SISTEMA E MÍDIA LEGÍVEL POR COMPUTADOR
+
+2. RESUMO
+A presente invenção refere-se a um método computacional para otimização do processamento
+de imagens de alta resolução, pertencente ao campo da Tecnologia da Informação aplicada à
+Saúde. A invenção soluciona o problema técnico da alta latência e consumo de memória RAM
+durante a análise de tomografias computadorizadas. A solução utiliza um algoritmo de
+segmentação dinâmica em blocos (tiling) seguido de processamento paralelo assimétrico. O
+resultado técnico é uma redução de 40% no tempo de processamento e 30% no uso de
+memória, permitindo diagnósticos em tempo real em dispositivos móveis.
+
+3. RELATÓRIO DESCRITIVO
+Campo da Invenção A invenção situa-se no campo do Processamento Digital de Sinais e
+Visão Computacional, especificamente em algoritmos de segmentação para imagens médicas
+(DICOM).
+Estado da Técnica Atualmente, sistemas de análise de imagens carregam o arquivo integral
+na memória (Full-Load). O documento US 10,123,456 descreve um método de compressão,
+mas que resulta em perda de qualidade (Lossy). Isso gera um problema técnico: a
+impossibilidade de rodar diagnósticos precisos em hardwares com pouca memória (como
+tablets em áreas remotas).
+Descrição Detalhada da Invenção (A "Lógica Técnica") Atenção: Não cole código-fonte
+aqui. Descreva a lógica.
+A solução compreende um método executado por processador configurado para realizar as
+seguintes etapas, conforme ilustrado no Fluxograma da Figura 1:
+1.​ Etapa 100 (Recebimento): O sistema recebe uma imagem bruta (RAW/DICOM) através
+
+da interface de entrada.
+2.​ Etapa 110 (Pré-Processamento/Tiling): Um módulo de segmentação divide a imagem
+matricial em sub-blocos de N x N pixels (ex: 64x64), calculando o histograma de cor de
+cada bloco individualmente.
+○​ Diferencial: Ao contrário do estado da técnica, blocos com variação de cor abaixo
+de um limiar (Threshold < 5%) são descartados da fila de processamento
+prioritário.
+3.​ Etapa 120 (Processamento Paralelo): Os blocos restantes são distribuídos em threads
+(fios de execução) distintas do processador, aplicando-se o filtro de convolução [Fórmula
+Matemática X].
+4.​ Etapa 130 (Reconstrução): Os dados processados são remontados em uma matriz
+vetorial leve, gerando o output de diagnóstico.
+Hardware/Sistema: A invenção pode ser implementada em um dispositivo compreendendo um
+processador (CPU/GPU), uma memória não-volátil armazenando as instruções e uma interface
+de exibição.
+Exemplo de Concretização (Prova de Conceito): Testes de desempenho (Benchmark)
+demonstraram que o processamento de uma imagem de 5GB, que levava 120 segundos no
+método tradicional, foi concluído em 72 segundos utilizando o método da invenção, sem perda
+de dados críticos.
+
+4. REIVINDICAÇÕES (O "Triunvirato" do Software)
+1. Método de processamento de imagens digitais, caracterizado por compreender as etapas
+de: a) Recebimento de um arquivo de imagem matricial; b) Segmentação da referida imagem
+em sub-blocos de dimensões N x N; c) Cálculo de histograma de cada sub-bloco e descarte
+daqueles com variância inferior a um limiar pré-definido; d) Processamento paralelo dos
+sub-blocos remanescentes aplicando filtro de convolução; e e) Reconstrução dos dados em
+matriz vetorial.
+2. Sistema de processamento de imagens, caracterizado por compreender: Um processador;
+e Uma memória acoplada ao processador contendo instruções que, quando executadas,
+configuram o processador para realizar as etapas do método definido na reivindicação 1.
+3. Mídia legível por computador não transitória, caracterizada por armazenar instruções de
+programa que, quando executadas por um processador, realizam o método definido na
+reivindicação 1.
+
+📂
+DOCUMENTO 2: O PARECER
+TÉCNICO (Modelo para o Avaliador UPE)
+PARA: NIT - UPE REFERÊNCIA: Pedido de Patente "Neuro-Scan" (Software) AVALIADOR:
+Comissão de Propriedade Intelectual
+
+📊 RELATÓRIO DE ANÁLISE DE SOFTWARE (CII)
+1. FILTRO INICIAL (O que NÃO é Patente)
+
+Este é o ponto crítico para software.
+Pergunta Chave
+Resposta
+É apenas código-fonte?
+NÃO
+É uma regra de
+NÃO
+negócio/financeira?
+É apenas uma interface bonita NÃO
+(GUI)?
+Há um "Efeito Técnico" claro? SIM
+
+✅
+✅
+✅
+✅
+
+Conclusão
+Passou (Descreve
+método/lógica).
+Passou (Resolve problema
+de memória/latência).
+Passou (Foca no
+backend/processamento).
+Redução de uso de
+CPU/Memória.
+
+2. CHECKLIST DE FORMATAÇÃO
+Critério
+Figuras
+
+Linguagem
+Categorias
+
+✅
+
+Status
+OK
+
+✅ OK
+✅ OK
+
+Observação
+Apresenta fluxogramas
+(diagrama de blocos). Não
+contém prints de tela.
+Texto agnóstico (não se limita a
+Java ou Python).
+Reivindica Método, Sistema e
+Mídia (Padrão INPI).
+
+3. ANÁLISE DE MÉRITO
+A. Novidade e Atividade Inventiva: A técnica de "descartar blocos vazios antes de processar"
+(Etapa 110c) não foi encontrada em documentos anteriores de processamento DICOM. Isso
+confere atividade inventiva pois economiza recursos computacionais de forma não óbvia.
+B. Suficiência Descritiva: O relatório descreve a lógica matemática e o fluxo de dados. Um
+programador experiente conseguiria reescrever o código em qualquer linguagem (C++, Python)
+lendo apenas este descritivo.
+
+4. RECOMENDAÇÃO AO INVENTOR (Feedback Educativo)
+"O pedido está excelente. O inventor descreveu a 'receita do bolo' (o algoritmo) e não apenas o
+'sabor do bolo' (o resultado visual). A ausência de trechos de código-fonte na descrição garante
+que a patente proteja a lógica, impedindo que concorrentes copiem o sistema apenas mudando
+a linguagem de programação."
+
+5. CONCLUSÃO FINAL
+( X ) APROVADO para depósito como Patente de Invenção (CII). ( ) RECOMENDADO PARA
+REGISTRO DE SOFTWARE (Se não houvesse efeito técnico). ( ) REJEITADO.
+
+💡 Nota Estratégica para o Site
+⚠️
+
+Ao disponibilizar este modelo de software, adicione um Aviso em Destaque:
+Atenção Desenvolvedores: Para patente, NUNCA inclua prints de tela da interface do
+usuário (botões, cores, menus). O INPI protege como funciona por dentro (o motor), não
+como se parece por fora (a lataria). Para proteger o visual, use o Registro de Desenho
+
+Industrial (DI). Para proteger o código exato, use o Registro de Programa de Computador
+(RPC).
+Deseja que eu gere o texto para essa "Caixa de Aviso" formatado para HTML/Web?
+
+

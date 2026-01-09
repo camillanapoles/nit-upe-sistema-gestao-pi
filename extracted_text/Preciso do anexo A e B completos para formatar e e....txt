@@ -1,0 +1,217 @@
+Aqui estão os 4 anexos essenciais (A, B, C e F) estruturados, calibrados com limites de
+caracteres e formatados para Alta Performance.
+Eles foram desenhados para serem copiados e colados em editores de texto (Word/Google
+Docs) e servirem como o "Golden Kit" de entrada.
+
+📂
+KIT DE PRÉ-QUALIFICAÇÃO DE
+INVENÇÃO (NIT/UPE)
+
+Instrução Geral: O preenchimento completo e rigoroso destes anexos é requisito obrigatório
+para abertura do processo de proteção.
+
+📄
+ANEXO A: Relatório de Busca de Anterioridade
+(Filtro de Novidade)
+Este documento comprova que sua invenção não é uma "reinvenção da roda".
+
+1.
+
+🔍 Estratégia de Busca
+
+Bases Consultadas (Obrigatório checar pelo menos 3): [ ] INPI (Brasil) [ ] Espacenet
+(Global) [ ] Google Patents [ ] PubMed/Scopus
+Palavras-Chave Utilizadas: Liste as combinações (Strings de busca) em Português e Inglês.
+Resposta: _____________________________________________
+
+2.
+
+⚔️ Análise Comparativa (Top 3 Documentos)
+
+Selecione os 3 documentos mais parecidos com o seu. Se não encontrou nada, refine a busca.
+
+Documento 01 (O mais similar)
+●​ Título/Número: _________________________________
+●​ Resumo do Funcionamento:
+○​ Como a tecnologia citada funciona?
+○​
+Limite: 20 a 50 palavras.
+○​ Sua resposta: _________________________________
+●​
+O Diferencial Técnico (Passo Inventivo):
+○​ Por que sua invenção é superior? Não use marketing, use dados técnicos (ex:
+estrutura diferente, etapa a menos, material novo).
+○​
+Limite: 200 a 500 caracteres.
+○​ Sua resposta: _________________________________
+
+🚨
+
+📏
+📏
+
+Documento 02
+●​ Título/Número: _________________________________
+●​ Resumo do Funcionamento (20-50 palavras):
+_________________________________
+
+●​
+
+🚨
+O Diferencial Técnico (200-500 caracteres):
+_________________________________
+
+Documento 03
+●​ Título/Número: _________________________________
+●​ Resumo do Funcionamento (20-50 palavras):
+_________________________________
+●​
+O Diferencial Técnico (200-500 caracteres):
+_________________________________
+
+🚨
+
+3.
+
+🎯 A Lacuna Técnica (Gap)
+📏
+
+Qual falha específica os documentos acima têm em comum que sua invenção resolve?
+●​
+Limite: 150 a 400 caracteres.
+Sua resposta: _____________________________________________
+
+📄
+ANEXO B: Matriz de Problema vs. Solução
+(Viabilidade)
+
+Este documento vende o valor da sua tecnologia para o mercado, SUS ou Indústria.
+
+1.
+
+😫 O Problema (A Dor)
+
+Quem sofre com o problema? ( ) Paciente ( ) Profissional ( ) Indústria ( ) Governo Descrição
+do Cenário Atual: Descreva as consequências negativas de NÃO ter sua invenção (custo alto,
+dor, morte, poluição, demora).
+●​
+Limite: 50 a 100 palavras.
+Sua resposta: ________________________________________
+
+📏
+
+2.
+
+💊 A Solução (Proposta de Valor)
+
+Pitch de Elevador (Modelo Obrigatório): Complete: "Para [Público Alvo] que está insatisfeito
+com [Solução Atual], o meu produto é um [Categoria] que [Benefício Principal]. Diferente de
+[Concorrente], nós [Diferencial Chave]."
+●​
+Limite: Máximo 280 caracteres.
+Sua resposta: ________________________________________
+
+📏
+
+3.
+
+📊 KPIs (Indicadores de Sucesso)
+
+Preencha pelo menos uma linha comparando o cenário "Sem Invenção" vs "Com Invenção".
+Indicador
+Situação Atual (Hoje) Situação Projetada
+% Melhoria
+(Com sua Invenção)
+Custo (R$)
+Tempo
+Eficácia
+
+Indicador
+
+Situação Atual (Hoje)
+
+Situação Projetada
+(Com sua Invenção)
+
+% Melhoria
+
+📄
+ANEXO C: Memorial Descritivo Estruturado
+(Rascunho Técnico)
+Segurança
+
+Este é a base para a redação da patente. Seja técnico, direto e detalhista.
+
+1. Título da Invenção
+Curto, preciso e sem nomes fantasia. (Máx 70 caracteres).
+Ex: "Dispositivo cateter com ponta guiada por ultrassom"
+
+2. Campo da Invenção
+Uma frase descrevendo a área técnica.
+Ex: "A presente invenção refere-se a equipamentos médicos, especificamente instrumentos
+cirúrgicos minimamente invasivos..."
+
+3. Estado da Técnica (O Passado)
+Descreva detalhadamente como o problema é resolvido hoje e quais as limitações técnicas
+dessas soluções (cite os documentos do Anexo A).
+
+4. Sumário da Invenção (O Resumo)
+Descreva O QUE É a invenção e QUAIS seus objetivos principais.
+
+5. Descrição Detalhada da Invenção (O Core)
+Aqui é o coração da patente. Não economize detalhes.
+●​ Componentes: Liste todas as partes (se for produto) ou etapas (se for processo).
+●​ Conexões: Como as partes interagem entre si?
+●​ Funcionamento: O que acontece quando o usuário liga/usa?
+●​ Referências: Cite as figuras (Ex: "conforme visto na Figura 1...").
+
+6. Exemplo de Concretização (Best Mode)
+Descreva um exemplo prático de uso/fabricação da invenção.
+Ex: "Em um teste realizado, o dispositivo foi construído utilizando polímero X e aplicado em..."
+
+📄
+ANEXO F: Qualificação e Acordo de Cotitularidade
+(Jurídico)
+
+Define "quem é dono do que". Previne conflitos futuros.
+
+1. Declaração de Inventores
+ATENÇÃO: Inventor é quem contribuiu intelectualmente para a concepção da ideia.
+Executores de tarefas braçais (fazer testes de rotina, digitar textos) NÃO são inventores
+segundo a Lei 9.279/96.
+Nome
+CPF
+Vínculo
+Link Lattes
+% Participação Assinatura
+Completo
+(Prof/Aluno/Ext
+erno)
+1. (Líder)
+%
+2.
+%
+3.
+%
+4.
+%
+TOTAL
+100%
+
+2. Vínculo e Financiamento (Rastreabilidade)
+( ) Houve uso de laboratórios/equipamentos da Universidade? ( ) Houve financiamento público
+(FACEPE, CNPq, CAPES)? Se sim, qual edital/processo? _____________________
+
+3. Termo de Concordância
+Ao assinar acima, declaramos que os percentuais de participação refletem a contribuição
+criativa de cada membro e autorizamos o NIT a prosseguir com os trâmites de proteção,
+estando cientes das políticas de inovação da Instituição.
+
+💡 Dica de Implementação (UX para o Gestor)
+
+Para aplicar isso com Alta Performance, não envie 4 arquivos soltos. Crie um PDF Único
+Editável ou um formulário online (Google Forms/Microsoft Forms) dividido em seções, onde o
+inventor não consegue avançar para a Seção C sem ter preenchido a Seção A.
+Isso é o Poka-Yoke (prova de erros) na prática administrativa.
+
+

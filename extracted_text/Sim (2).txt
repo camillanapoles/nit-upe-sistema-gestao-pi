@@ -1,0 +1,140 @@
+Aqui está o seu Dossiê Completo de Reestruturação de PI.
+Organizei todo o material desenvolvido em seções lógicas, pronto para ser impresso, arquivado
+ou transformado em PDF para distribuição oficial.
+
+📂 DOSSIÊ ESTRATÉGICO:
+
+Reestruturação de Processos de Propriedade
+Intelectual & Inovação (UPE)
+Data: 27 de Dezembro de 2025 Objetivo: Elevar o padrão de redação de patentes, reduzir
+riscos de indeferimento pelo INPI e aumentar o valor comercial dos ativos tecnológicos da
+Universidade.
+
+📑 ÍNDICE DO DOSSIÊ
+
+1.​ Templates de Alta Performance (Novos padrões de redação)
+2.​ Checklist de Sanidade Técnica (Filtro de pré-validação)
+3.​ Guia Mestre de Referência (Material educativo)
+4.​ Modelo de E-mail para o Inventor (Comunicação direta)
+5.​ Memorando para a Comissão de PI (Proposta institucional)
+6.​ Wireframe do Portal do Inventor (Conteúdo para o site)
+
+1. TEMPLATES DE ALTA PERFORMANCE
+Estruturas blindadas para eliminar subjetividade.
+
+A. Reivindicação de Processo (O "Como")
+1. Processo de obtenção de [PRODUTO FINAL], caracterizado por compreender as
+seguintes etapas sequenciais: a) Inoculação de [AGENTE BIOLÓGICO/QUÍMICO] consistindo
+nas espécies [INSERIR NOME CIENTÍFICO] em substrato contendo [CITAR COMPONENTE
+CHAVE]; b) Cultivo/Reação sob temperatura controlada entre [X] e [Y] °C, por um período de
+[X] a [Y] horas/dias; c) Extração/Isolamento utilizando solvente [TIPO] na proporção de [X:Y],
+seguida de [MÉTODO DE SEPARAÇÃO].
+
+B. Reivindicação de Produto (O "O Quê")
+2. Extrato/Produto [NOME], caracterizado por ser obtido pelo processo definido na
+reivindicação 1 e por compreender uma concentração de [MARCADOR QUÍMICO] entre [X]
+mg/L e [Y] mg/L, apresentando-se na forma física de [SÓLIDO/LÍQUIDO/GEL].
+
+C. Reivindicação de Uso (A "Aplicação")
+3. Uso do [PRODUTO], definido na reivindicação 2, caracterizado por ser na preparação de
+uma composição farmacêutica/industrial para [TRATAMENTO DE DOENÇA X / APLICAÇÃO
+
+Y].
+
+2. CHECKLIST DE SANIDADE TÉCNICA
+Formulário obrigatório para o inventor preencher antes da redação.
+Instrução: Preencha com dados brutos do caderno de laboratório. Termos como "otimizado"
+são proibidos.
+●​ [ ] Identificação do Agente: Qual a taxonomia exata (Gênero/Espécie) ou fórmula
+química completa?
+●​ [ ] Parâmetros de Temperatura: Qual a faixa operacional exata? (Mín: __°C / Máx:
+__°C).
+●​ [ ] Parâmetros de Tempo: Qual a duração do processo? (Mín: __ h / Máx: __ h).
+●​ [ ] Parâmetros de Solvente/Meio: Qual a composição e proporção exata? (Ex: Etanol
+70%, Proporção 1:10).
+●​ [ ] Caracterização do Produto: Qual o marcador químico principal e sua concentração
+final?
+●​ [ ] Definição de Uso: Qual a aplicação específica? (Ex: "Tratamento de infecções por S.
+aureus", não apenas "Antibiótico").
+
+3. GUIA MESTRE DE REFERÊNCIA (Exemplo
+Educativo)
+Comparativo "Certo vs. Errado" para orientar os pesquisadores.
+Cenário Fictício: Projeto Bio-CicatriX
+O QUE O INPI REJEITA (Vago)
+O QUE O INPI APROVA (Blindado)
+"Usamos uma planta medicinal."
+"Usamos cascas de Mimosa tenuiflora (SisGen
+nº XXX)."
+"Aquecemos até otimizar."
+"Aquecemos a uma temperatura de 45°C a
+50°C."
+"O extrato ficou concentrado."
+"O extrato possui Teor de Taninos > 15%."
+"Serve para curar feridas."
+"Uso na preparação de curativo para úlceras
+venosas."
+
+4. MODELO DE COMUNICAÇÃO (E-MAIL PARA
+INVENTOR)
+
+🛡️
+
+Texto padrão para envio do kit de correção.
+Assunto:
+Ação Necessária: Blindagem Técnica da Patente [Nome do Projeto]
+Prezado(a) Pesquisador(a),
+Para garantir a proteção robusta da sua invenção e evitar indeferimento pelo INPI,
+identificamos a necessidade de substituir termos qualitativos (ex: "otimizado") por dados
+técnicos quantitativos na minuta da patente.
+Anexo a este e-mail, você encontrará o Kit de Estruturação de Patentes UPE:
+1.​ Templates de Alta Performance (Modelos de redação).
+2.​ Checklist de Sanidade Técnica (Para levantamento de dados).
+3.​ Guia de Exemplos (Referência prática).
+
+Por favor, preencha o Checklist com os parâmetros exatos do seu experimento e nos retorne
+até [DATA].
+Atenciosamente, Comissão de Propriedade Intelectual
+
+5. MEMORANDO PARA A COMISSÃO (PROPOSTA)
+Justificativa estratégica para a mudança.
+PARA: Comissão de PI / NIT - UPE ASSUNTO: Implementação do "Toolkit de Alta
+Performance" para Redação de Patentes
+Prezados,
+Proponho a adoção imediata de novos padrões de orientação para inventores. O diagnóstico
+atual aponta "Fragilidade Descritiva" (uso de termos subjetivos) como principal risco aos nossos
+ativos.
+A solução consiste num kit de três ferramentas (Templates, Checklist, Guia) que atua como
+filtro de qualidade antes da submissão, garantindo conformidade com o Art. 25 da LPI e
+facilitando a defesa comercial das tecnologias. A implementação inclui a atualização da seção
+de PI no portal da universidade.
+
+6. MOCKUP DO PORTAL DO INVENTOR (SITE)
+
+🚀
+
+Estrutura de conteúdo para a página web.
+Título:
+Portal do Inventor UPE Subtítulo: Transformando Ciência em Patrimônio Industrial
+Passo 1: Diagnóstico
+Antes de escrever, valide seus dados. [Botão: Baixar Checklist de
+Sanidade Técnica]
+Passo 2: Guia de Linguagem
+Aprenda a linguagem do INPI. [Botão: Baixar Guia Mestre
+"Do Laboratório para a Lei"]
+Passo 3: Redação Estratégica
+Use modelos aprovados. [Botão: Baixar Template de
+Reivindicações]
+FAQ Rápido:
+●​ "Por que não posso usar 'otimizado'?" -> Porque o INPI exige parâmetros numéricos, não
+adjetivos.
+●​ "O que acontece se eu não definir faixas?" -> Risco de cópia por concorrentes e
+indeferimento.
+Fim do Dossiê.
+
+🛑
+
+📚
+✍️
+
+

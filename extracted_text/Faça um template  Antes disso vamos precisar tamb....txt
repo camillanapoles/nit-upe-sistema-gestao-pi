@@ -1,0 +1,130 @@
+Olá, Maria Regina. Com certeza. Para que a Comissão de PI atue com Alta Performance, o
+parecer não pode ser apenas um documento burocrático de "Sim" ou "Não". Ele precisa ser
+uma Ferramenta de Diagnóstico e Correção.
+O modelo anterior era passivo. O novo modelo que desenhei abaixo é ativo e educativo. Ele
+funciona como um checklist guiado que impede que a própria comissão deixe passar erros
+básicos (como aceitar um "Processo" como "Modelo de Utilidade", o erro crítico do exemplo
+que você enviou).
+Este template utiliza a lógica de Semaforização (RAG - Red, Amber, Green) para facilitar a
+leitura rápida e a tomada de decisão.
+
+📝
+TEMPLATE: PARECER TÉCNICO DE VIABILIDADE E
+ENQUADRAMENTO
+Comissão de Propriedade Intelectual – NIT/UPE
+1. IDENTIFICAÇÃO DO PROJETO
+Título do Pedido: [Inserir Título]
+Inventor Principal: [Nome]
+Data de Recebimento: __/__/____
+
+2. CHECKLIST DE ADMISSIBILIDADE (Fase Eliminatória)
+Se houver "NÃO" em qualquer item desta seção, o parecer é suspenso imediatamente para
+saneamento.
+Item Avaliado
+Status
+Análise / Obs.
+2.1 Documentação: O
+( ) OK ( ) ERRO
+[Comentar]
+formulário está assinado por
+TODOS os inventores
+(inclusive alunos/externos)?
+2.2 Anterioridade: As tabelas ( ) OK ( ) ERRO
+[Comentar]
+de busca em bancos de
+patentes foram preenchidas
+corretamente?
+2.3 SisGen: Há número de
+( ) OK ( ) N/A
+[Se usou planta/fungo e não
+cadastro SisGen informado
+tem SisGen, travar]
+(para uso de biodiversidade
+brasileira)?
+
+3. ANÁLISE ESTRATÉGICA (O "Coração" do Parecer)
+Aqui avaliamos a qualidade e a estratégia de proteção.
+3.1 ENQUADRAMENTO LEGAL (Natureza da Proteção) Atenção Relator: Processos,
+Protocolos, Métodos e Sistemas NÃO podem ser Modelo de Utilidade (MU). Apenas objetos
+físicos com nova forma são MU.
+●​ O pedido descreve: ( ) Um Objeto/Dispositivo ( ) Um Processo/Método ( ) Uma
+Composição Química
+●​ A natureza solicitada no formulário é: ( ) Invenção (PI) ( ) Modelo de Utilidade (MU)
+●​ VEREDITO DO ENQUADRAMENTO:
+○​ ( ) Correto (Natureza compatível com o objeto).
+○​ ( ) INCORRETO (Ex: Pediu MU para um Processo). Ação: Exigir reclassificação
+
+para Patente de Invenção.
+3.2 MATÉRIA REIVINDICADA (Art. 10 e 18 da LPI)
+●​ Há reivindicação de seres vivos naturais ou materiais biológicos encontrados na
+natureza?
+○​ ( ) Não.
+○​ ( ) Sim. Ação: Exigir remoção/reescrita. O INPI veda patente de "o que Deus criou".
+Deve-se reivindicar o PROCESSO de obtenção ou a COMPOSIÇÃO modificada.
+3.3 NOVIDADE E PERÍODO DE GRAÇA
+●​ Houve publicação de artigo/resumo sobre este tema nos últimos 12 meses?
+○​ ( ) Não detectado.
+○​ ( ) Sim. O inventor anexou o artigo e solicitou o Art. 12 (Período de Graça) no
+formulário?
+■​ ( ) Sim, está protegido.
+■​ ( ) Não (RISCO CRÍTICO). Ação: Exigir anexo imediato e menção no
+formulário, sob pena de indeferimento por falta de novidade.
+
+4. CONCLUSÃO DA COMISSÃO (Parecer Final)
+
+🟢
+🟡
+🔴
+
+O pedido encontra-se:
+()
+APTO PARA DEPÓSITO A documentação está perfeita. O NIT pode protocolar amanhã.
+()
+APTO COM RESSALVAS (PENDENTE DE AJUSTES) O conteúdo é bom, mas exige
+correções obrigatórias antes do depósito. (Preencher Plano de Ação abaixo).
+()
+INAPTO / DEVOLVIDO A tecnologia não é patenteável (ex: é apenas uma ideia abstrata,
+uma descoberta científica sem aplicação, ou já existe idêntico).
+
+5. PLANO DE AÇÃO PARA O INVENTOR (Obrigatório se "Ressalvas")
+Instrução ao Relator: Seja prescritivo. Diga o erro e a solução exata.
+#
+TIPO DE ERRO
+AÇÃO CORRETIVA EXIGIDA
+(O que o inventor deve fazer)
+1
+Ex: Classificação
+Alterar no Formulário (Item 2.2)
+de "Modelo de Utilidade" para
+"Patente de Invenção", pois
+trata-se de um protocolo.
+2
+Ex: Reivindicação
+Reescrever a Reivindicação 02.
+Não reivindicar o "extrato de
+aroeira" (natural), mas sim o
+"Processo de obtenção do
+extrato".
+3
+Ex: Sigilo
+Anexar o PDF do artigo
+publicado em 30/09 para
+garantir o Período de Graça.
+Recife, __ de ________ de 20__.
+Assinatura do Relator - Comissão de PI / NIT-UPE
+
+💡 Por que este template gera Alta Performance?
+
+1.​ Bloqueio de Erro Crítico (Poka-Yoke): A seção 3.1 obriga o avaliador a checar
+"Processo vs. MU". Isso resolve o problema que vimos no exemplo do PDF (Schinus),
+onde um protocolo foi classificado erroneamente.
+2.​ Educação Contínua: As notas em itálico ("Atenção Relator...") treinam os membros da
+comissão enquanto eles trabalham.
+3.​ Feedback Acionável: A Tabela 5 (Plano de Ação) elimina e-mails vagos. O pesquisador
+recebe uma "lista de compras" do que consertar, reduzindo o tempo de resposta.
+Próximo Passo: Para fechar o ciclo de governança, sugiro que eu crie a "Minuta de E-mail de
+Devolução". Quando o parecer for "Amarelo" (Com Ressalvas), o NIT enviará este e-mail
+padrão já com o Plano de Ação colado, explicando de forma empática mas firme que o prazo
+para correção é de X dias. Deseja que eu redija esta minuta?
+
+

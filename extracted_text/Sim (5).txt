@@ -1,0 +1,77 @@
+Aqui está o Briefing Visual (Roteiro para o Designer).
+Você pode entregar este texto diretamente para a equipe de comunicação ou design da UPE.
+Ele descreve exatemente o que deve aparecer na imagem para que não haja dúvidas.
+
+🎨
+Briefing de Design: Comparativo
+"Certo x Errado" para Patentes
+
+Local de uso: Site da UPE (Portal do Inventor) e Manuais em PDF. Objetivo: Mostrar
+visualmente o que o INPI aceita e o que ele rejeita.
+
+CENA 1: SOFTWARE E PROCESSOS (O Fluxograma)
+
+❌ LADO ESQUERDO (O Errado)
+
+●​ Título: "REJEITADO (Print de Tela)"
+●​ Visual: Uma imagem simulando um screenshot de um software ou aplicativo.
+○​ Fundo escuro (Dark mode) ou colorido.
+○​ Texto pequeno, pixelado ou difícil de ler.
+○​ Botões com sombras e degradês.
+○​ Trechos de código-fonte visíveis.
+●​ Marcação: Um "X" vermelho grande sobre a imagem.
+●​ Legenda do erro: "Fundo colorido, texto ilegível e interface de usuário."
+
+✅ LADO DIREITO (O Certo)
+
+●​ Título: "APROVADO (Fluxograma Técnico)"
+●​ Visual: Um diagrama de blocos limpo em fundo 100% branco.
+○​ Caixas geométricas (Retângulos e Losangos) com contorno preto sólido.
+○​ Setas pretas indicando o fluxo.
+○​ Texto interno em Arial (Preto), caixa alta, fácil de ler.
+○​ Detalhe crucial: Cada caixa tem um número pequeno fora dela (Ex: 100, 110,
+120).
+●​ Marcação: Um "Check" (✔) verde grande.
+●​ Legenda do acerto: "Traço preto puro, fundo branco, etapas numeradas e lógica clara."
+
+CENA 2: PRODUTOS E DISPOSITIVOS (O Desenho
+Técnico)
+
+❌ LADO ESQUERDO (O Errado)
+
+●​ Título: "REJEITADO (Foto ou 3D)"
+●​ Visual: Uma foto de um protótipo em cima de uma mesa ou um Render 3D colorido.
+○​ Presença de sombras e reflexos.
+○​ Cores realistas (metal, plástico azul).
+
+○​ Legendas escritas com setas (Ex: uma seta apontando escrita "Parafuso").
+●​ Marcação: Um "X" vermelho grande.
+●​ Legenda do erro: "Uso de fotos, sombras, cores e textos descritivos na imagem."
+
+✅ LADO DIREITO (O Certo)
+
+●​ Título: "APROVADO (Desenho Linear)"
+●​ Visual: O mesmo objeto, mas desenhado apenas com linhas pretas finas (estilo
+"wireframe" ou patente antiga).
+○​ Sem preenchimento (o interior é branco).
+○​ Sem sombras.
+○​ Em vez de escrever "Parafuso", há apenas uma linha puxada com o número (12)
+na ponta.
+●​ Marcação: Um "Check" (✔) verde grande.
+●​ Legenda do acerto: "Apenas linhas (sem preenchimento), referências numéricas e alta
+reprodutibilidade."
+
+📝 Texto de Apoio (Para colocar abaixo da imagem no site)
+
+Regra de Ouro da Imagem: "Se você tirar uma xerox preto e branco da sua imagem e ela ficar
+escura, manchada ou ilegível, o INPI vai rejeitar. Mantenha simples: Preto no Branco."
+
+💡 Próximo Passo
+
+Com isso, você tem o pacote completo: Texto (Templates) + Lógica (Checklists) + Visual
+(Guias de Desenho).
+Seu "Sistema de Defesa de PI" está pronto para ser implementado. Deseja que eu faça uma
+lista de verificação final de implantação (um passo a passo do que fazer na segunda-feira
+de manhã) para colocar tudo isso no ar?
+
+

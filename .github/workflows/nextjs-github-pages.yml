@@ -1,0 +1,85 @@
+name: Next.js MVP to GitHub Pages
+
+# =============================================================================
+# WORKFLOW: Deploy Next.js MVP estático para GitHub Pages
+#
+# Branch Strategy:
+#   - main/master:      Branch principal com API/Prisma (desenvolvimento completo)
+#   - pages-mvp:        Branch específica para GitHub Pages (apenas estático)
+#
+# Trigger: Push para branch 'pages-mvp'
+# Deploy:  Cria/atualiza branch 'gh-pages' com arquivos estáticos
+# =============================================================================
+
+on:
+  push:
+    branches:
+      - pages-mvp
+    paths:
+      - 'web-app/**'
+      - '.github/workflows/nextjs-github-pages.yml'
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-static:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: web-app/package-lock.json
+
+      - name: 🔧 Install dependencies
+        run: |
+          cd web-app
+          npm ci
+
+      - name: 🏗️ Build Static Export
+        run: |
+          cd web-app
+          npm run build
+        env:
+          NEXT_PUBLIC_GIT_COMMIT_SHA: ${{ github.sha }}
+          NEXT_PUBLIC_GIT_REF: ${{ github.ref_name }}
+
+      - name: 📄 Add .nojekyll
+        run: |
+          touch web-app/out/.nojekyll
+          echo 'gitHub Pages Mock System' > web-app/out/CNAME.bak
+
+      - name: 🚀 Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web-app/out
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy MVP ${{ github.sha }}'
+
+      - name: 📊 Summary
+        run: |
+          echo "## 🚀 MVP Deploy Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Deploy Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Form | URL |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-----|" >> $GITHUB_STEP_SUMMARY
+          echo "| Home | \`/\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| PI/MU | \`/formulario-pi-mu\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| CII | \`/formulario-cii\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| RPC | \`/formulario-rpc\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Anexos | \`/anexos\` |" >> $GITHUB_STEP_SUMMARY

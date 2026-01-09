@@ -1,0 +1,87 @@
+Aqui está o Copywriting Estratégico para os e-mails de feedback automático.
+Desenvolvi estes textos aplicando princípios de UX Writing (clareza e empatia) e Gestão de
+Expectativas (transparência de processo). O tom é institucional, mas moderno, reforçando a
+marca do NIT-UPE como um hub de inovação de alta performance.
+Você pode configurar estes textos em ferramentas de automação do Google Forms (como o
+Autocrat ou Form Notifications).
+
+📧 OPÇÃO 1: PARA PEDIDOS DE PATENTE
+🚀
+
+Objetivo: Validar o recebimento e explicar que a "burocracia" agora virou "análise de mercado".
+Assunto:
+[NIT-UPE] Recebemos sua Inovação: {Título da Invenção} (Protocolo #{ID})
+Corpo do E-mail:
+Olá, {Nome do Inventor}.
+Confirmamos o recebimento seguro da sua solicitação de análise de patente.
+Gostaríamos de agradecer pelo preenchimento cuidadoso do formulário. Ao respeitar os
+critérios de síntese e foco em mercado, você acelerou a etapa de triagem técnica em cerca de
+30%. Isso permite que nossa equipe foque no que realmente importa: a estratégia de proteção
+e transferência da sua tecnologia.
+O que acontece agora? (SLA - Nível de Serviço) Sua submissão entrou no nosso fluxo de
+Análise de Viabilidade. O processo seguirá as seguintes etapas:
+1.​ Triagem Técnica e de Mercado: Avaliaremos o TRL, a busca de anterioridade que você
+enviou e o potencial comercial listado.
+2.​ Parecer de Viabilidade: A UPE emitirá um parecer oficial indicando se há interesse
+institucional na titularidade da patente.
+3.​ Depósito no INPI: Se o parecer for favorável, solicitaremos os ajustes finais no Relatório
+Descritivo para o depósito oficial.
+Prazo Estimado para Primeira Devolutiva: [Inserir Prazo, ex: 10 dias úteis]
+Lembrete Importante: Mantenha o sigilo da sua invenção. Não publique artigos ou
+resumos em congressos até receber nosso sinal verde, pois isso pode invalidar a novidade
+necessária para a patente.
+Estamos entusiasmados para conhecer o impacto que sua tecnologia trará para a sociedade.
+Atenciosamente,
+Equipe NIT-UPE Núcleo de Inovação Tecnológica Universidade de Pernambuco
+
+📋
+
+⏳
+⚠️
+
+📧 OPÇÃO 2: PARA REGISTRO DE SOFTWARE
+💾
+
+Objetivo: Confirmar a integridade do código (Hash) e a rapidez do processo.
+Assunto:
+[NIT-UPE] Registro de Software Iniciado: {Título do Programa} (Protocolo #{ID})
+Corpo do E-mail:
+Olá, {Nome do Autor}.
+Recebemos sua documentação para registro de Programa de Computador.
+Confirmamos também o recebimento do Código Hash informado no formulário. Isso garante a
+integridade digital da sua criação sem a necessidade de envio físico do código-fonte neste
+momento.
+Próximos Passos (Fast Track): Diferente de patentes, o registro de software é focado na
+formalização da autoria. Nossa equipe irá verificar:
+1.​ Conformidade Documental: Validação da Declaração de Autoria e Vínculos com a UPE.
+2.​ Classificação: Checagem das Linguagens e Campos de Aplicação (Anexos 01 e 02)
+
+🚀
+
+para o nosso Portfólio Tecnológico.
+3.​ Protocolo INPI: Estando tudo correto, prosseguiremos com o pedido de registro.
+Ação Necessária (Caso não tenha feito): Se você indicou que há cotitularidade com
+outra instituição, certifique-se de ter anexado a Procuração ou Termo de Cooperação. A falta
+deste documento é o principal motivo de pausas no processo.
+Qualquer dúvida técnica, responda a este e-mail mantendo o número do protocolo no assunto.
+Parabéns pela inovação.
+Atenciosamente,
+Equipe NIT-UPE Núcleo de Inovação Tecnológica Universidade de Pernambuco
+
+📝
+
+💡 Dica de Implementação (O "Pulo do Gato")
+
+Para que o {Nome do Inventor} e o {Título} apareçam automaticamente no e-mail:
+1.​ Instale o complemento Autocrat (gratuito) na Planilha Google (Google Sheets) vinculada
+ao seu formulário.
+2.​ Crie um "Job" novo no Autocrat.
+3.​ Cole os textos acima no template do e-mail.
+4.​ Onde está {Nome do Inventor}, você substituirá pela "Tag" da coluna da sua planilha (ex:
+<<Nome Completo>>).
+Próximo Passo: O sistema de coleta está pronto (Formulário Otimizado + E-mail de
+Feedback). Você gostaria que eu criasse agora a estrutura do Dashboard de Indicadores
+(KPIs) no papel (quais gráficos exatos montar) para você visualizar como esses dados se
+transformarão em relatórios de gestão para a reitoria?
+
+

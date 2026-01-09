@@ -1,0 +1,155 @@
+Este é o "Gabarito Mestre" (Gold Standard).
+Ele consiste em dois documentos distintos que devem ser usados em conjunto no treinamento
+da comunidade UPE:
+1.​ O Pedido de Patente Perfeito: Um exemplo fictício (Bio-CicatriX) preenchido com rigor
+técnico máximo.
+2.​ O Parecer do Avaliador (NIT): O relatório interno aprovando essa patente, mostrando o
+que foi avaliado.
+
+📂
+DOCUMENTO 1: O PEDIDO DE
+PATENTE (Exemplo de Referência)
+Projeto Fictício: Bio-CicatriX Status: Pronto para Protocolo no INPI.
+
+1. TÍTULO
+PROCESSO DE OBTENÇÃO DE EXTRATO PADRONIZADO DE Mimosa tenuiflora,
+COMPOSIÇÃO CICATRIZANTE E SEUS USOS
+
+2. RESUMO
+A presente invenção refere-se a um processo biotecnológico para obtenção de extratos da
+casca de Mimosa tenuiflora (Jurema Preta) enriquecidos em taninos e sua aplicação em uma
+composição hidrogel nanostruturada. O processo soluciona o problema da baixa estabilidade
+oxidativa dos extratos naturais através de uma etapa de microencapsulamento em quitosana. A
+invenção provê uma formulação com atividade cicatrizante acelerada para tratamento de
+queimaduras de 2º grau e úlceras venosas, sendo aplicável na indústria farmacêutica e
+veterinária.
+
+3. RELATÓRIO DESCRITIVO
+Campo da Invenção A presente invenção situa-se no campo da Biotecnologia Farmacêutica,
+especificamente referindo-se a formulações fitoterápicas tópicas para regeneração tecidual.
+Estado da Técnica Atualmente, o tratamento de feridas crônicas utiliza hidrogéis sintéticos ou
+pomadas à base de colagenase. Embora eficazes, estes produtos apresentam alto custo e
+baixa adesão em feridas exsudativas. O documento US 9,999,999 descreve o uso bruto da
+Jurema, porém falha em garantir a estabilidade dos compostos fenólicos, que se degradam em
+48h (oxidação). Existe a necessidade de um processo que estabilize o ativo por longos
+períodos.
+Descrição Detalhada da Invenção A solução proposta compreende um processo de extração
+e estabilização definido pelos seguintes parâmetros:
+A. Do Processo de Obtenção: O processo compreende as etapas sequenciais de:
+1.​ Coleta e Preparo: Utilização de cascas de tronco de Mimosa tenuiflora (SisGen nº
+A1B2C3D), secas em estufa com circulação de ar a uma temperatura entre 40°C e 45°C
+até atingir umidade residual inferior a 5%.
+2.​ Extração: Maceração dinâmica utilizando solvente Etanol 70% (v/v) na proporção
+planta:solvente de 1:10 (m/v), sob agitação constante de 150 a 200 rpm, por um período
+
+de 24 a 48 horas, ao abrigo da luz.
+3.​ Estabilização (Microencapsulamento): Adição do extrato seco a uma solução de
+quitosana a 1% (m/v) em ácido acético 0,1M, seguida de atomização (Spray Drying) com
+temperatura de entrada de 160°C a 180°C.
+Nota de Ensino: Veja que não usamos "secagem rápida" ou "agitação otimizada". Definimos
+graus, porcentagens e rotações.
+B. Da Composição (Produto Final): A composição farmacêutica resultante apresenta-se na
+forma de hidrogel, compreendendo:
+●​ Extrato microencapsulado de M. tenuiflora: 0,5% a 2,0% (m/m);
+●​ Polímero espessante (Carbopol 940): 1,0% a 1,5% (m/m);
+●​ Agente neutralizante (Trietanolamina): q.s. para pH 6,0 a 7,0;
+●​ Veículo aquoso: q.s.p 100%.
+Exemplo de Concretização (Prova de Conceito): Testes in vivo em modelos murinos (Tabela
+1) demonstraram que a formulação da invenção reduziu a área da lesão em 95% após 7 dias,
+comparado a 60% do controle (pomada comercial).
+
+💡
+
+4. REIVINDICAÇÕES (O "Coração" da Proteção)
+1. Processo de obtenção de extrato estabilizado, caracterizado por compreender as etapas
+de: a) Extração de cascas de Mimosa tenuiflora utilizando solvente hidroalcoólico a 70% (v/v)
+na proporção de 1:10 (m/v); b) Microencapsulamento do extrato obtido em matriz de quitosana
+via atomização, com temperatura de entrada de ar entre 160°C e 180°C.
+2. Composição cicatrizante, caracterizada por compreender de 0,5% a 2,0% em massa do
+extrato obtido pelo processo definido na reivindicação 1, disperso em base de hidrogel de
+polímero acrílico, apresentando pH final entre 6,0 e 7,0.
+3. Uso da composição, definida na reivindicação 2, caracterizado por ser na preparação de
+um medicamento para o tratamento de queimaduras de 2º grau e úlceras de decúbito.
+
+📂
+DOCUMENTO 2: O PARECER
+TÉCNICO (Modelo para o Avaliador UPE)
+PARA: Pró-Reitoria de Pós-Graduação e Pesquisa / NIT REFERÊNCIA: Pedido de Patente
+"Bio-CicatriX" AVALIADOR: Comissão de Propriedade Intelectual
+
+📊 RELATÓRIO DE ANÁLISE DE PATENTEABILIDADE
+
+1. CHECKLIST DE SANIDADE TÉCNICA (Critérios Eliminatórios)
+Critério
+Clareza (Art. 25 LPI)
+Suficiência (Art. 24 LPI)
+
+Taxonomia/Nomenclatura
+
+✅
+✅ OK
+Status
+OK
+
+✅ OK
+
+Observação do Avaliador
+Texto isento de termos
+subjetivos ("otimizado", "bom").
+As faixas de temperatura e
+concentrações permitem
+reprodução.
+Espécie M. tenuiflora citada
+
+Critério
+Reivindicações
+Desenhos/Gráficos
+
+Status
+
+✅ OK
+✅ OK
+
+Observação do Avaliador
+corretamente com SisGen.
+Estrutura hierárquica correta.
+Não há mistura de categorias.
+Gráficos em P&B, legíveis, sem
+fotos coloridas.
+
+2. ANÁLISE DE MÉRITO (Critérios de Invenção)
+A. Novidade: A busca de anterioridade não revelou documentos que antecipem o
+microencapsulamento específico desta planta nestas condições de temperatura.
+●​ Conclusão: Há novidade.
+B. Atividade Inventiva: Embora extratos de plantas sejam comuns, a combinação com a
+técnica de atomização para resolver o problema técnico da oxidação não é óbvia para um
+técnico no assunto.
+●​ Conclusão: Há atividade inventiva.
+C. Aplicação Industrial: O processo é escalonável e o produto tem mercado definido
+(farmacêutico).
+●​ Conclusão: Há aplicação industrial.
+
+3. COMENTÁRIOS E CORREÇÕES SOLICITADAS
+(Este campo estaria preenchido se houvesse erros. Como é o exemplo perfeito, usamos para
+elogio educativo).
+"O inventor seguiu corretamente o Template de Alta Performance. Destaca-se a definição
+precisa das faixas de temperatura de secagem (160-180°C), o que blinda a patente contra
+concorrentes que tentassem copiar o processo usando temperaturas similares. A reivindicação
+de USO está bem delimitada para a patologia específica."
+
+4. CONCLUSÃO FINAL
+( X ) APROVADO para depósito no INPI. ( ) APROVADO COM RESSALVAS (Devolver para
+ajustes). ( ) REJEITADO (Matéria não patenteável ou insuficiente).
+Data: 27/12/2025 Assinatura: __________________________ Comissão de PI da UPE
+
+💡 Como usar isso na prática?
+
+Minha sugestão é que você imprima estes dois documentos e os coloque no "Manual do
+Inventor" lado a lado.
+●​ Na página esquerda: O Pedido de Patente.
+●​ Na página direita: O Parecer do Avaliador sobre aquele pedido.
+Isso cria um efeito didático poderoso: o pesquisador lê a patente e imediatamente vê como ela
+será corrigida, entendendo a lógica por trás da exigência de cada dado.
+Deseja mais algum ajuste nesse fluxo de validação?
+
+

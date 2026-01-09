@@ -1,0 +1,178 @@
+Maria Regina, aqui está o Manual de Operações Unificado.
+Compilei todas as ferramentas que desenvolvemos nesta sessão em um único documento
+estruturado. Este arquivo serve como o "Cérebro do Novo NIT", padronizando a entrada
+(inventor), o processamento (fluxo) e a saída (parecer).
+Você pode copiar este conteúdo, colar em um documento Word/Google Docs, salvar como PDF
+e distribuir para sua equipe hoje mesmo.
+
+📘
+MANUAL DE OPERAÇÕES: ESTEIRA
+DE PATENTES DE ALTA PERFORMANCE
+Núcleo de Inovação Tecnológica – NIT/UPE Versão 1.0 – Foco em Eficiência e Segurança
+Jurídica
+
+🎯 OBJETIVO
+
+Padronizar o fluxo de solicitação de patentes, reduzindo o tempo de análise, eliminando o
+retrabalho técnico e garantindo a conformidade com a Lei da Propriedade Industrial (LPI
+9.279/96).
+
+MÓDULO 1: O KIT DO INVENTOR
+(Ferramentas para entregar ao pesquisador antes dele começar a escrever)
+
+1.1. O "Prompt Mestre" de Redação (Para IA)
+Instrução: O pesquisador deve colar este texto no ChatGPT/Gemini para gerar os campos
+descritivos do formulário.
+ATUE COMO: Especialista Sênior em Propriedade Intelectual do INPI.​
+CONTEXTO: Estou preenchendo o formulário de depósito de patente do
+NIT-UPE.​
+TAREFA: Com base no resumo do meu artigo (colado abaixo), escreva as
+respostas técnicas para:​
+​
+CAMPO 2.10 (DESCRIÇÃO): Comece com "A presente invenção refere-se
+a...". Descreva O QUE É a tecnologia e onde se aplica.​
+CAMPO 2.11 (ESTADO DA TÉCNICA): Descreva como o problema é resolvido
+HOJE, sem minha invenção (foco nas limitações atuais).​
+CAMPO 2.12 (VANTAGENS): Liste as métricas de melhoria (ex: maior
+rendimento, menor custo) em comparação ao estado da técnica.​
+​
+MEU RESUMO: [COLAR AQUI]​
+
+1.2. Modelo de Quadro Reivindicatório (Preencha as Lacunas)
+
+Instrução: Escolha o modelo adequado à invenção.
+TIPO A: PROCESSO/PROTOCOLO (Ex: Extração, Cultivo, Síntese) 1. PROCESSO DE
+[AÇÃO], compreendendo as etapas de [etapas comuns], CARACTERIZADO POR
+compreender as etapas específicas de: a) [detalhe técnico]; b) [detalhe técnico].
+TIPO B: PRODUTO/DISPOSITIVO (Ex: Máquina, formulação sintética) 1. [NOME DO
+PRODUTO] compreendendo [componentes comuns], CARACTERIZADO POR compreender
+[Componente Inovador X] disposto em [configuração Y].
+
+1.3. Checklist de "Sanity Check" (Obrigatório antes do envio)
+●​
+●​
+●​
+●​
+●​
+
+[ ] Assinaturas: Todos os inventores assinaram digitalmente?
+[ ] Natureza: Se é PROCESSO, marcou "Invenção" (e não Modelo de Utilidade)?
+[ ] Sigilo: O Art. 6º (Não divulgação de nome) foi marcado para todos?
+[ ] SisGen: Se usou biodiversidade brasileira, incluiu o nº do cadastro?
+[ ] Anexos: Relatório, Reivindicações, Resumo e Figuras estão anexados?
+
+MÓDULO 2: FLUXO DE PROCESSO
+(Visualização para Gestão de Expectativa)
+[PESQUISADOR]
+[NIT-UPE]
+[DECISÃO]​
+│
+│
+│​
+1. PREPARAÇÃO ────────► 2. RECEBIMENTO ────────► 3. TRIAGEM TÉCNICA​
+(Busca, Escrita,
+(Checklist Admin)
+(Comissão avalia:​
+SisGen, Assinaturas)
+É patenteável?)​
+│​
+┌──────────┴──────────┐​
+▼
+▼​
+NÃO APTO
+APTO
+(Favorável)​
+(Devolução c/
+│​
+Plano de Ação)
+▼​
+│
+4. DEPÓSITO
+NO INPI​
+│
+(NIT
+protocola e​
+└────────────► envia
+recibo)​
+
+🔴
+
+MÓDULO 3: FERRAMENTAS DA COMISSÃO
+(ANÁLISE)
+(Para uso interno dos avaliadores do NIT)
+
+3.1. Template de Parecer (Semaforizado)
+
+🟢
+
+CRITÉRIO DE ANÁLISE
+Enquadramento Legal
+
+STATUS
+( ) OK ( ) ERRO
+
+Matéria Reivindicada
+
+( ) OK ( ) ERRO
+
+Novidade (Divulgação)
+
+( ) OK ( ) RISCO
+
+🟢
+🟡
+🔴
+
+AÇÃO IMEDIATA
+Se for Protocolo/Processo
+classificado como Modelo de
+Utilidade, travar o processo.
+Se reivindicar ser vivo natural
+ou extrato sem modificação
+(Art. 10 LPI), exigir reescrita.
+Se há artigo publicado <12
+meses, exigir anexo para
+Período de Graça.
+
+VEREDITO FINAL:
+●​ ( )
+FAVORÁVEL (Seguir para depósito).
+●​ ( )
+COM RESSALVAS (Enviar E-mail de Devolução com ajustes).
+●​ ( )
+DESFAVORÁVEL (Arquivar ou devolver titularidade).
+
+MÓDULO 4: COMUNICAÇÃO PADRONIZADA
+(Copiar e colar no corpo do e-mail)
+
+4.1. Minuta de Devolução (Para Parecer "Com Ressalvas")
+
+⚠️
+
+Assunto:
+AÇÃO NECESSÁRIA: Ajustes no Pedido – [Nome do Projeto]
+Prezado(a) Pesquisador(a),
+A Comissão de PI analisou seu pedido. Identificamos mérito técnico, mas existem bloqueios
+jurídicos que impedem o depósito imediato. Para não perdermos a proteção, solicitamos os
+seguintes ajustes obrigatórios:
+ONDE ESTÁ O ERRO
+O QUE CORRIGIR (Plano de Ação)
+[Inserir Local]
+[Inserir a correção técnica exata]
+[Inserir Local]
+[Inserir a correção técnica exata]
+Prazo para retorno: [X] dias. Aguardamos o reenvio apenas dos arquivos corrigidos.
+Atenciosamente, NIT-UPE
+
+📝 Recomendação Final de Implementação
+
+Maria Regina, para rodar isso com sucesso na UPE:
+1.​ Semana 1: Reúna a comissão e apresente o Módulo 3 (O novo Parecer). Explique que o
+rigor agora economiza tempo depois.
+2.​ Semana 2: Atualize o site/e-mail do NIT com o Módulo 1 (O Kit do Inventor) para
+download.
+3.​ Monitoramento: Use o exemplo do Schinus terebinthifolia como "Case de Sucesso"
+(mostrando o "antes" com erro de MU e o "depois" corrigido para Processo) para treinar
+novos membros.
+
+

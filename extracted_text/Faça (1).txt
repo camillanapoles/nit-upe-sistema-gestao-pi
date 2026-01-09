@@ -1,0 +1,66 @@
+Maria Regina, este é o "Portão de Qualidade" (Quality Gate). Na visão de UX, é o momento de
+confirmação antes da ação irreversível. Na visão de processos (Lean), é o Poka-Yoke (à prova
+de erros).
+Este checklist foi desenhado para ser rápido (menos de 2 minutos para preencher) mas
+rigoroso o suficiente para barrar os erros que mais consomem o tempo da equipe do NIT.
+
+✅ CHECKLIST DE CONFERÊNCIA FINAL (Sanity Check)
+
+Instrução ao Inventor: Antes de enviar o e-mail para o NIT, marque os itens abaixo. Se algum
+item for "NÃO", pare e corrija. O envio incompleto retornará para o final da fila de análise.
+
+1. DOCUMENTAÇÃO & ASSINATURAS (A Burocracia Essencial)
+●​ [ ] Todos os Inventores Assinaram?
+○​ As assinaturas digitais (Gov.br ou similar) de todos os listados (Inventores 1, 2, 3,
+4...) constam no final do formulário principal?.
+○​ Erro comum: Esquecer a assinatura do orientador ou do aluno.
+●​ [ ] As Datas Coincidem?
+○​ A data da assinatura no formulário é atual (não pode ser anterior à data da busca
+de anterioridade)?.
+●​ [ ] Dados Cadastrais Conferidos?
+○​ CPF, RG e vínculo (Docente/Aluno/Técnico) estão idênticos aos documentos
+oficiais?.
+●​ [ ] Decisão de Sigilo Marcada?
+○​ O campo "O inventor requer a não divulgação de sua nomeação" foi marcado com
+(X) SIM ou (X) NÃO para todos os inventores?.
+
+2. ANEXOS TÉCNICOS (O Coração da Patente)
+●​ [ ] Os 4 Arquivos Obrigatórios Estão Anexados?
+○​ Além deste formulário preenchido, você anexou arquivos separados para:
+1.​ Relatório Descritivo (5 a 10 pgs)
+2.​ Quadro Reivindicatório (O que você protege)
+3.​ Desenhos/Figuras (Se houver)
+4.​ Resumo (1 parágrafo)
+●​ [ ] As Figuras estão Citadas no Texto?
+○​ Se você anexou desenhos, garantiu que eles são mencionados no texto do
+Relatório Descritivo (ex: "conforme Figura 1")?
+
+3. COMPLIANCE & LEGAL (A Segurança Jurídica)
+●​ [ ] Cadastro SisGen (Biodiversidade)?
+○​ Se sua pesquisa usou patrimônio genético brasileiro (plantas, fungos, animais,
+etc.), você inseriu o número de cadastro do SisGen no item 4.2?.
+○​ Alerta: Sem isso, o depósito é ilegal.
+●​ [ ] Busca de Anterioridade Realizada?
+○​ Você preencheu as tabelas do item 3.2 com os resultados das buscas nas 5 bases
+(INPI, Google, USPTO, etc.)? Não deixe tudo como "Nada Encontrado" sem ter
+
+certeza.
+●​ [ ] Divulgação Prévia?
+○​ Se você marcou "NÃO" no item 5.1 (Revelado ao Público), você tem certeza
+absoluta que não publicou artigo, resumo em congresso ou tese sobre isso há
+mais de 12 meses?
+
+🚀 Ação Final: Pacote Pronto para Entrega
+
+Maria Regina, agora você tem o "Kit Completo de Gestão da Inovação do NIT-UPE":
+1.​ O Guia de Preenchimento (Para escrever certo).
+2.​ O Prompt de IA (Para acelerar a redação).
+3.​ O Template de Reivindicações (Para proteger juridicamente).
+4.​ O Fluxograma Visual (Para alinhar expectativas).
+5.​ O Checklist Final (Para garantir qualidade).
+Qual o seu próximo passo? Eu posso redigir um E-mail Padrão de Lançamento desse novo
+processo para ser enviado aos coordenadores de pesquisa e pós-graduação da UPE,
+"vendendo" essa mudança como uma melhoria de gestão e eficiência (focado no seu perfil de
+estrategista). Gostaria que eu fizesse isso?
+
+

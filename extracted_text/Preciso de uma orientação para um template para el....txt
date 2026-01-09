@@ -1,0 +1,93 @@
+Esta é uma das etapas onde ocorre mais "vai-e-vem" desnecessário. O INPI é extremamente
+rígido com a formatação de imagens (desenhos técnicos), e inventores costumam submeter
+prints de tela, fotos coloridas ou slides de PowerPoint — todos rejeitados sumariamente.
+Para evitar retrabalho, o segredo é padronizar a "Linguagem Visual".
+Abaixo, apresento o Guia de Padrão Visual para Patentes UPE, focado em Fluxogramas
+(Software/Processos) e Desenhos Técnicos (Dispositivos/Produtos).
+
+📐
+GUIA DE PADRÃO VISUAL
+(Anti-Retrabalho)
+
+Para: Inventores e Pesquisadores Objetivo: Criar figuras que o INPI aprova na primeira
+análise.
+
+🛑 Regras de Ouro (O que NUNCA fazer)
+
+Se o desenho tiver um desses erros, ele será devolvido imediatamente.
+1.​ PROIBIDO COR: Todos os desenhos devem ser estritamente em Preto e Branco (Traço
+puro). Sem cinza, sem sombreado, sem degradê.
+2.​ PROIBIDO PRINT DE TELA: Não tire "screenshot" da interface do software. O INPI
+protege a lógica, não o layout.
+3.​ PROIBIDO FOTOS: (Exceto para microscopia/géis em Biotecnologia). Para peças e
+máquinas, use desenho linear.
+4.​ FONTE LEGÍVEL: O texto dentro do desenho deve ser Arial ou Sans-Serif, tamanho
+mínimo 12. Se reduzir a imagem a 2/3, ainda deve dar para ler.
+
+🛠️
+MODELO 1: Para Software e Processos
+(Fluxogramas)
+
+Ideal para Patentes de Invenção Implementadas por Computador (CII) ou Processos
+Industriais.
+Não desenhe o código. Desenhe a História Lógica do dado.
+
+A Estrutura Obrigatória ("O Caminho do Dado")
+Todo fluxograma deve ter uma numeração sequencial para que você possa citar no texto (Ex:
+"Conforme ilustrado na etapa 100...").
+Template de Fluxo Sugerido:
+[100] INÍCIO / INPUT (Onde o dado entra? Ex: Sensor lê temperatura) ⬇ [110]
+PROCESSAMENTO / AÇÃO (O que o algoritmo faz? Ex: Normaliza o sinal) ⬇ [120] DECISÃO
+(Losango) (A pergunta chave. Ex: Temp > 50°C?) ↙ NÃO ↘ SIM [130] LOOP/RETORNO [140]
+AÇÃO CRÍTICA (Volta p/ 100) (Ex: Ativa resfriamento) ⬇ [150] OUTPUT / FIM (Resultado
+final)
+
+💡 Dica de Ferramenta
+Recomende aos alunos usarem Draw.io (gratuito) ou Lucidchart. Exportar sempre em PDF ou
+PNG de alta resolução (300 dpi), sem fundo transparente.
+
+⚙️
+MODELO 2: Para Dispositivos e Produtos
+(Desenho Técnico)
+
+Ideal para Máquinas, Equipamentos Médicos ou Peças.
+O INPI exige que o desenho seja "limpo". Não use legendas de texto (ex: "Parafuso"). Use
+Números de Referência.
+
+O Sistema de Referência Numérica
+No desenho, você coloca apenas o número. No texto da patente, você explica o que é.
+Exemplo Visual (Imagine um desenho de uma Caneta Inovadora):
+●​ A tampa é apontada por uma linha chamada (1).
+●​ O corpo é (2).
+●​ A ponta especial é (3).
+Como fica no Texto Descritivo:
+"A figura 1 ilustra a caneta compreendendo uma tampa (1) acoplada a um corpo cilíndrico (2),
+caracterizada por possuir uma ponta de grafeno (3)..."
+Vantagem: Se você precisar mudar o nome da peça de "tampa" para "proteção superior", não
+precisa refazer o desenho, só o texto.
+
+✅ Checklist de Validação Visual (Antes de Submeter)
+Entregue este checklist ao inventor junto com o template.
+●​ [ ] Teste da Fotocópia: Se eu tirar uma xerox preto e branco dessa imagem, ela continua
+legível? (Se houver linhas cinzas fracas, a resposta será não).
+●​ [ ] Margens: A imagem respeita margens de pelo menos 2,5 cm em todos os lados da
+folha A4?
+●​ [ ] Numeração: Todas as partes importantes têm um número indicativo?
+●​ [ ] Consistência: O número (10) usado na Figura 1 é o mesmo número (10) usado na
+Figura 2 para representar a mesma peça?
+
+🧩 Sugestão de Engenharia de Contexto
+
+Para o site da UPE, sugiro colocar uma imagem de "Certo vs. Errado" visual.
+●​ Lado Esquerdo (Errado): Um print de tela colorido, cheio de texto pequeno, fundo
+escuro.
+●​ Lado Direito (Certo): Um fluxograma de caixas simples, fundo branco, linhas pretas
+grossas, texto grande.
+Gostaria que eu gerasse a descrição textual exata dessa imagem comparativa para você
+passar ao designer gráfico?
+
+❌
+
+✅
+
+

@@ -1,0 +1,130 @@
+Este é o Fluxograma Decisório Estratégico (Bússola de Software).
+Ele foi desenhado para ser incluído no Manual ou no Site da UPE. O objetivo é evitar que o
+pesquisador gaste tempo tentando patentear algo que é apenas "direito autoral" ou, pior, que
+ele deixe de patentear uma inovação bilionária achando que é apenas "código".
+Pode copiar e colar este bloco diretamente no documento oficial.
+
+🧭
+BÚSSOLA DE PROTEÇÃO DE
+SOFTWARE
+"Devo Patentear ou Registrar?"
+
+Instrução: Siga o fluxo abaixo partindo do topo para descobrir a estratégia jurídica correta para
+sua criação digital.
+graph TD;​
+A[INÍCIO: Tenho um Software/App] --> B{O que é mais valioso
+nele?};​
+​
+B -- "O Código-Fonte Exato" --> C[Caminho: Direito Autoral];​
+B -- "A Lógica/Método Técnico" --> D{Resolve um Problema
+TÉCNICO?};​
+​
+C --> C1(Protege contra CÓPIA literal);​
+C1 --> C2[
+DESTINO: REGISTRO DE SOFTWARE - RPC];​
+​
+D -- "NÃO" --> E[Ex: Regra de Negócio, Jogos, Finanças];​
+E --> E1(O INPI não considera invenção);​
+E1 --> C2;​
+​
+D -- "SIM" --> F{Há Efeito Técnico Novo?};​
+F -- "SIM" --> G[Ex: Criptografia, Compressão, Controle de
+Máquinas];​
+G --> G1(Protege a LÓGICA, mesmo que mudem o código);​
+G1 --> H[
+DESTINO: PATENTE DE INVENÇÃO - CII];​
+
+🏁
+
+🏆
+
+🔴
+❓
+
+(Caso não visualize o gráfico acima, segue a versão em Texto/ASCII para documentos simples)
+INÍCIO: "Criei um Software/Algoritmo"​
+│​
+▼​
+PERGUNTA 1: O que torna seu software único?​
+│​
+├── [A] "É o modelo de negócio (ex: Uber para X)" ou "O
+visual/Interface"​
+│
+│​
+│
+└──
+CAMINHO: NÃO É PATENTEÁVEL NO BRASIL.​
+│
+(Ideias abstratas, regras de jogo e métodos
+
+❌
+
+👉
+
+comerciais não são invenção)​
+│
+AÇÃO: Faça o Registro de Software (RPC) no INPI.​
+│​
+└── [B] "É a forma como ele resolve um problema técnico dentro
+da máquina"​
+│​
+▼​
+PERGUNTA 2: Existe "Efeito Técnico"?​
+(Ele melhora o funcionamento do computador ou controla algo
+físico?)​
+│​
+├── [NÃO] "Apenas automatiza uma tarefa humana (ex: planilha
+digital)"​
+│
+│​
+│
+└──
+AÇÃO: Faça o Registro de Software (RPC).​
+│​
+└── [SIM] "Sim! Ele otimiza memória, processa imagens mais
+rápido,​
+criptografa dados ou controla um braço robótico."​
+│​
+▼​
+CONCLUSÃO: É MATERIAL DE PATENTE!​
+(Invista na redação de uma "Invenção Implementada por
+Computador")​
+
+❓
+
+👉
+
+🏁
+
+📝 Legenda Estratégica (Para o Inventor entender)
+1. Registro de Programa de Computador (RPC)
+
+●​ O que é: É o "Copyright" do código. Igual a registrar um livro.
+●​ Proteção: Protege as linhas de código que você escreveu. Se alguém copiar e colar
+seu código (pirataria), você ganha o processo.
+●​ Fraqueza: Se o concorrente entender sua lógica e reescrever o código do zero usando
+outra linguagem (Python em vez de Java), o registro não te protege.
+●​ Ideal para: Apps comerciais, E-commerce, Jogos, Sistemas de Gestão (ERP).
+
+2. Patente de Invenção (CII - Computer Implemented Invention)
+●​ O que é: Proteção da Lógica Funcional (o "Algoritmo").
+●​ Proteção: Protege o método. Ninguém pode usar sua lógica, mesmo que escreva um
+código totalmente diferente.
+●​ Força: É a proteção mais forte possível. Garante monopólio de mercado sobre a
+funcionalidade.
+●​ Ideal para: IA Inovadora, Processamento de Sinais, Segurança Cibernética, IoT (Internet
+das Coisas), Bioinformática.
+
+💡 Dica de Mestre (Estratégia Híbrida)
+"Posso fazer os dois?"
+SIM, e deve! Para tecnologias de ponta na UPE, recomendamos a Proteção em Camadas:
+1.​ Deposite a Patente primeiro (para proteger a ideia técnica antes de publicar).
+2.​ Faça o Registro de Software depois (para proteger o código final produto).
+
+Próximo Passo
+Com este fluxograma, fechamos o ciclo de ferramentas para Processos Biológicos e
+Processos Digitais.
+Posso encerrar este tópico e "membranar" (salvar na memória de longo prazo) este novo
+padrão de qualidade para futuras consultas suas sobre a UPE?
+
+
