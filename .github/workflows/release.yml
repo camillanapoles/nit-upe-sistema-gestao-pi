@@ -262,13 +262,13 @@ jobs:
           EOF
 
       - name: 📥 Download release artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: release-artifacts-${{ steps.version.outputs.version }}
           path: release-artifacts/
 
       - name: 📥 Download release archive
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: release-archive-${{ steps.version.outputs.version }}
           path: ./
