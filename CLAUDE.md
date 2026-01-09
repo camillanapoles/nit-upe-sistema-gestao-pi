@@ -69,6 +69,20 @@ This project supports **multi-agent orchestration** using CCManager, wshobson/ag
 | `create-worktrees.sh` | Create worktrees |
 | `sync-worktrees.sh` | Sync changes between worktrees |
 | `validate-specs.sh` | Validate OpenSpec specs |
+| `merge-worktrees.sh` | ⭐ **MERGE FINAL with gatekeeping** |
 | `start-ccmanager.sh` | Launch CCManager |
+
+### Complete Workflow
+
+```
+1. PLANEJAMENTO   →  orchestrate.sh <feature> --create-worktrees
+2. EXECUÇÃO       →  start-ccmanager.sh (sessões de trabalho)
+3. SYNC           →  sync-worktrees.sh <feature>
+4. VALIDAÇÃO      →  validate-specs.sh <change-id>
+5. ⭐ MERGE       →  merge-worktrees.sh <feature> --dry-run
+6. MERGE FINAL    →  merge-worktrees.sh <feature>
+```
+
+**See `ORCHESTRATION.md` for complete documentation.**
 
 ---
