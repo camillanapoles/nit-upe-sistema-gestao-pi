@@ -13,8 +13,11 @@ import {
   ArrowLeft,
   Upload,
   X,
+  FileCode,
+  CheckCircle,
 } from 'lucide-react';
 import { apiCriarPedidoRPC } from '@/lib/mock-api';
+import { createPedido, updatePedido, getPedidoByPedidoId, type Pedido } from '@/lib/pedido-storage';
 import {
   validateCPFRealtime,
   formatCPF,
@@ -50,6 +53,7 @@ interface FormData {
 // ============================================================================
 
 const STORAGE_KEY = 'formulario-rpc-rascunho';
+const PEDIDO_ID_KEY = 'formulario-rpc-pedido-id';
 const AUTOSAVE_INTERVAL = 30000; // 30 seconds
 
 const LINGUAGENS = [
@@ -436,6 +440,7 @@ export default function FormularioRPC() {
   const [showDraftModal, setShowDraftModal] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [currentPedido, setCurrentPedido] = useState<Pedido | null>(null);
 
   // Auto-save interval ref
   const autoSaveRef = useRef<NodeJS.Timeout | null>(null);
@@ -455,12 +460,22 @@ export default function FormularioRPC() {
   useEffect(() => {
     // Check for existing draft on mount
     const savedDraft = localStorage.getItem(STORAGE_KEY);
+    const savedPedidoId = localStorage.getItem(PEDIDO_ID_KEY);
+
     if (savedDraft) {
       try {
         const parsed = JSON.parse(savedDraft);
         if (parsed.nomePrograma || parsed.nomeAutor) {
           setHasDraft(true);
           setShowDraftModal(true);
+
+          // Also load the pedido if exists
+          if (savedPedidoId) {
+            const pedido = getPedidoByPedidoId(savedPedidoId);
+            if (pedido) {
+              setCurrentPedido(pedido);
+            }
+          }
         }
       } catch (e) {
         // Invalid draft, ignore
@@ -504,6 +519,38 @@ export default function FormularioRPC() {
           manualUsuario: null,
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(draftToSave));
+
+        // Create or update pedido when form has required fields
+        if (formData.nomePrograma && formData.descricaoFuncional) {
+          const savedPedidoId = localStorage.getItem(PEDIDO_ID_KEY);
+
+          if (!savedPedidoId && !currentPedido) {
+            // Create new pedido
+            const novoPedido = createPedido({
+              tipo: 'RPC' as any,
+              titulo: formData.nomePrograma,
+              problema: formData.descricaoFuncional,
+              solucao: '',
+            });
+            localStorage.setItem(PEDIDO_ID_KEY, novoPedido.pedidoId);
+            setCurrentPedido(novoPedido);
+          } else if (currentPedido) {
+            // Update existing pedido
+            updatePedido(currentPedido.id, {
+              titulo: formData.nomePrograma,
+              formData: {
+                tipo: 'RPC' as any,
+                titulo: formData.nomePrograma,
+                problema: formData.descricaoFuncional,
+                solucao: '',
+              },
+            });
+            // Reload pedido to get updated state
+            const updated = getPedidoByPedidoId(currentPedido.pedidoId);
+            if (updated) setCurrentPedido(updated);
+          }
+        }
+
         setLastSaved(new Date());
         if (!silent) {
           console.log('Rascunho salvo');
@@ -514,7 +561,7 @@ export default function FormularioRPC() {
         setIsSaving(false);
       }
     },
-    [formData]
+    [formData, currentPedido]
   );
 
   const restoreDraft = useCallback(() => {
@@ -539,8 +586,10 @@ export default function FormularioRPC() {
 
   const clearDraft = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(PEDIDO_ID_KEY);
     setHasDraft(false);
     setShowDraftModal(false);
+    setCurrentPedido(null);
   }, []);
 
   const updateField = useCallback(
@@ -600,28 +649,30 @@ export default function FormularioRPC() {
       setSubmitError(null);
 
       try {
-        await apiCriarPedidoRPC({
-          nomePrograma: formData.nomePrograma,
-          versao: formData.versao,
-          linguagem: formData.linguagem,
-          plataforma: formData.plataforma,
-          descricaoFuncional: formData.descricaoFuncional,
-          nomeAutor: formData.nomeAutor,
-          cpfAutor: formData.cpfAutor,
-          emailAutor: formData.emailAutor,
-          tipoVinculo: formData.tipoVinculo,
-          vinculoUPE: formData.vinculoUPE,
-        });
+        // Ensure pedido exists
+        let pedidoId = currentPedido?.pedidoId;
+
+        if (!pedidoId) {
+          const novoPedido = createPedido({
+            tipo: 'RPC' as any,
+            titulo: formData.nomePrograma,
+            problema: formData.descricaoFuncional,
+            solucao: '',
+          });
+          pedidoId = novoPedido.pedidoId;
+          setCurrentPedido(novoPedido);
+        }
 
         // Clear draft on successful submission
         localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(PEDIDO_ID_KEY);
 
         setSubmitSuccess(true);
 
-        // Redirect to dashboard after showing success
+        // Redirect to confirmation page after showing success
         setTimeout(() => {
-          router.push('/');
-        }, 3000);
+          router.push(`/confirmacao?pedidoId=${pedidoId}`);
+        }, 2000);
       } catch (error) {
         setSubmitError('Erro ao submeter pedido. Por favor, tente novamente.');
         console.error('Erro ao submeter:', error);
@@ -629,7 +680,7 @@ export default function FormularioRPC() {
         setIsSubmitting(false);
       }
     },
-    [formData, router, validateCurrentSection]
+    [formData, router, validateCurrentSection, currentPedido]
   );
 
   // ============================================================================
@@ -969,6 +1020,69 @@ export default function FormularioRPC() {
               </h2>
 
               <div className="space-y-6">
+                {/* Anexos Status */}
+                {currentPedido && (
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-medium text-orange-900 flex items-center gap-2">
+                        <FileCode className="h-4 w-4" />
+                        Anexos do Pedido
+                      </h3>
+                      <span className="text-xs text-orange-600 font-mono">{currentPedido.pedidoId}</span>
+                    </div>
+
+                    <div className="grid grid-cols-4 gap-2 mb-3">
+                      {[
+                        { key: 'a' as const, label: 'A', obrigatorio: true },
+                        { key: 'b' as const, label: 'B', obrigatorio: true },
+                        { key: 'c' as const, label: 'C', obrigatorio: true },
+                        { key: 'f' as const, label: 'F', obrigatorio: false },
+                      ].map((anexo) => {
+                        const completo = currentPedido.anexosCompletos[anexo.key];
+                        return (
+                          <div
+                            key={anexo.key}
+                            className={`flex items-center justify-center gap-1 py-2 px-3 rounded-lg text-sm font-medium ${
+                              completo
+                                ? 'bg-green-100 text-green-700 border border-green-300'
+                                : anexo.obrigatorio
+                                  ? 'bg-red-100 text-red-700 border border-red-300'
+                                  : 'bg-gray-100 text-gray-500 border border-gray-300'
+                            }`}
+                          >
+                            {completo ? (
+                              <CheckCircle className="h-3 w-3" />
+                            ) : (
+                              <AlertCircle className="h-3 w-3" />
+                            )}
+                            <span>{anexo.label}</span>
+                            {anexo.obrigatorio && <span className="text-xs">*</span>}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-orange-700">
+                        Anexos obrigatórios:{' '}
+                        <strong>
+                          {['a', 'b', 'c'].filter((k) => currentPedido.anexosCompletos[k as keyof typeof currentPedido.anexosCompletos]).length}/3
+                        </strong>
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => router.push(`/anexos?pedidoId=${currentPedido.pedidoId}`)}
+                        className="text-sm bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 flex items-center gap-2"
+                      >
+                        <FileCode className="h-4 w-4" />
+                        {['a', 'b', 'c'].filter((k) => currentPedido.anexosCompletos[k as keyof typeof currentPedido.anexosCompletos]).length === 0
+                          ? 'Adicionar Anexos'
+                          : 'Ver Anexos'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
                 {/* Summary */}
                 <div className="bg-gray-50 rounded-lg p-6 space-y-4">
                   <h3 className="font-semibold text-gray-900 mb-4">Resumo do Pedido RPC</h3>
