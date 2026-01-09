@@ -35,7 +35,7 @@
     "stylelint-config-standard": "^34.0.0",
     "markdownlint-cli": "^0.38.0",
     "html-validator": "^6.1.2",
-    "link-checker": "^0.0.19",
+    "link-checker": "^1.4.2",
     "pa11y": "^7.0.0",
     "trivy": "^0.51.1"
   },
