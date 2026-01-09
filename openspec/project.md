@@ -57,7 +57,8 @@ O projeto utiliza uma abordagem multidisciplinar de ponta:
 
 - **Hosting Atual**: GitHub Pages (Static Export)
 - **CI/CD**: GitHub Actions (workflow automatizado)
-- **Branch Principal**: `feature/github-pages-cicd`
+- **Branch Principal**: `pages-mvp` ← **ATUAL** (MVP estático completo)
+- **Branch Feature**: `feature/github-pages-cicd` (desenvolvimento com API)
 - **Branch Deploy**: `gh-pages`
 - **Node Version**: 20.x
 - **Package Manager**: npm
@@ -243,8 +244,9 @@ web-app/
 
 #### Branches
 
+- **`pages-mvp`**: **ATUAL** - MVP estático completo para GitHub Pages
+- **`feature/github-pages-cicd`**: Desenvolvimento com API Routes
 - **`main`**: Produção (após merge completo)
-- **`feature/github-pages-cicd`**: Feature atual de CI/CD
 - **`feature/*`**: Features em desenvolvimento
 - **`fix/*`**: Corrections e hotfixes
 - **`docs/*`**: Atualizações de documentação
@@ -477,35 +479,67 @@ docs(readme): atualizar instruções de deploy
 
 ## Status Atual do Projeto
 
-### ✅ Completado
+### ✅ Completado (pages-mvp)
 
 - [x] Documentação mestra (planejamento, agentes, fluxos)
 - [x] Especificações técnicas (SPEC_*.md)
 - [x] Diagramas UML em Mermaid
 - [x] Mock system em Next.js
-- [x] CI/CD para GitHub Pages
+- [x] CI/CD para GitHub Pages (workflow funcionando)
 - [x] Landing page responsiva
-- [x] Branch `feature/github-pages-cicd` implementado
+- [x] Branch `pages-mvp` - **MVP estático completo**
+- [x] **Formulários** PI/MU, CII, RPC totalmente implementados
+- [x] **Anexos** A, B, C, F com componentes e validações
+- [x] **Dashboard de Pedidos** (/pedidos) - listagem, filtros, ações
+- [x] **Página de Confirmação** (/confirmacao) - revisão pré-submissão
+- [x] **Página de Sucesso** (/sucesso) - feedback visual, download comprovante
+- [x] **Sistema de Pedidos** - localStorage CRUD + status de anexos
+- [x] **Mock API Anexos** - endpoints para A/B/C/F + validações
+- [x] **Build estático** - funcionando sem erros
+- [x] **Deploy GitHub Pages** - CI/CD automatizado
 
-### 🚧 Em Andamento
+### 🚧 Em Andamento (próximos passos)
 
-- [ ] Implementação de formulários CII e RPC
-- [ ] Implementação de anexos (A, B, C, F)
+- [ ] Integração completa formulários ↔ anexos (pedidoId)
+- [ ] Fluxo de submissão end-to-end
+- [ ] Validação de anexos obrigatórios antes da submissão
+- [ ] Landing page institucional melhorada
+- [ ] Testes E2E do fluxo completo
 
 ### 📊 Status Detalhado de Implementação
 
-#### Frontend (Next.js)
+#### Frontend (Next.js) - `pages-mvp` ✅
+
+**Páginas Implementadas:**
+- [x] `/` - Dashboard principal com KPIs
+- [x] `/formulario-pi-mu` - Formulário PI/MU (tipo A+B)
+- [x] `/formulario-cii` - Formulário CII (software)
+- [x] `/formulario-rpc` - Formulário RPC (registro)
+- [x] `/anexos` - Dashboard de Anexos (A/B/C/F)
+- [x] `/anexos/a` - Anexo A - Busca de Anterioridade
+- [x] `/anexos/b` - Anexo B - Matriz Problema x Solução
+- [x] `/anexos/c` - Anexo C - Memorial Descritivo
+- [x] `/anexos/f` - Anexo F - Qualificação de Inventores
+- [x] `/pedidos` - **NOVO** Dashboard de pedidos do usuário
+- [x] `/confirmacao` - **NOVO** Revisão pré-submissão
+- [x] `/sucesso` - **NOVO** Página de sucesso pós-submissão
+
+**Componentes:**
 - [x] Layout principal e página inicial (dashboard)
 - [x] Componentes base (KPICard, Badges)
-- [x] API mock para simulação
-- [ ] **Formulário PI/MU** (CRÍTICO - não implementado)
-- [ ] Formulários CII e RPC
-- [ ] Páginas de anexos (A, B, C, F)
-- [ ] Sistema de autenticação
+- [x] Formulários PI/MU, CII, RPC
+- [x] Componentes de Anexos (A, B, C, F)
+- [x] Componentes compartilhados (InventorCard, SolucaoExistenteCard, etc.)
 
-#### Backend
+**Bibliotecas:**
+- [x] `lib/mock-api.ts` - API mock para pedidos PI/CII/RPC
+- [x] `lib/mock-api-anexos.ts` - **NOVO** API mock para anexos
+- [x] `lib/pedido-storage.ts` - **NOVO** Gerenciamento de pedidos (localStorage)
+- [x] `lib/validations/anexos.ts` - Schemas Zod para anexos
+
+#### Backend (planejado para `feature/github-pages-cicd`)
 - [x] API mock (simulação)
-- [ ] API Routes reais
+- [ ] API Routes reais (removidas para static export)
 - [ ] Banco de dados PostgreSQL
 - [ ] Autenticação JWT/OAuth2
 - [ ] Upload de arquivos
@@ -538,7 +572,20 @@ docs(readme): atualizar instruções de deploy
 
 ---
 
-**Versão**: 1.0
+**Versão**: 1.1 (pages-mvp)
 **Data**: 9 de janeiro de 2026
-**Status**: ✅ Ativo para desenvolvimento
+**Branch Atual**: `pages-mvp`
+**Status**: ✅ MVP estático completo - deploy no GitHub Pages
 **Metodologia**: Engenharia de Contexto - Projeto Crush
+
+## Changelog
+
+### v1.1 (2026-01-09) - pages-mvp
+- ✅ Adicionada página `/pedidos` - Dashboard de pedidos do usuário
+- ✅ Adicionada página `/confirmacao` - Revisão pré-submissão
+- ✅ Adicionada página `/sucesso` - Página de sucesso pós-submissão
+- ✅ Criado `lib/pedido-storage.ts` - Sistema de gerenciamento de pedidos (localStorage)
+- ✅ Criado `lib/mock-api-anexos.ts` - Mock API para anexos A/B/C/F
+- ✅ Removido `app/api/` (incompatível com static export)
+- ✅ Build estático funcionando sem erros
+- ✅ Deploy automatizado via GitHub Actions
