@@ -1,0 +1,185 @@
+// Prisma Schema para Sistema de Gestão de Propriedade Intelectual UPE
+// Documentação: https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Enums do Sistema
+enum TipoPatente {
+  PI   // Patente de Invenção - protege lógica técnica, 20 anos
+  MU   // Modelo de Utilidade - protege forma física, 15 anos
+  CII  // Computer Implemented Invention - software com efeito técnico
+  RPC  // Registro de Programa de Computador - protege código, 50 anos
+}
+
+enum StatusPedido {
+  RASCUNHO      // Pedido em criação pelo inventor
+  SUBMETIDO     // Pedido enviado para análise do NIT
+  EM_ANALISE    // Pedido em análise técnica
+  APROVADO      // Pedido aprovado pelo NIT
+  COM_RESSALVAS // Pedido aprovado com ressalvas/correções necessárias
+  REPROVADO     // Pedido reprovado pelo NIT
+  DEPOSITADO    // Pedido depositado no INPI
+}
+
+enum FaseAtual {
+  PREPARACAO     // Fase 1 - Inventor preenchendo formulários
+  SUBMISSAO      // Fase 2 - Portão de entrada
+  ANALISE        // Fase 3 - Análise técnica do NIT
+  FORMALIZACAO   // Fase 4 - Formalização documental
+  ROBUSTEZ       // Fase 5 - Robustez e conformidade
+}
+
+enum Role {
+  INVENTOR   // Usuário inventor (cria pedidos)
+  AVALIADOR  // Usuário avaliador do NIT (analisa pedidos)
+  ADMIN      // Administrador do sistema
+}
+
+// Modelo de Pedido de Patente
+model Pedido {
+  id              String       @id @default(uuid())
+  numeroPedido    String?      @unique // Número formatado: PED-2024-001
+  numeroProtocolo String?      @unique // Número de protocolo INPI (quando depositado)
+
+  // Campos do formulário principal
+  tipo            TipoPatente
+  titulo          String       @db.VarChar(150)
+  problema        String       @db.Text
+  solucao         String       @db.Text
+  estadoTecnica   String       @db.Text
+  vantagens       String       @db.Text
+  palavrasChave   String       @db.VarChar(200)
+  resumo          String?      @db.Text
+
+  // Campos de controle
+  faseAtual       FaseAtual    @default(PREPARACAO)
+  status          StatusPedido @default(RASCUNHO)
+
+  // Campos de parecer (quando em análise)
+  parecerTecnico  String?      @db.Text
+  classificacaoNAI String?     // Verde/Amarelo/Vermelho
+  observacoes     String?      @db.Text
+
+  // Timestamps
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  depositadoAt    DateTime?    // Data de depósito no INPI
+
+  // Relacionamentos
+  inventorId      String?
+  inventor        Usuario?     @relation(fields: [inventorId], references: [id], onDelete: SetNull)
+
+  // Anexos (documentos relacionados)
+  anexos          Anexo[]
+
+  // Avaliações técnicas
+  avaliacoes      Avaliacao[]
+
+  // Histórico de alterações (opcional para auditoria)
+  historico       Historico[]
+
+  @@index([inventorId])
+  @@index([status])
+  @@index([tipo])
+  @@index([createdAt])
+}
+
+// Modelo de Usuário
+model Usuario {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  nome          String    @db.VarChar(200)
+  senha         String    // Senha hasheada com bcrypt
+
+  role          Role      @default(INVENTOR)
+
+  // Campos adicionais para inventores
+  cpf           String?   @unique
+  telefone      String?
+  departamento  String?
+  instituicao   String?   @default("UPE")
+
+  ativo         Boolean   @default(true)
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  ultimoLoginAt DateTime?
+
+  // Relacionamentos
+  pedidos       Pedido[]
+  avaliacoes    Avaliacao[]
+
+  @@index([email])
+  @@index([cpf])
+}
+
+// Modelo de Anexos (Documentos)
+model Anexo {
+  id              String   @id @default(uuid())
+  tipo            String   // TIPO_ANEXO: "ANEXO_A", "ANEXO_B", "ANEXO_C", "ANEXO_F", "RELATORIO", etc
+  nomeArquivo     String   @db.VarChar(255)
+  caminhoArquivo  String   @db.VarChar(500) // Caminho no sistema de arquivos
+  tamanhoBytes    Int?
+  mimeType        String?  @db.VarChar(100)
+
+  createdAt       DateTime @default(now())
+
+  pedidoId        String
+  pedido          Pedido   @relation(fields: [pedidoId], references: [id], onDelete: Cascade)
+
+  @@index([pedidoId])
+  @@index([tipo])
+}
+
+// Modelo de Avaliação (parecer técnico detalhado)
+model Avaliacao {
+  id              String   @id @default(uuid())
+  pedidoId        String
+  pedido          Pedido   @relation(fields: [pedidoId], references: [id], onDelete: Cascade)
+
+  avaliadorId     String
+  avaliador       Usuario  @relation(fields: [avaliadorId], references: [id])
+
+  // Critérios de avaliação NAI
+  novidade               Boolean? // Novidade
+  atividadeInventiva     Boolean? // Atividade Inventiva
+  aplicacaoIndustrial    Boolean? // Aplicação Industrial
+  suficienciaDescritiva  Boolean? // Suficiência Descritiva
+
+  classificacao          String?  // VERDE/AMARELO/VERMELHO
+  parecerTecnico         String   @db.Text
+  recomendacoes          String?  @db.Text
+
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  @@unique([pedidoId, avaliadorId])
+  @@index([pedidoId])
+  @@index([avaliadorId])
+}
+
+// Modelo de Histórico (Auditoria)
+model Historico {
+  id          String   @id @default(uuid())
+  pedidoId    String
+  pedido      Pedido   @relation(fields: [pedidoId], references: [id], onDelete: Cascade)
+
+  acao        String   // CRIADO, ATUALIZADO, STATUS_ALTERADO, PARECER_ADICIONADO, etc
+  campo       String?  // Campo alterado (opcional)
+  valorAntigo String?  @db.Text
+  valorNovo   String?  @db.Text
+
+  createdBy   String?  // ID do usuário que fez a alteração
+
+  createdAt   DateTime @default(now())
+
+  @@index([pedidoId])
+  @@index([createdAt])
+}

@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FileText, TrendingUp, Users, Clock, CheckCircle, Zap, Shield, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { FileText, TrendingUp, Users, Clock, CheckCircle, CheckCircle2, Zap, Shield, ArrowRight, Plus } from 'lucide-react';
 import { apiObterEstatisticas, apiListarPedidos, TipoPatente } from '@/lib/mock-api';
 
 export default function HomePage() {
+  const router = useRouter();
   const [stats, setStats] = useState<any>(null);
   const [pedidos, setPedidos] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -52,10 +54,17 @@ export default function HomePage() {
               </div>
             </div>
             <nav className="flex space-x-4">
-              <button className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900">
-                Dashboard
+              <button
+                onClick={() => router.push('/anexos')}
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+              >
+                Anexos
               </button>
-              <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+              <button
+                onClick={() => router.push('/formulario-pi-mu')}
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 flex items-center gap-2"
+              >
+                <Plus className="h-4 w-4" />
                 Novo Pedido
               </button>
             </nav>
@@ -161,19 +170,152 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Call to Action */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center">
+        {/* Call to Action - Patent Type Selector */}
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center mb-8">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Comece seu pedido de patente agora
+            Comece seu pedido de propriedade intelectual agora
           </h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
             Nosso sistema com auto-preenchimento inteligente reduz o tempo de escrita
             em 50% e aumenta suas chances de aprovação.
           </p>
-          <button className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-colors">
-            Criar Novo Pedido
-            <ArrowRight className="h-5 w-5 ml-2" />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {/* PI Card */}
+            <button
+              onClick={() => router.push('/formulario-pi-mu')}
+              className="bg-white rounded-xl p-6 hover:shadow-xl transition-all cursor-pointer text-left"
+            >
+              <div className="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">📋</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Patente de Invenção</h4>
+              <p className="text-sm text-gray-600">
+                Proteção para invenções de alto impacto com maior rigor de novidade.
+              </p>
+            </button>
+
+            {/* MU Card */}
+            <button
+              onClick={() => router.push('/formulario-pi-mu')}
+              className="bg-white rounded-xl p-6 hover:shadow-xl transition-all cursor-pointer text-left"
+            >
+              <div className="bg-green-100 text-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">⚙️</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Modelo de Utilidade</h4>
+              <p className="text-sm text-gray-600">
+                Proteção para melhorias funcionais com processo mais simples.
+              </p>
+            </button>
+
+            {/* CII Card */}
+            <button
+              onClick={() => router.push('/formulario-cii')}
+              className="bg-white rounded-xl p-6 hover:shadow-xl transition-all cursor-pointer text-left"
+            >
+              <div className="bg-purple-100 text-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Software CII</h4>
+              <p className="text-sm text-gray-600">
+                Patente de software com efeito técnico em hardware/processamento.
+              </p>
+            </button>
+
+            {/* RPC Card */}
+            <button
+              onClick={() => router.push('/formulario-rpc')}
+              className="bg-white rounded-xl p-6 hover:shadow-xl transition-all cursor-pointer text-left"
+            >
+              <div className="bg-orange-100 text-orange-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">💾</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Programa RPC</h4>
+              <p className="text-sm text-gray-600">
+                Registro de programa de computador (direito autoral).
+              </p>
+            </button>
+          </div>
+        </div>
+
+        {/* Anexos Quick Access */}
+        <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 text-center mb-8">
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Sistema Completo de Anexos INPI
+          </h3>
+          <p className="text-purple-100 mb-8 max-w-2xl mx-auto">
+            Anexos obrigatórios para o processo de patenteamento (A/B/C/F). Preencha os anexos
+            após criar um pedido de patente.
+          </p>
+
+          <button
+            onClick={() => router.push('/anexos')}
+            className="bg-white rounded-xl px-8 py-4 hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-3"
+          >
+            <div className="bg-purple-100 text-purple-600 w-12 h-12 rounded-lg flex items-center justify-center">
+              <FileText className="h-6 w-6" />
+            </div>
+            <div className="text-left">
+              <h4 className="font-semibold text-gray-900">Acessar Anexos</h4>
+              <p className="text-sm text-gray-600">
+                Anexo A, B, C e F com 77 campos obrigatórios
+              </p>
+            </div>
           </button>
+        </div>
+
+        {/* Additional Info */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+              <span className="text-xl">🤔</span>
+              Não sabe qual tipo escolher?
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 mt-1">•</span>
+                <span><strong>PI:</strong> Invenções revolucionárias, novo conceito técnico</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 mt-1">•</span>
+                <span><strong>MU:</strong> Melhorias em produtos existentes</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600 mt-1">•</span>
+                <span><strong>CII:</strong> Software que melhora hardware ou processamento</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-600 mt-1">•</span>
+                <span><strong>RPC:</strong> Qualquer software (proteção por direito autoral)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+              <span className="text-xl">✨</span>
+              Recursos do Sistema
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                <span>Auto-preenchimento inteligente</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                <span>Validação em tempo real (RAG)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                <span>Salvamento automático de rascunhos</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                <span>Interface responsiva mobile/desktop</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
@@ -181,7 +323,7 @@ export default function HomePage() {
 }
 
 function KPICard({ icon, label, value, color }: any) {
-  const colorClasses = {
+  const colorClasses: Record<string, string> = {
     green: 'bg-green-50 border-green-200 text-green-700',
     blue: 'bg-blue-50 border-blue-200 text-blue-700',
     purple: 'bg-purple-50 border-purple-200 text-purple-700',
@@ -191,7 +333,7 @@ function KPICard({ icon, label, value, color }: any) {
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
       <div className="flex items-center justify-between mb-4">
-        <div className={`p-3 rounded-lg ${colorClasses[color]}`}>
+        <div className={`p-3 rounded-lg ${colorClasses[color] || 'bg-gray-50 border-gray-200 text-gray-700'}`}>
           {icon}
         </div>
         <span className="text-3xl font-bold text-gray-900">{value}</span>

@@ -131,15 +131,101 @@ export async function apiCriarPedido(dados: Partial<PedidoPatente>) {
 
 export async function apiAutoPreencher(tipo: string) {
   await delay(200);
-  
+
   const sugestoes = {
     titulo: 'Dispositivo para [termo1] com [termo2]',
     vantagens: 'Redução de tempo em 30%; Economia de custos de 25%; Melhoria de eficiência em 40%',
     estadoTecnica: 'Atualmente, existem soluções que utilizam [tecnologias], no entanto, estas apresentam limitações...'
   };
-  
+
   return {
     sugestao: sugestoes[tipo as keyof typeof sugestoes] || '',
     explicacao: 'Sugestão gerada automaticamente pelo sistema'
   };
+}
+
+// ============================================================================
+// CII API (Computer Implemented Invention)
+// ============================================================================
+
+interface PedidoCIIData {
+  titulo: string;
+  versao?: string;
+  plataforma: string;
+  descricaoEfeitoTecnico: string;
+  metricaQuantitativa: string;
+  tipoEfeitoTecnico: string;
+  funcionalidades: string;
+  inputs: string;
+  outputs: string;
+  processador: string;
+  memoriaRAM: string;
+  armazenamento: string;
+  descricaoFluxo: string;
+  resumoMetodo: string;
+  resumoSistema: string;
+  resumoMidia: string;
+}
+
+export async function apiCriarPedidoCII(dados: PedidoCIIData) {
+  await delay(500);
+  const novoId = `CII-${new Date().getFullYear()}-${String(dadosIniciais.length + 1).padStart(3, '0')}`;
+
+  const novo: PedidoPatente = {
+    id: novoId,
+    tipo: TipoPatente.CII,
+    titulo: dados.titulo,
+    problema: `Efeito Técnico: ${dados.descricaoEfeitoTecnico}\nMétrica: ${dados.metricaQuantitativa}`,
+    solucao: `Funcionalidades: ${dados.funcionalidades}\nInputs: ${dados.inputs}\nOutputs: ${dados.outputs}`,
+    estadoTecnica: `Requisitos: ${dados.processador}, ${dados.memoriaRAM}, ${dados.armazenamento}`,
+    vantagens: `Tipo: ${dados.tipoEfeitoTecnico}\nTripla Reivindicação: ${dados.resumoMetodo} | ${dados.resumoSistema} | ${dados.resumoMidia}`,
+    palavrasChave: `${dados.plataforma}, ${dados.tipoEfeitoTecnico}, CII`,
+    faseAtual: FaseAtual.PREPARACAO,
+    status: StatusPedido.RASCUNHO,
+    dataCriacao: new Date(),
+    protocolo: `PROTO-${new Date().getFullYear()}-${String(dadosIniciais.length + 1).padStart(3, '0')}`
+  };
+
+  dadosIniciais.push(novo);
+  return novo;
+}
+
+// ============================================================================
+// RPC API (Registro de Programa de Computador)
+// ============================================================================
+
+interface PedidoRPCData {
+  nomePrograma: string;
+  versao?: string;
+  linguagem: string;
+  plataforma: string;
+  descricaoFuncional: string;
+  nomeAutor: string;
+  cpfAutor: string;
+  emailAutor: string;
+  tipoVinculo: string;
+  vinculoUPE: string;
+}
+
+export async function apiCriarPedidoRPC(dados: PedidoRPCData) {
+  await delay(500);
+  const novoId = `RPC-${new Date().getFullYear()}-${String(dadosIniciais.length + 1).padStart(3, '0')}`;
+
+  const novo: PedidoPatente = {
+    id: novoId,
+    tipo: TipoPatente.RPC,
+    titulo: dados.nomePrograma,
+    problema: `Descrição: ${dados.descricaoFuncional}`,
+    solucao: `Linguagem: ${dados.linguagem}\nPlataforma: ${dados.plataforma}`,
+    estadoTecnica: `Autor: ${dados.nomeAutor} (${dados.cpfAutor})\nVínculo: ${dados.tipoVinculo}`,
+    vantagens: `Vínculo UPE: ${dados.vinculoUPE}\nEmail: ${dados.emailAutor}`,
+    palavrasChave: `${dados.plataforma}, ${dados.linguagem}, RPC`,
+    faseAtual: FaseAtual.PREPARACAO,
+    status: StatusPedido.RASCUNHO,
+    dataCriacao: new Date(),
+    protocolo: `PROTO-${new Date().getFullYear()}-${String(dadosIniciais.length + 1).padStart(3, '0')}`
+  };
+
+  dadosIniciais.push(novo);
+  return novo;
 }
