@@ -56,12 +56,40 @@ O projeto utiliza uma abordagem multidisciplinar de ponta:
 ### Deploy e Infraestrutura
 
 - **Hosting Atual**: GitHub Pages (Static Export)
-- **CI/CD**: GitHub Actions (workflow automatizado)
-- **Branch Principal**: `pages-mvp` ← **ATUAL** (MVP estático completo)
-- **Branch Feature**: `feature/github-pages-cicd` (desenvolvimento com API)
-- **Branch Deploy**: `gh-pages`
+- **CI/CD**: GitHub Actions (workflow: `nextjs-github-pages.yml`)
+- **Branch Source**: `pages-mvp` ← Código fonte do MVP estático
+- **Branch Deploy**: `gh-pages` ← GitHub Pages serve este branch
+- **Branch Docs**: `master` ← Documentação OpenSpec, scripts, orquestração
+- **Workflow**: Push em `pages-mvp` → build → deploy em `gh-pages`
 - **Node Version**: 20.x
 - **Package Manager**: npm
+
+#### Estratégia de Deploy (v1.1 - 2026-01-09)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    WORKFLOW DE DEPLOY                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  pages-mvp (source)     →    GitHub Actions    →   gh-pages    │
+│  ┌──────────────────┐         ┌─────────────┐      ┌─────────┐ │
+│  │ web-app/         │         │ npm run     │      │ out/    │ │
+│  │   app/           │   ───▶  │   build     │  ───▶ │         │ │
+│  │   components/    │         │ next export │      │ .nojekyll│ │
+│  │   lib/           │         └─────────────┘      └─────────┘ │
+│  └──────────────────┘                                    ↓      │
+│                                                         GHPAGES  │
+│                                                           SERVE │
+│                                                                 │
+│  GitHub Pages Config: source = gh-pages, path = /              │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Histórico de Merge:**
+- `master` → `pages-mvp` (2026-01-09): Merge para unificar documentação
+- `pages-mvp` contém código MVP funcional
+- `master` contém OpenSpec atualizado + scripts de orquestração
 
 ### Ferramentas de Desenvolvimento
 
